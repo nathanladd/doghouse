@@ -52,31 +52,34 @@ function setActiveNavigation() {
   });
 }
 
-function injectHomeLink() {
+function buildHeader() {
   const header = document.querySelector('.site-header');
-  const badge = header && header.querySelector('.header-badge');
   if (!header) return;
+
+  const breadcrumbData = header.dataset.breadcrumb || '';
+  const badge = header.dataset.badge || '';
 
   const parts = window.location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
   const acIdx = parts.lastIndexOf('bobcat-ac');
   const depth = acIdx === -1 ? 1 : parts.length - acIdx;
-  const href = '../'.repeat(depth) + 'index.html';
+  const courseHref = '../'.repeat(depth - 1) + 'index.html';
+  const doghouseHref = '../'.repeat(depth) + 'index.html';
 
-  const link = document.createElement('a');
-  link.href = href;
-  link.className = 'home-link';
-  link.innerHTML = '&#8592; Rudi-HQ';
+  const breadcrumbHtml = breadcrumbData
+    ? `Service Training <b>›</b> ${breadcrumbData}`
+    : 'Service Training';
 
-  if (badge) {
-    header.insertBefore(link, badge);
-  } else {
-    header.appendChild(link);
-  }
+  header.innerHTML = `
+    <div class="logo"><a href="${courseHref}" style="text-decoration: none; color: inherit;">BOTR AC: <span>Making Stuff Less Hot</span></a></div>
+    <div class="breadcrumb">${breadcrumbHtml}</div>
+    <a href="${doghouseHref}" class="home-link">&#8592; Rudi-HQ</a>
+    ${badge ? `<div class="header-badge">${badge}</div>` : ''}
+  `;
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  injectHomeLink();
+  buildHeader();
   setActiveNavigation();
   
   // Add click handlers to all navigation links
