@@ -70,7 +70,7 @@ function buildHeader() {
     : 'Service Training';
 
   header.innerHTML = `
-    <div class="logo"><a href="${courseHref}" style="text-decoration: none; color: inherit;">BOTR AC: <span>Making Stuff Less Hot</span></a></div>
+    <div class="logo"><a href="${courseHref}" style="text-decoration: none; color: inherit;">Bobcat AC: <span>Making Stuff Less Hot</span></a></div>
     <div class="breadcrumb">${breadcrumbHtml}</div>
     <a href="${doghouseHref}" class="home-link">&#8592; Rudi-HQ</a>
     ${badge ? `<div class="header-badge">${badge}</div>` : ''}
