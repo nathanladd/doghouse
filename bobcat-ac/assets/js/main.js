@@ -61,7 +61,7 @@ function buildHeader() {
 
   const parts = window.location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
   const acIdx = parts.lastIndexOf('bobcat-ac');
-  const depth = acIdx === -1 ? 1 : parts.length - acIdx;
+  const depth = acIdx === -1 ? 1 : parts.length - acIdx - 1;
   const courseHref = '../'.repeat(depth - 1) + 'index.html';
   const doghouseHref = '../'.repeat(depth) + 'index.html';
 
