@@ -52,8 +52,31 @@ function setActiveNavigation() {
   });
 }
 
+function injectHomeLink() {
+  const header = document.querySelector('.site-header');
+  const badge = header && header.querySelector('.header-badge');
+  if (!header) return;
+
+  const parts = window.location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
+  const acIdx = parts.lastIndexOf('bobcat-ac');
+  const depth = acIdx === -1 ? 1 : parts.length - acIdx;
+  const href = '../'.repeat(depth) + 'index.html';
+
+  const link = document.createElement('a');
+  link.href = href;
+  link.className = 'home-link';
+  link.innerHTML = '&#8592; Rudi-HQ';
+
+  if (badge) {
+    header.insertBefore(link, badge);
+  } else {
+    header.appendChild(link);
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+  injectHomeLink();
   setActiveNavigation();
   
   // Add click handlers to all navigation links

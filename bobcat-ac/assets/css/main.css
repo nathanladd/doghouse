@@ -74,8 +74,22 @@ body {
 
 .breadcrumb b { color: var(--text-secondary); }
 
-.header-badge {
+.home-link {
   margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.home-link:hover { color: var(--accent-dark); }
+
+.header-badge {
+  margin-left: 16px;
   background: var(--accent);
   color: white;
   font-weight: 700;
