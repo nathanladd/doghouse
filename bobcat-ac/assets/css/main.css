@@ -716,6 +716,7 @@ input[type="checkbox"] { accent-color: var(--accent); }
   .sidebar {
     position: static;
     height: auto;
+    min-width: 0;
     border-right: none;
     border-bottom: 1px solid var(--border);
     display: flex;
@@ -738,7 +739,14 @@ input[type="checkbox"] { accent-color: var(--accent); }
   .sidebar a .step-num { display: none; }
 
   /* Page content */
-  .main { padding: 20px 16px; }
+  .main { padding: 20px 16px; min-width: 0; overflow-x: hidden; }
   .page-title { font-size: 26px; }
   .two-col { grid-template-columns: 1fr; }
+
+  /* Tables scroll horizontally rather than overflowing */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
