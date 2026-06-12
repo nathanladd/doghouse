@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specs & Codes — Bobcat AC Training</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">BOTR AC: <span>Making Stuff Less Hot</span></a></div>
+  <div class="breadcrumb">Service Training <b>›</b> Specs & Codes</div>
+  <div class="header-badge">Reference</div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Modules</div>
+    <a href="refrigerant-cycle.html">
+      <span class="icon">🔄</span> Refrigerant Cycle
+      <span class="step-num">1</span>
+    </a>
+    <a href="../Components/">
+      <span class="icon">�</span> System Components
+      <span class="step-num">2</span>
+    </a>
+    <a href="safety.html">
+      <span class="icon">⚠️</span> Safety Third
+      <span class="step-num">3</span>
+    </a>
+    <a href="tools-recovery.html">
+      <span class="icon">🎛️</span> Tools & Tool Manuals
+      <span class="step-num">4</span>
+    </a>
+    <a href="pressure-diagnostics.html">
+      <span class="icon">📊</span> Reading Pressures
+      <span class="step-num">5</span>
+    </a>
+    <a href="diagnosis-process.html">
+      <span class="icon">🔍</span> Diagnosis Process
+      <span class="step-num">6</span>
+    </a>
+    <a href="machine-exercises.html">
+      <span class="icon">🚜</span> Machine Exercises
+      <span class="step-num">7</span>
+    </a>
+    <div class="sidebar-section-label">Reference</div>
+    <a href="reference.html" class="active">
+      <span class="icon">📋</span> Specs & Codes
+      <span class="step-num">—</span>
+    </a>
+    <a href="superheat-subcooling.html">
+      <span class="icon">🌡️</span> Superheat & Subcooling
+      <span class="step-num">—</span>
+    </a>
+    <a href="r134a-pt-chart.html">
+      <span class="icon">📊</span> R134a PT Chart
+      <span class="step-num">—</span>
+    </a>
+    <a href="schedule.html">
+      <span class="icon">📅</span> Class Schedule
+      <span class="step-num">—</span>
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">Reference</div>
+      <div class="page-title">Specs <span>&amp;</span> Codes</div>
+      <div class="page-meta">
+        <span>📋 Quick Reference</span>
+        <span>Field Use</span>
+      </div>
+    </div>
+
+    <div class="section-title">Key Specifications</div>
+    <table class="spec-table">
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Duct temperature — normal operating</td><td>45–53°F</td></tr>
+      <tr><td>Pressure relief valve opens at</td><td>535 psi</td></tr>
+      <tr><td>R-134a boiling point</td><td>−15°F</td></tr>
+      <tr><td>R-12 boiling point (reference)</td><td>−21°F</td></tr>
+      <tr><td>MCC key-on delay before clutch engages</td><td>6 seconds</td></tr>
+      <tr><td>Refrigerant type</td><td>R-134a</td></tr>
+      <tr><td>Compressor temp (operating)</td><td>Near engine temp</td></tr>
+    </table>
+
+    <div class="section-title">Diagnosis Rules of Thumb</div>
+    <table>
+      <tr><th>If you see…</th><th>Consider…</th></tr>
+      <tr><td class="topic">Clutch not engaging, low pressure</td><td>Low charge, pressure switch cutout (cuts out below 28 psi on high side), or electrical</td></tr>
+      <tr><td class="topic">Both pressures elevated</td><td>Overcharge OR blocked condenser — check airflow</td></tr>
+      <tr><td class="topic">Erratic pressures, intermittent cooling</td><td>Moisture — TXV freeze/thaw cycle</td></tr>
+      <tr><td class="topic">Cold duct, low airflow</td><td>Clogged cab filters, weak blower, frozen evaporator</td></tr>
+      <tr><td class="topic">Warm duct, gauges normal</td><td>Heater valve bypassing hot coolant</td></tr>
+      <tr><td class="topic">Clutch not engaging, pressures normal</td><td>Electrical — voltage drop, AC switch, EDT fault</td></tr>
+      <tr><td class="topic">Oil on hose or fitting exterior</td><td>Refrigerant leak at that point</td></tr>
+      <tr><td class="topic">Compressor running hot</td><td>Low oil quantity — check oil accounting</td></tr>
+    </table>
+
+    <div class="section-title">MCC Flash Codes</div>
+    <table>
+      <tr><th>Malfunction</th><th>Detection Interval</th><th>Status Light</th></tr>
+      <tr><td class="topic">Temperature Sensor</td><td>Continuous</td><td>1x per second</td></tr>
+      <tr><td class="topic">Compressor Clutch</td><td>At Cut-in</td><td>2x per second</td></tr>
+      <tr><td class="topic">Compressor Clutch Open</td><td>Continuous</td><td>3x per second</td></tr>
+      <tr><td class="topic">Clutch Short or Current High</td><td>At Cut-in</td><td>4x per second</td></tr>
+    </table>
+
+    <div class="section-title">Normal Operating Baseline</div>
+    <table class="spec-table">
+      <tr><th>Parameter</th><th>Normal Value</th></tr>
+      <tr><td>Duct (louver) temperature</td><td>45–53°F</td></tr>
+      <tr><td>Low-side pressure (approx. 70–80°F ambient)</td><td>25–45 psi</td></tr>
+      <tr><td>High-side pressure (approx. 70–80°F ambient)</td><td>150–250 psi</td></tr>
+      <tr><td>Compressor housing temp</td><td>Near engine temp</td></tr>
+    </table>
+
+    <div class="section-title">Gauge Pattern Guide</div>
+    <table>
+      <tr><th>Condition</th><th>Low Side</th><th>High Side</th><th>Duct Temp</th><th>Clue</th></tr>
+      <tr>
+        <td class="topic">Normal / Good System</td>
+        <td>25–45 psi</td>
+        <td>150–250 psi</td>
+        <td>45–53°F</td>
+        <td>Baseline. Memorize this.</td>
+      </tr>
+      <tr>
+        <td class="topic">Low Charge</td>
+        <td>↓ Low</td>
+        <td>↓ Low</td>
+        <td>Warm</td>
+        <td>Both sides low. Clutch may not engage (pressure switch cuts out below 28 psi on high side).</td>
+      </tr>
+      <tr>
+        <td class="topic">Overcharge</td>
+        <td>↑ High</td>
+        <td>↑↑ Very High</td>
+        <td>Warm</td>
+        <td>Both sides elevated. High side excessively high.</td>
+      </tr>
+      <tr>
+        <td class="topic">Blocked Condenser</td>
+        <td>↑ High</td>
+        <td>↑↑ Very High</td>
+        <td>Warm</td>
+        <td>Same pattern as overcharge — check airflow first!</td>
+      </tr>
+      <tr>
+        <td class="topic">Blocked Evap / Cab Filters</td>
+        <td>↓ Low</td>
+        <td>↓ Low</td>
+        <td>Cold (no airflow)</td>
+        <td>System works, no airflow to cab. Blower check too.</td>
+      </tr>
+      <tr>
+        <td class="topic">Moisture in System</td>
+        <td>Fluctuates</td>
+        <td>Fluctuates</td>
+        <td>Intermittent</td>
+        <td>TXV freezing and thawing. Erratic cycling.</td>
+      </tr>
+    </table>
+
+    <div class="section-title">Component Specifications</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Compressor</div>
+        <p>Clutch current: 3 amps. Oil capacity: 140–170 CC (4.7–5.7 oz) — this is the capacity for the entire system. New pumps ship with a full charge of oil.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <div class="card-title">Condenser</div>
+        <p>Airflow requirement: minimum 400 CFM. Fin spacing: standard. Clean monthly in dusty conditions. Check for damage.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🫙</div>
+        <div class="card-title">Receiver/Dryer</div>
+        <p>Relief valve: 535 psi. Replace when system opened. Desiccant capacity: finite. Check service manual for replacement intervals.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">❄️</div>
+        <div class="card-title">Evaporator</div>
+        <p>Freeze protection: EDT cycles compressor. Drain must be clear. Duct temp: 45-53°F normal. Below 40°F possible freeze-up.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Electrical Specifications</div>
+    <table>
+      <tr><th>Component</th><th>Specification</th><th>Test Method</th></tr>
+      <tr>
+        <td class="topic">AC Switch</td>
+        <td>Voltage drop < 0.5V when closed</td>
+        <td>Voltage-drop test across switch</td>
+      </tr>
+      <tr>
+        <td class="topic">Compressor Clutch</td>
+        <td>Current flow 3 amps</td>
+        <td>Use your high-current test light to substitute this load</td>
+      </tr>
+      <tr>
+        <td class="topic">Pressure Switch</td>
+        <td>High-side switch cuts out below 28 psi and above 384 psi</td>
+        <td>Pressure test with gauges</td>
+      </tr>
+    </table>
+
+    <div class="section-title">Field Quick Reference</div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <div class="card-title">Tools Required</div>
+        <p>...</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <div class="card-title">Documentation</div>
+        <p>...</p>
+      </div>
+    </div>
+
+    <div class="section-title">Service Intervals</div>
+    <table>
+      <tr><th>Item</th><th>Interval</th><th>Action</th></tr>
+      <tr>
+        <td class="topic">Cab Filters</td>
+        <td>As needed</td>
+        <td>Replace or clean</td>
+      </tr>
+      <tr>
+        <td class="topic">Condenser and Evaporator Cleaning</td>
+        <td>Every Service</td>
+        <td>Clean fins, check for damage</td>
+      </tr>
+    </table>
+
+    <div class="nav-buttons">
+      <a href="machine-exercises.html" class="btn btn-ghost">← Back: Machine Exercises</a>
+      <a href="schedule.html" class="btn btn-primary">Next: Class Schedule →</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

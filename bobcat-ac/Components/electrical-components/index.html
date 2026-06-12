@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Components — Bobcat AC Training</title>
+<link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><a href="../../index.html" style="text-decoration: none; color: inherit;">BOTR AC: <span>Making Stuff Less Hot</span></a></div>
+  <div class="breadcrumb">Service Training <b>›</b> System Components <b>›</b> Electrical Components</div>
+  <div class="header-badge">Component Detail</div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Modules</div>
+    <a href="../../modules/refrigerant-cycle.html">
+      <span class="icon">🔄</span> Refrigerant Cycle
+      <span class="step-num">1</span>
+    </a>
+    <a href="../index.html" class="active">
+      <span class="icon">�</span> System Components
+      <span class="step-num">2</span>
+    </a>
+    <a href="../../modules/safety.html">
+      <span class="icon">⚠️</span> Safety Third
+      <span class="step-num">3</span>
+    </a>
+    <a href="../../modules/tools-recovery.html">
+      <span class="icon">🎛️</span> Tools & Tool Manuals
+      <span class="step-num">4</span>
+    </a>
+    <a href="../../modules/pressure-diagnostics.html">
+      <span class="icon">📊</span> Reading Pressures
+      <span class="step-num">5</span>
+    </a>
+    <a href="../../modules/diagnosis-process.html">
+      <span class="icon">🔍</span> Diagnosis Process
+      <span class="step-num">6</span>
+    </a>
+    <a href="../../modules/machine-exercises.html">
+      <span class="icon">🚜</span> Machine Exercises
+      <span class="step-num">7</span>
+    </a>
+    <div class="sidebar-section-label">Component Details</div>
+    <a href="../compressor/index.html">
+      <span class="icon">⚙️</span> Compressor
+    </a>
+    <a href="../condenser/index.html">
+      <span class="icon">🌡️</span> Condenser
+    </a>
+    <a href="../evaporator/index.html">
+      <span class="icon">❄️</span> Evaporator
+    </a>
+    <a href="../receiver-dryer/index.html">
+      <span class="icon">🫙</span> Receiver/Dryer
+    </a>
+    <a href="../expansion-devices/index.html">
+      <span class="icon">⭕</span> Expansion Devices
+    </a>
+    <a href="../pressure-switches/index.html">
+      <span class="icon">🔘</span> Pressure Switches
+    </a>
+    <a href="index.html" class="active">
+      <span class="icon">⚡</span> Electrical
+    </a>
+    <a href="../filters/index.html">
+      <span class="icon">🔲</span> Filters
+    </a>
+    <a href="../heater-system/index.html">
+      <span class="icon">🔥</span> Heater System
+    </a>
+    <div class="sidebar-section-label">Reference</div>
+    <a href="../../modules/reference.html">
+      <span class="icon">📋</span> Specs & Codes
+      <span class="step-num">—</span>
+    </a>
+    <a href="../../modules/superheat-subcooling.html">
+      <span class="icon">🌡️</span> Superheat & Subcooling
+      <span class="step-num">—</span>
+    </a>
+    <a href="../../modules/r134a-pt-chart.html">
+      <span class="icon">📊</span> R134a PT Chart
+      <span class="step-num">—</span>
+    </a>
+    <a href="../../modules/schedule.html">
+      <span class="icon">📅</span> Class Schedule
+      <span class="step-num">—</span>
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">Component Detail</div>
+      <div class="page-title"><span>Electrical Components</span></div>
+      <div class="page-meta">
+        <span>⚡ Control System</span>
+        <span>🔛 AC Switch</span>
+        <span>🛡️ Protection</span>
+      </div>
+    </div>
+
+    <div class="section-title">Function & Operation</div>
+    <div class="section-desc">Electrical components control AC system operation and provide protection. The AC switch provides user control, the clutch engages the compressor, and protection devices prevent damage from abnormal conditions. Integration with MCC (Machine Control Computer) provides sophisticated control and diagnostics.</div>
+
+    <div class="tip-note">
+      <strong>💡 From HVAC Components Training</strong>
+      <p>Electrical issues account for 40% of AC complaints. Voltage-drop testing of AC switch is critical. Many "failed compressors" are actually electrical control problems.</p>
+    </div>
+
+    <div class="section-title">AC Switch (Cab)</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Location</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Operator cab, dashboard or console</strong><br>
+            Typically illuminated switch with LED indicator. May be part of climate control panel. Look for AC symbol or lettering.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">LED Indicator</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Critical diagnostic tool</strong><br>
+            LED brightness indicates switch condition. Dim LED = voltage drop = corrosion. Even slightly dim LED indicates problem.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">Operation</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Sends signal to MCC</strong><br>
+            When pressed, completes circuit to MCC. MCC processes request and engages clutch after 6-second delay if conditions are safe.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Common Failure</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Internal corrosion</strong><br>
+            Moisture causes corrosion on contacts. Creates voltage drop that prevents proper clutch engagement. Most common electrical failure.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Compressor Clutch</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Construction</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Electromagnetic coil and clutch plate</strong><br>
+            Coil creates magnetic field when energized. Pulls clutch plate into engagement with pulley. Requires significant current to engage.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Air Gap</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Critical specification</strong><br>
+            Space between clutch plate and pulley when disengaged. Too wide = won't engage. Too narrow = drags. Check service manual for specs.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">Bearing</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Pulley bearing</strong><br>
+            Allows pulley to free-wheel when clutch disengaged. Bearing failure causes noise and can prevent proper engagement.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Electrical Connection</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Weatherproof connector</strong><br>
+            Provides power to clutch coil. Check for corrosion, proper seating, and secure connection.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">EDT (Electronic De-icing Thermostat)</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Function</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Freeze protection and system monitoring</strong><br>
+            Monitors evaporator temperature, system current draw, voltage, and short circuits. Protects system from damage.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Freeze Protection</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Cycles compressor to prevent freeze-up</strong><br>
+            Disengages clutch when evaporator approaches freezing. Re-engages when temperature rises. Prevents ice damage.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">Current Monitoring</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Detects compressor problems</strong><br>
+            Monitors clutch current draw. High current = seized compressor. Low current = open circuit. Protects electrical system.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Integration</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Communicates with MCC</strong><br>
+            Provides status and fault information to MCC for diagnostics. Can set MCC fault codes for system problems.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">MCC Integration</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⏱️</div>
+        <div class="card-title">6-Second Delay</div>
+        <p>MCC waits 6 seconds after key-on before engaging clutch. Allows system stabilization and prevents immediate engagement.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">Diagnostics</div>
+        <p>MCC monitors AC system and can set specific fault codes. Provides valuable diagnostic information through service tool.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title">Protection</div>
+        <p>Integrates with EDT and pressure switches to provide comprehensive system protection. Prevents operation under unsafe conditions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Control Logic</div>
+        <p>Processes multiple inputs before enabling clutch. Includes engine speed, system pressure, temperature, and electrical conditions.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Testing Procedures</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-title">AC Switch Voltage-Drop Test</div>
+        <p>Measure voltage drop across closed switch with clutch engaged. More than 0.3-0.5V drop = replace switch. Critical test for electrical diagnosis.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Clutch Bypass Test</div>
+        <p>Use high-current test light to bypass clutch circuit. If clutch engages with direct power, compressor is good - problem is in control circuit.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">LED Brightness Check</div>
+        <p>Compare LED brightness to known good switch. Dim LED indicates internal corrosion and voltage drop. Replace if dim.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Clutch Resistance Test</div>
+        <p>Measure clutch coil resistance. Typical 3-5 ohms. Open circuit = failed coil. Very low resistance = shorted coil.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Common Failures</div>
+
+    <table>
+      <tr><th>Symptom</th><th>Cause</th><th>Diagnosis</th></tr>
+      <tr>
+        <td class="topic">Clutch not engaging</td>
+        <td>AC switch corrosion, voltage drop, failed clutch coil</td>
+        <td>Voltage-drop test, clutch bypass test, resistance test</td>
+      </tr>
+      <tr>
+        <td class="topic">Dim AC switch LED</td>
+        <td>Internal corrosion, voltage drop</td>
+        <td>Visual inspection, voltage-drop test, compare to good switch</td>
+      </tr>
+      <tr>
+        <td class="topic">Clutch noise</td>
+        <td>Failed bearing, worn clutch plate, incorrect air gap</td>
+        <td>Listen with stethoscope, check air gap, inspect bearing</td>
+      </tr>
+      <tr>
+        <td class="topic">Intermittent operation</td>
+        <td>Loose connections, faulty switch, failing coil</td>
+        <td>Wiggle test connections, voltage monitoring, resistance test</td>
+      </tr>
+      <tr>
+        <td class="topic">EDT fault codes</td>
+        <td>System overcurrent, freeze-up, short circuit</td>
+        <td>Read MCC codes, check system pressures and temperatures</td>
+      </tr>
+    </table>
+
+    <div class="section-title">AC Switch Voltage-Drop Testing</div>
+
+    <div class="safety-note">
+      <strong>⚡ Most Critical Electrical Test</strong>
+      <p>AC switch internal corrosion is the most common electrical failure. Even a slightly dim LED indicates excessive voltage drop. Always perform this test on AC complaints where clutch doesn't engage reliably.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Set Up Test</div>
+          <div class="step-body">Connect multimeter across AC switch terminals. Set to DC voltage scale. Ensure AC system is activated.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Measure Voltage Drop</div>
+          <div class="step-body">Read voltage across switch with circuit energized. More than 0.3-0.5V indicates excessive resistance and corrosion.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">Interpret Results</div>
+          <div class="step-body">Low drop (<0.3V) = good switch. High drop (>0.5V) = replace switch. Test multiple times for consistent results.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Verify Repair</div>
+          <div class="step-body">After switch replacement, verify clutch engages properly and LED brightness is normal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Replacement Guidelines</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">AC Switch</div>
+          <div class="step-body">Disconnect battery, remove switch from panel, note wire positions. Install new switch with correct orientation. Reconnect battery.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Clutch Coil</div>
+          <div class="step-body">Requires compressor removal on most models. Replace with compressor if coil failed. Check air gap during installation.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">EDT</div>
+          <div class="step-body">Location varies by model. May be separate or integrated with other components. Follow service manual procedures.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Wiring</div>
+          <div class="step-body">Inspect all wiring for damage, corrosion, proper routing. Repair any damaged conductors. Ensure proper grounding.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="../pressure-switches/index.html" class="btn btn-ghost">← Back: Pressure Switches</a>
+      <a href="../filters/index.html" class="btn btn-primary">Next: Filters →</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

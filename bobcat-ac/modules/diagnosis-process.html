@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnosis Process — Bobcat AC Training</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">BOTR AC: <span>Making Stuff Less Hot</span></a></div>
+  <div class="breadcrumb">Service Training <b>›</b> Diagnosis Process</div>
+  <div class="header-badge">Module 6</div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Modules</div>
+    <a href="refrigerant-cycle.html">
+      <span class="icon">🔄</span> Refrigerant Cycle
+      <span class="step-num">1</span>
+    </a>
+    <a href="../Components/index.html">
+      <span class="icon">🔧</span> System Components
+      <span class="step-num">2</span>
+    </a>
+    <a href="safety.html">
+      <span class="icon">⚠️</span> Safety Third
+      <span class="step-num">3</span>
+    </a>
+    <a href="tools-recovery.html">
+      <span class="icon">🎛️</span> Tools & Tool Manuals
+      <span class="step-num">4</span>
+    </a>
+    <a href="pressure-diagnostics.html">
+      <span class="icon">📊</span> Reading Pressures
+      <span class="step-num">5</span>
+    </a>
+    <a href="diagnosis-process.html" class="active">
+      <span class="icon">🔍</span> Diagnosis Process
+      <span class="step-num">6</span>
+    </a>
+    <a href="machine-exercises.html">
+      <span class="icon">🚜</span> Machine Exercises
+      <span class="step-num">7</span>
+    </a>
+    <div class="sidebar-section-label">Reference</div>
+    <a href="reference.html">
+      <span class="icon">📋</span> Specs & Codes
+      <span class="step-num">—</span>
+    </a>
+    <a href="superheat-subcooling.html">
+      <span class="icon">🌡️</span> Superheat & Subcooling
+      <span class="step-num">—</span>
+    </a>
+    <a href="r134a-pt-chart.html">
+      <span class="icon">📊</span> R134a PT Chart
+      <span class="step-num">—</span>
+    </a>
+    <a href="schedule.html">
+      <span class="icon">📅</span> Class Schedule
+      <span class="step-num">—</span>
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">Module 6</div>
+      <div class="page-title">AC Field Expedient <span>Diagnostics</span></div>
+      <div class="page-meta">
+        <span>⏱️ 25–30 min</span>
+        <span>🔍 7-Step Process</span>
+      </div>
+    </div>
+
+    <div class="tip-note">
+      <strong>💡 Systematic Approach</strong>
+      <p>Follow these 7 steps in order every time. This process will lead you to the root cause efficiently and help you write a complete service report. Bypass the first failure and make the rest of the system function before quoting the customer.</p>
+    </div>
+
+    <!-- ===== STEP 1 ===== -->
+    <div class="section-title">Step 1: Verify the Concern</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Start and Operate</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Start machine. Full engine speed. Turn AC on full cold. Blower on high.</strong><br>
+            Close cab door and windows. Operate AC for 5 minutes to allow system to stabilize.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Measure Duct Temperature</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Proper functioning AC louver temperature is between 45-53°F</strong><br>
+            Not uncommon to get below 40°F. If duct temperature is within range, the system is operating normally. Document the reading.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 2 ===== -->
+    <div class="section-title">Step 2: Inspect the Machine</div>
+
+    <ul class="checklist" id="inspect-checklist">
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Coolers/condenser restricted or extremely dirty?</label></li>
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Compressor clutch engaging?</label></li>
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Engine accessory belt(s) in good condition? If not, does the compressor rotate by hand?</label></li>
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Fresh air and recirculating filters restricted?</label></li>
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Debris behind operator seat plugging recirculating filter?</label></li>
+      <li><input type="checkbox" onchange="toggleCheck(this)"><label>Blower noisy or weak?</label></li>
+    </ul>
+
+    <!-- ===== STEP 3 ===== -->
+    <div class="section-title">Step 3: List Possible Causes</div>
+
+    <div class="section-desc">Based on your inspection, list all possible causes of the AC concern. 
+      It's important to make a plan before starting any testing. Divide the possible causes into categories and work through them systematically.</div>
+
+    <!-- ===== STEP 4 ===== -->
+    <div class="section-title">Step 4: Determine Root Cause</div>
+
+    <div class="safety-note">
+      <strong>⚠️ Key Principle</strong>
+      <p>Bypass the first failure and make the rest of the system function before quoting the customer. This ensures you find ALL problems, not just the first one.</p>
+    </div>
+
+    <div class="section-desc">Work through each category systematically to identify and isolate the root cause.</div>
+
+    <!-- ── Step 4A ── -->
+    <div class="section-title" style="font-size:1.1rem">4A — Airflow</div>
+
+    <div class="tip-note">
+      <strong>💨 Airflow Is Everything</strong>
+      <p>Low air volume from the ducts or restricted airflow through the evaporator and condenser will cause warm air from the ducts.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🔲</div>
+        <div class="card-title">Cab Filters</div>
+        <p>Check fresh air and recirculating filters. Restricted filters reduce airflow across the evaporator, causing poor cooling or freeze-up.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <div class="card-title">Condenser & Evaporator</div>
+        <p>Check for restrictions in condenser and evaporator. Debris, bent fins, or internal contamination all reduce heat transfer.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💨</div>
+        <div class="card-title">Blower Function</div>
+        <p>Verify blower motor operation and speed. Weak or noisy blower reduces airflow and cooling capacity.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💧</div>
+        <div class="card-title">HVAC Box Drains</div>
+        <p>Check HVAC box drains for clogs. Blocked drains cause water buildup and evaporator freezing, which further restricts airflow.</p>
+      </div>
+    </div>
+
+    <!-- ── Step 4B ── -->
+    <div class="section-title" style="font-size:1.1rem">4B — Electrical</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Key On / Engine Off Test</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Turn AC on. After a 6-second MCC delay, clutch should engage.</strong><br>
+            R-Series cycles the clutch for a soft start. Check the MCC flash codes for any stored faults.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">AC Switch</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Check for corrosion in the AC switch</strong><br>
+            Voltage drop or bypass test is important here. A dim light in the switch can indicate corrosion in the switch.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-label">Compressor Clutch</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Bypass with a high current test light in its place</strong><br>
+            This verifies the rest of the electrical system is functioning. If the test light illuminates, the circuit is good and the clutch is the problem.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-label">Pressure Switch</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Bypass switch and install gauge set to check charge</strong><br>
+            High-side pressure switch cuts out below 28 psi and above 384 psi. Low refrigerant pressure will prevent the compressor from engaging. Charge an empty system with a pound — look and listen.<br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Step 4C ── -->
+    <div class="section-title" style="font-size:1.1rem">4C — Refrigerant Charge</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Check for Leaks</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Check for leaks if system is low or empty</strong><br>
+            Hose and/or fitting leaking — look for oil residue. Compressor leaking — use soapy water to verify.
+            Pressurize the system with service truck air or refrigerant to check for leaks.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Step 4D ── -->
+    <div class="section-title" style="font-size:1.1rem">4D — Heater Control Valve</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Inspect Heater Control Valve</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Hot coolant can bypass the heater valve and heat the heater core</strong><br>
+            Clamp the heater hose to block any possible coolant flow. Key on / engine off: change temperature control setting and monitor heater coolant valve rotation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Step 4E ── -->
+    <div class="section-title" style="font-size:1.1rem">4E — Compressor</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Visual Inspection</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Visually inspect the compressor</strong><br>
+            If the belt is damaged or off, engage the compressor clutch and rotate the compressor by hand. Check for seized or rough operation.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Temperature Check</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Using an infrared temperature gun, measure the compressor housing temp while the system is operating</strong><br>
+            Compressor should be near engine temperature. Too little oil quantity will cause compressor to overheat.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <div class="card-title">Seized</div>
+        <p>Compressor will not rotate by hand. Belt may be damaged or thrown. Replace compressor, flush system, replace dryer.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <div class="card-title">Mounting</div>
+        <p>Check compressor mounting brackets and hardware. Loose mounting causes vibration, noise, and belt alignment issues.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Belt</div>
+        <p>Inspect belt condition, tension, and alignment. A slipping or damaged belt prevents proper compressor operation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🫙</div>
+        <div class="card-title">Oil Quantity</div>
+        <p>Insufficient oil causes compressor overheating and premature failure. Always verify proper oil quantity during service.</p>
+      </div>
+    </div>
+
+    <!-- ===== STEP 5 ===== -->
+    <div class="section-title">Step 5: Repair the Machine According to the Latest Service Information</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Repair the Machine</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Repair according to the latest service information</strong><br>
+            Use MyMachine to check for service letters or Knowledge Articles. Replace the dryer if system has been opened. Use the proper amount of oil.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 6 ===== -->
+    <div class="section-title">Step 6: Verify the Repair</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Verify the Repair</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Start machine. Full engine speed. Turn AC on full cold. Blower on high.</strong><br>
+            It's crutial to verify the repair exactly the same way as the concern was verified. 
+            Close cab door and windows. Operate AC for 5 minutes. Measure duct temperature. Proper functioning AC louver temperature is between 45-53°F.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 7 ===== -->
+    <div class="section-title">Step 7: Write the Service Report</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-label">Write the Service Report</div>
+          <div class="step-body">
+            <strong style="color: var(--text-primary)">Concern, Cause, and Correction</strong><br>
+            Include results of verifying the concern and verifying the repair. Include only the diagnostic steps that lead to the successful repair.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="pressure-diagnostics.html" class="btn btn-ghost">← Previous: Reading Pressures</a>
+      <a href="machine-exercises.html" class="btn btn-primary">Next: Machine Exercises →</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

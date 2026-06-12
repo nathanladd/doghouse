@@ -1,0 +1,31 @@
+﻿Diagnostic Chart for Air Conditioning System
+The diagnostic chart can help to understand how different conditions can affect the entire system. The chart gives symptoms that normally are associated with the conditions that are listed.
+Use the Troubleshooting Charts and the Flow Charts for Diagnosing the System to locate the source of a problem and systematically examine and repair the problem.
+Condition	Low Side Pressure	High Side Pressure	Sight Glass	Suction Line	ReceiverDrier	Liquid Line	Discharge Line	Discharge Air
+LACK OF REFRIGERANT	Very low	Very low	Clear	Slightly	Slightly	Slightly	Slightly	Warm
+				cool	warm	warm	warm	
+LOSS OF	Low	Low	Bubbles	Cool	Warm to	Warm	Warm to	Slightly cool
+REFRIGERANT					hot		hot	
+COMPRESSOR								
+FAILURE	High	Low	Clear	Cool	Warm	Warm	Warm	Slightly cool
+			Clear to	Slightly				
+CONDENSER	High	High	occasional		Hot	Hot	Hot	Warm
+				cool to				
+MALFUNCTION			bubbles	warm				
+								
+				Cold —				
+EXPANSION		High or		sweating				
+VALVE STUCK	High	Normal	Clear	or	Warm	Warm	Hot	Slightly cool
+OPEN				frosting heavily				
+								
+Cold — sweating
+EXPANSION	or
+VALVE STUCK Low	Low	Clear	frosting Warm	Warm	Hot	Slightly cool
+CLOSED	heavily
+at valve
+inlet
+RESTRICTION BETWEEN CONDENSER AND EXPANSION VALVE	Low	Low	Clear	Cool	Cool or sweating or frosting	Cool or sweating or frosting	Hot to point of restriction	Slightly cool
+RESTRICTION BETWEEN COMPRESSOR AND CONDENSER	High	High, normal, or low	Clear	Slightly cool to warm	Warm or hot	Warm or hot	Hot	Warm
+	Cool,	Cool (see
+NORMAL	Normal	Normal	Clear	possible Warm	Warm	Hot	specification light	on page 63)
+sweat
