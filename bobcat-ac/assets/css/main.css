@@ -706,6 +706,7 @@ input[type="checkbox"] { accent-color: var(--accent); }
   }
   .breadcrumb { display: none; }
   .header-badge { display: none; }
+  .logo span { display: none; }
 
   /* Sidebar becomes a horizontal scroll strip */
   .layout {
