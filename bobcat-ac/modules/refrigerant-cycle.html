@@ -62,21 +62,55 @@
       <h1 class="page-title">Refrigerant <span>Cycle</span></h1>
       <div class="page-meta">
         <span>⏱️ 90 Minutes</span>
-        <span>🎯 Theory + Live Demonstration</span>
-        <span>👷 Hands-On Machine Work</span>
+        <span>🎯 Theory + Relation to other systems</span>
       </div>
     </div>
 
     <div class="section-title">Understanding the Refrigerant Cycle</div>
-    <div class="section-desc">Master the fundamental principles of how refrigerant moves through the AC system to remove heat from the operator compartment. This is the foundation for all AC diagnostics and repair work.</div>
+    <div class="section-desc">Relate the fundamental principles of how refrigerant moves through the AC system to remove heat from the operator compartment. This is the foundation for all AC diagnostics and repair work.</div>
 
     <div class="instructor-note">
       <strong>💡 From Refrigerant Cycle Training</strong>
       <p>Students must understand that the AC system doesn't "create cold" - it moves heat from inside the cab to outside. Every component has a specific role in this heat transfer process.</p>
     </div>
 
-    <div class="section-title">The Four Basic Components</div>
-    <div class="section-desc">Every AC system has four main components that work together to move heat. Understanding each component's role is essential for proper diagnosis.</div>
+    <div class="section-title">Concepts You Already Know</div>
+    <div class="section-desc">The refrigerant cycle borrows the same physics you've already seen in other systems. Spot the connection before we dig in.</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">💧</div>
+        <div class="card-title">Hydraulic Orifice</div>
+        <p>A small restriction that drops pressure and controls flow. The <strong>expansion device</strong> 
+          works the same way — high-pressure liquid refrigerant passes through a restriction, pressure collapses, 
+          and the fluid gets cold.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Hydraulic Pump</div>
+        <p>Moves fluid by raising its pressure. The AC <strong>compressor</strong> is the refrigerant pump — 
+          it pulls in low-pressure vapor and pushes out high-pressure vapor to keep the cycle moving.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌬️</div>
+        <div class="card-title">Radiator</div>
+        <p>Rejects heat to passing air. The AC <strong>condenser</strong> does the same job — 
+          hot refrigerant vapor flows through fins, airflow strips the heat away, 
+          and the refrigerant comes out as cool liquid.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🫧</div>
+        <div class="card-title">Latent and Sensible Heat</div>
+        <p>Boiling water absorbs heat without getting hotter while it boils. 
+          Refrigerant does the same thing in the <strong>evaporator</strong> — 
+          it boils at 40°F, pulling heat from cab air without the temperature rising until it's fully vaporized.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Build out the system</div>
+    <div class="section-desc">The Bobcat AC system has components that work together to move heat. 
+                              Understanding each component's role is essential for proper diagnosis.
+                            Lets build out the entire system on a whiteboard, describing all the components.</div>
 
     <div class="steps">
       <div class="step">
@@ -96,8 +130,25 @@
         </div>
       </div>
 
-      <div class="step">
+            <div class="step">
         <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-label">Expansion Device</div>
+          <div class="step-body">
+            <p><strong>Function:</strong> Drops pressure and temperature</p>
+            <p><strong>Location:</strong> Very close to the inlet of the evaporator</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+              <li>Creates pressure drop from high to low side</li>
+              <li>Refrigerant becomes cold and partially vaporizes</li>
+              <li>Controls refrigerant flow into evaporator</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
         <div class="step-content">
           <div class="step-label">Condenser</div>
           <div class="step-body">
@@ -108,23 +159,6 @@
               <li>Hot high-pressure vapor enters, cool liquid leaves</li>
               <li>Airflow across fins removes heat from refrigerant</li>
               <li>Refrigerant changes state from vapor to liquid</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-label">Expansion Device</div>
-          <div class="step-body">
-            <p><strong>Function:</strong> Drops pressure and temperature</p>
-            <p><strong>Location:</strong> Between condenser and evaporator</p>
-            <p><strong>Key Points:</strong></p>
-            <ul>
-              <li>Creates pressure drop from high to low side</li>
-              <li>Refrigerant becomes cold and partially vaporizes</li>
-              <li>Controls refrigerant flow into evaporator</li>
             </ul>
           </div>
         </div>
@@ -146,6 +180,55 @@
           </div>
         </div>
       </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <div class="step-label">Receiver Dryer</div>
+          <div class="step-body">
+            <p><strong>Function:</strong> Absorbs moisture and debris from refrigerant</p>
+            <p><strong>Location:</strong> Between condenser and expansion valve</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+              <li>Removes moisture and contaminants from refrigerant</li>
+              <li>Stores a small amount of liquid refrigerant</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <div class="step-label">Pressure Switch</div>
+          <div class="step-body">
+            <p><strong>Function:</strong> Protects system from lack of refrigerent or excessive pressure</p>
+            <p><strong>Location:</strong> On the receiver dryer</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+              <li>Monitors system high and low pressure</li>
+              <li>Cycles compressor on/off</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">7</div>
+        <div class="step-content">
+          <div class="step-label">MCC Thermostat</div>
+          <div class="step-body">
+            <p><strong>Function:</strong> Controls temperature of evaporator</p>
+            <p><strong>Location:</strong> Near HVAC box</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+              <li>Monitors and controls evaporator temperature</li>
+              <li>Cycles compressor on and off by system load</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="section-title">Refrigerant States and Properties</div>
