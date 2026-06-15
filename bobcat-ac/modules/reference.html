@@ -170,17 +170,18 @@
       <div class="card">
         <div class="card-icon">⚙️</div>
         <div class="card-title">Compressor</div>
-        <p>Clutch current: 3 amps. Oil capacity: 140–170 CC (4.7–5.7 oz) — this is the capacity for the entire system. New pumps ship with a full charge of oil.</p>
+        <p>Clutch current: 3 amps. Oil capacity: 140–170 CC (4.7–5.7 oz) — this is the capacity for the entire system. 
+          New pumps ship with a full charge of oil.</p>
       </div>
       <div class="card">
         <div class="card-icon">🌡️</div>
         <div class="card-title">Condenser</div>
-        <p>Airflow requirement: minimum 400 CFM. Fin spacing: standard. Clean monthly in dusty conditions. Check for damage.</p>
+        <p>Has to be clean. Fan must operate correctly. Bobcat calls for a 20 degree temperature differential. I find more than that normally.</p>
       </div>
       <div class="card">
         <div class="card-icon">🫙</div>
         <div class="card-title">Receiver/Dryer</div>
-        <p>Relief valve: 535 psi. Replace when system opened. Desiccant capacity: finite. Check service manual for replacement intervals.</p>
+        <p>Relief valve: 535 psi. Replace when system opened. R-Series has an interval replacement schedule.</p>
       </div>
       <div class="card">
         <div class="card-icon">❄️</div>
@@ -205,7 +206,7 @@
       <tr>
         <td class="topic">Pressure Switch</td>
         <td>High-side switch cuts out below 28 psi and above 384 psi</td>
-        <td>Pressure test with gauges</td>
+        <td>Pressure test with gauges. Bypass test pressure switch.</td>
       </tr>
     </table>
 
@@ -215,12 +216,23 @@
       <div class="card">
         <div class="card-icon">🔧</div>
         <div class="card-title">Tools Required</div>
-        <p>...</p>
+        <ul class="checklist" style="margin-top:8px;">
+          <li><input type="checkbox" id="tool1" onchange="toggleCheck(this)"><label for="tool1">Recovery machine</label></li>
+          <li><input type="checkbox" id="tool2" onchange="toggleCheck(this)"><label for="tool2">Scale</label></li>
+          <li><input type="checkbox" id="tool3" onchange="toggleCheck(this)"><label for="tool3">Gauge set</label></li>
+          <li><input type="checkbox" id="tool4" onchange="toggleCheck(this)"><label for="tool4">Re-fillable AC bottle</label></li>
+          <li><input type="checkbox" id="tool5" onchange="toggleCheck(this)"><label for="tool5">New refrigerant</label></li>
+          <li><input type="checkbox" id="tool6" onchange="toggleCheck(this)"><label for="tool6">Thermometer</label></li>
+        </ul>
       </div>
       <div class="card">
         <div class="card-icon">📋</div>
         <div class="card-title">Documentation</div>
-        <p>...</p>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+          <a href="../data/Mastercool%2069110%20Recovery%20System.pdf" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" target="_blank">Mastercool 69110 Recovery System →</a>
+          <a href="../data/OMT%20Gauge%20Set%20and%20Vacuum%20Pump.pdf" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" target="_blank">OMT Gauge Set & Vacuum Pump →</a>
+          <a href="../data/yellow-jacket-scale.html" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;">Yellow Jacket Scale →</a>
+        </div>
       </div>
     </div>
 
