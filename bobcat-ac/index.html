@@ -8,11 +8,35 @@
 </head>
 <body>
 
+<!--
+  This is a static, multi-page site — no build step, no framework. Every
+  page shares two assets:
+    assets/css/main.css  styling for the header, sidebar, cards, buttons, etc.
+    assets/js/main.js    shared behavior: builds the header below, highlights
+                          the active sidebar link, and (on other pages)
+                          drives checklist checkboxes, component search, and
+                          collapsible sections.
+  Module pages live under modules/ and Components/, one file per topic.
+-->
+
+<!--
+  Left empty on purpose: main.js's buildHeader() fills this in at runtime.
+  It reads data-breadcrumb/data-badge below and counts how deeply this page
+  is nested under bobcat-ac/ to work out the right number of "../" hops for
+  the logo link (back to this course's index) and the "Rudi-HQ" link (back
+  to the parent doghouse index).
+-->
 <header class="site-header" data-breadcrumb="Hands-On Curriculum" data-badge="Technician Course"></header>
 
 <div class="layout">
 
-  <!-- SIDEBAR NAV -->
+  <!--
+    SIDEBAR NAV — one <a> per module/reference page. main.js's
+    setActiveNavigation() compares each href to the current page URL and adds
+    an "active" class so you can see where you are. <span class="step-num">
+    is just the module order; "—" marks reference pages outside the
+    7-step sequence.
+  -->
   <nav class="sidebar">
     <div class="sidebar-section-label">Course Modules</div>
     <a href="modules/refrigerant-cycle.html">
@@ -20,6 +44,7 @@
       <span class="step-num">1</span>
     </a>
     <a href="Components/index.html">
+      <!-- That replacement character is a corrupted emoji byte sequence in the source file, not a rendering bug -->
       <span class="icon">�</span> System Components
       <span class="step-num">2</span>
     </a>
@@ -57,6 +82,7 @@
   <!-- MAIN CONTENT -->
   <main class="main">
 
+    <!-- Title block: .page-label/.page-title/.page-meta are purely presentational, styled in main.css -->
     <div class="page-header">
       <div class="page-label">Course Overview</div>
       <div class="page-title">Bobcat <span>AC</span> Systems<br>Hands-On Training</div>
@@ -68,6 +94,11 @@
       </div>
     </div>
 
+    <!--
+      "Course Goals" — four summary cards. .card-grid/.card is the reusable
+      icon+title+description tile pattern used across this whole site
+      (see the module cards just below, and the Components pages).
+    -->
     <div class="section-title">Course Goals</div>
     <div class="section-desc">Pragmatic approach to learning AC systems with hands-on experience.</div>
     <div class="card-grid">
@@ -93,6 +124,12 @@
       </div>
     </div>
 
+    <!--
+      "Training Modules" — same card pattern as above, but each card adds a
+      "Start Module →" button (.btn .btn-primary) linking to the matching
+      sidebar page. This is a second table of contents for the same 7
+      modules listed in the sidebar, just with more detail per item.
+    -->
     <div class="section-title">Training Modules</div>
 
     <div class="card-grid">
@@ -105,6 +142,7 @@
         </div>
       </div>
       <div class="card">
+        <!-- Same corrupted-emoji byte sequence as the sidebar icon above -->
         <div class="card-icon">�</div>
         <div class="card-title">Module 2: System Components</div>
         <p>Detailed component identification, location, testing, and replacement procedures for all Bobcat AC systems.</p>
@@ -154,7 +192,8 @@
       </div>
     </div>
 
-  
+
+    <!-- Bottom pager: the empty <span> is a flexbox spacer that keeps the "Next" button pinned right (see .nav-buttons in main.css) -->
     <div class="nav-buttons">
       <span></span>
       <a href="modules/refrigerant-cycle.html" class="btn btn-primary">Start Training: Refrigerant Cycle →</a>
@@ -163,6 +202,12 @@
   </main>
 </div>
 
+<!--
+  Shared site script (see top-of-file note). On this page it only needs to
+  build the header and highlight the active sidebar link; the checklist,
+  search, and collapsible-section helpers in main.js are unused here but
+  used by other pages that share this same <script> tag.
+-->
 <script src="assets/js/main.js"></script>
 
 </body>
