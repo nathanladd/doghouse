@@ -4,13 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rudi-HQ</title>
+
+  <!--
+    Two-layer CSS setup used across this whole site:
+      styles.css      global base — typography, buttons, cards, tables,
+                      form inputs, and the .toc-layout sidebar pattern
+                      shared by all course module pages.
+      <style> below   page-specific overrides and layout rules that only
+                      apply to this homepage; kept inline so each page
+                      carries its own context rather than cluttering
+                      the global sheet.
+    No JavaScript is loaded on this page — unlike the bobcat-ac subsite,
+    the header here is plain HTML, not dynamically built at runtime.
+  -->
   <link rel="stylesheet" href="styles.css">
+
   <style>
+    /*
+      .home-wrapper: centers the page at a readable max width and adds
+      breathing room at the top/bottom. All direct children (header,
+      sections) stack vertically inside this constraint.
+    */
     .home-wrapper {
       max-width: 960px;
       margin: 0 auto;
       padding: 48px 24px;
     }
+
+    /*
+      .site-header: the branded hero at the top of this page only.
+      Note this is different from the .site-header in the bobcat-ac
+      subsite — there, that element is left empty and populated by
+      JavaScript; here, it's plain static HTML (no JS on this page).
+      The bottom border uses the site's accent blue (#AFC8E8) to
+      visually separate the hero from the body content below.
+    */
     .site-header {
       text-align: center;
       padding: 48px 24px 40px;
@@ -18,6 +46,9 @@
       margin-bottom: 40px;
     }
     .site-header .eyebrow {
+      /* Small all-caps label above the main title — a common typographic
+         pattern for section context ("Dog House" situates Rudi-HQ within
+         the broader doghouse platform). */
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
@@ -26,6 +57,10 @@
       margin-bottom: 12px;
     }
     .site-header h1 {
+      /* Overrides the global h1 rule in styles.css (which adds a bottom
+         border and padding) so the title looks clean in a centered hero
+         context rather than the document-body context that rule was
+         designed for. */
       font-size: 48px;
       font-weight: 700;
       color: #0078d4;
@@ -39,12 +74,23 @@
       color: #555555;
       margin: 0;
     }
+
+    /*
+      .rudi-origin: constrains the "about the name" block to a narrower
+      column than .home-wrapper for better readability of longer prose,
+      and centers it.
+    */
     .rudi-origin {
       max-width: 640px;
       margin: 0 auto;
       text-align: center;
     }
     .rudi-origin blockquote {
+      /* Semantic <blockquote> tag marks a quote from an external source.
+         The left blue bar is a standard visual convention for quotes.
+         text-align: left overrides the parent's centered text so the
+         quote body reads naturally as a paragraph, even though it's
+         centered as a block on the page. */
       font-style: italic;
       color: #555555;
       border-left: 4px solid #0078d4;
@@ -56,12 +102,22 @@
       border-radius: 0 4px 4px 0;
     }
     .rudi-origin blockquote cite {
+      /* <cite> is the semantic HTML tag for the source of a quote.
+         display: block + margin-top gives it its own line below the
+         quote body; font-style: normal cancels the inherited italic
+         so the attribution is visually distinct from the quote text. */
       display: block;
       margin-top: 8px;
       font-size: 13px;
       color: #888888;
       font-style: normal;
     }
+
+    /*
+      Responsive breakpoint: below 600px (most phones in portrait),
+      reduce padding and shrink the h1 so the hero doesn't dominate
+      the screen. This is the only responsive rule for this page.
+    */
     @media (max-width: 600px) {
       .home-wrapper {
         padding: 24px 16px;
@@ -81,12 +137,23 @@
 <body>
   <div class="home-wrapper">
 
+    <!-- Hero / site identity block (static HTML — no JS involved here) -->
     <header class="site-header">
       <div class="eyebrow">Dog House</div>
       <h1>Rudi-HQ</h1>
-      <p class="tagline">Your training and tools platform.</p>
+      <p class="tagline">Nate's training platform.</p>
     </header>
 
+    <!--
+      "Rudi-origin" — explains where the name comes from. The <blockquote>
+      and <cite> tags are semantic HTML: they tell browsers (and screen
+      readers) that this is a quotation and its source, not just styled
+      text. The special characters inside are HTML entities:
+        &ldquo; / &rdquo;  "smart" left/right double-quote marks (" ")
+        &mdash;             em dash (—), longer than a hyphen
+      Using entities instead of the literal characters avoids encoding
+      problems if the file is ever opened in a tool that mangles UTF-8.
+    -->
     <section class="rudi-origin">
       <p>
         <strong>Rudi</strong> is named for <strong>Rudolf Christian Karl Diesel</strong> — the engineer who designed
@@ -99,6 +166,21 @@
       </blockquote>
     </section>
 
+    <!--
+      "Training Courses" section — each course is a clickable card-link
+      (<a> styled as a block) that navigates to a full course subsite.
+      The styles here are all inline (style="...") rather than named
+      classes. This is a trade-off: inline styles are quick to write for
+      one-off elements, but harder to update consistently if the design
+      changes. Compare this to the bobcat-ac subsite, which uses named
+      classes (.card, .card-grid) for the same visual pattern so the
+      CSS lives in one place.
+
+      The transition: box-shadow 0.15s rule animates the shadow on hover
+      for a subtle depth effect — but the :hover state itself would need
+      CSS to trigger it; without a matching :hover rule or JS, the shadow
+      won't change on mouse-over. This is a common gotcha with inline styles.
+    -->
     <section style="margin-top: 48px;">
       <div style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #888888; margin-bottom: 16px;">Training Courses</div>
       <a href="bobcat-ac/index.html" style="display: block; text-decoration: none; background: #EAF4FF; border: 1px solid #AFC8E8; border-radius: 6px; padding: 20px 24px; transition: box-shadow 0.15s;">
