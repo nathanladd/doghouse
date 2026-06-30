@@ -96,11 +96,14 @@
     </div>
 
     <div class="section-title">Function & Operation</div>
-    <div class="section-desc">Electrical components control AC system operation and provide protection. The AC switch provides user control, the clutch engages the compressor, and protection devices prevent damage from abnormal conditions. Integration with MCC (Machine Control Computer) provides sophisticated control and diagnostics.</div>
+    <div class="section-desc">Electrical components control AC system operation and provide protection. 
+      The AC switch provides user control, the clutch engages the compressor, and the pressure switch prevents 
+      damage from abnormal conditions. Integration with MCC provides diagnostics.</div>
 
     <div class="tip-note">
       <strong>💡 From HVAC Components Training</strong>
-      <p>Electrical issues account for 40% of AC complaints. Voltage-drop testing of AC switch is critical. Many "failed compressors" are actually electrical control problems.</p>
+      <p>Voltage-drop testing of AC switch is critical. Many "failed MCC Thermostats" are actually 
+        voltage drop problems.</p>
     </div>
 
     <div class="section-title">AC Switch (Cab)</div>
@@ -112,7 +115,7 @@
           <div class="step-label">Location</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Operator cab, dashboard or console</strong><br>
-            Typically illuminated switch with LED indicator. May be part of climate control panel. Look for AC symbol or lettering.
+            Typically illuminated switch with LED indicator.
           </div>
         </div>
       </div>
@@ -132,7 +135,7 @@
           <div class="step-label">Operation</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Sends signal to MCC</strong><br>
-            When pressed, completes circuit to MCC. MCC processes request and engages clutch after 6-second delay if conditions are safe.
+            When pressed, completes circuit to MCC (pressure switch is there as well).
           </div>
         </div>
       </div>
@@ -142,7 +145,8 @@
           <div class="step-label">Common Failure</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Internal corrosion</strong><br>
-            Moisture causes corrosion on contacts. Creates voltage drop that prevents proper clutch engagement. Most common electrical failure.
+            Moisture causes corrosion on contacts. Creates voltage drop that prevents proper MCC operation. 
+            Most common electrical failure.
           </div>
         </div>
       </div>
@@ -157,32 +161,13 @@
           <div class="step-label">Construction</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Electromagnetic coil and clutch plate</strong><br>
-            Coil creates magnetic field when energized. Pulls clutch plate into engagement with pulley. Requires significant current to engage.
+            Coil creates magnetic field when energized. Pulls clutch plate into engagement with pulley. 
+            The ohm meter is not your friend. Substitute test. 3 amp current.
           </div>
         </div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-label">Air Gap</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Critical specification</strong><br>
-            Space between clutch plate and pulley when disengaged. Too wide = won't engage. Too narrow = drags. Check service manual for specs.
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-label">Bearing</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Pulley bearing</strong><br>
-            Allows pulley to free-wheel when clutch disengaged. Bearing failure causes noise and can prevent proper engagement.
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
         <div class="step-content">
           <div class="step-label">Electrical Connection</div>
           <div class="step-body">
@@ -193,7 +178,7 @@
       </div>
     </div>
 
-    <div class="section-title">EDT (Electronic De-icing Thermostat)</div>
+    <div class="section-title">MCC (Mobile Climate Control) Thermostat</div>
 
     <div class="steps">
       <div class="step">
@@ -202,7 +187,8 @@
           <div class="step-label">Function</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Freeze protection and system monitoring</strong><br>
-            Monitors evaporator temperature, system current draw, voltage, and short circuits. Protects system from damage.
+            Monitors evaporator temperature, system current draw, and voltage. 
+            Protects system from damage.
           </div>
         </div>
       </div>
@@ -212,54 +198,21 @@
           <div class="step-label">Freeze Protection</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Cycles compressor to prevent freeze-up</strong><br>
-            Disengages clutch when evaporator approaches freezing. Re-engages when temperature rises. Prevents ice damage.
+            Disengages clutch when evaporator approaches freezing. Re-engages when temperature rises. 
+            Prevents ice.
           </div>
         </div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <div class="step-content">
-          <div class="step-label">Current Monitoring</div>
+          <div class="step-label"><a href="../../modules/reference.html#mcc-flash-codes">Current Monitoring</a></div>
           <div class="step-body">
-            <strong style="color: var(--text-primary)">Detects compressor problems</strong><br>
-            Monitors clutch current draw. High current = seized compressor. Low current = open circuit. Protects electrical system.
+            <strong style="color: var(--text-primary)">Detects circuit problems</strong><br>
+            Monitors clutch current draw. High current = short-to-ground. Low current = open circuit. 
+            Protects electrical system.
           </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-label">Integration</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Communicates with MCC</strong><br>
-            Provides status and fault information to MCC for diagnostics. Can set MCC fault codes for system problems.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">MCC Integration</div>
-
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">⏱️</div>
-        <div class="card-title">6-Second Delay</div>
-        <p>MCC waits 6 seconds after key-on before engaging clutch. Allows system stabilization and prevents immediate engagement.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔍</div>
-        <div class="card-title">Diagnostics</div>
-        <p>MCC monitors AC system and can set specific fault codes. Provides valuable diagnostic information through service tool.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🛡️</div>
-        <div class="card-title">Protection</div>
-        <p>Integrates with EDT and pressure switches to provide comprehensive system protection. Prevents operation under unsafe conditions.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <div class="card-title">Control Logic</div>
-        <p>Processes multiple inputs before enabling clutch. Includes engine speed, system pressure, temperature, and electrical conditions.</p>
       </div>
     </div>
 
@@ -269,22 +222,25 @@
       <div class="card">
         <div class="card-icon">📊</div>
         <div class="card-title">AC Switch Voltage-Drop Test</div>
-        <p>Measure voltage drop across closed switch with clutch engaged. More than 0.3-0.5V drop = replace switch. Critical test for electrical diagnosis.</p>
+        <p>Measure voltage drop across closed switch with clutch engaged. 
+          More than 0.3-0.5V drop = replace switch. Critical test for electrical diagnosis.</p>
       </div>
       <div class="card">
         <div class="card-icon">⚡</div>
         <div class="card-title">Clutch Bypass Test</div>
-        <p>Use high-current test light to bypass clutch circuit. If clutch engages with direct power, compressor is good - problem is in control circuit.</p>
+        <p>Use high-current test light to bypass clutch. If test light operates at 3 amps, 
+          compressor clutch is bad - replace compressor.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Pressure Switch Bypass Test</div>
+        <p>Use jumper to bypass switch. If system operates, install gauge set and diag system pressure.
+           If pressure is good, replace pressure switch.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔍</div>
         <div class="card-title">LED Brightness Check</div>
         <p>Compare LED brightness to known good switch. Dim LED indicates internal corrosion and voltage drop. Replace if dim.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚙️</div>
-        <div class="card-title">Clutch Resistance Test</div>
-        <p>Measure clutch coil resistance. Typical 3-5 ohms. Open circuit = failed coil. Very low resistance = shorted coil.</p>
       </div>
     </div>
 
@@ -293,29 +249,26 @@
     <table>
       <tr><th>Symptom</th><th>Cause</th><th>Diagnosis</th></tr>
       <tr>
-        <td class="topic">Clutch not engaging</td>
-        <td>AC switch corrosion, voltage drop, failed clutch coil</td>
-        <td>Voltage-drop test, clutch bypass test, resistance test</td>
+        <td class="topic">Clutch not engaging and MCC LED off</td>
+        <td>Low gas charge</td>
+        <td>Bypass pressure switch or install gauge set</td>
       </tr>
       <tr>
-        <td class="topic">Dim AC switch LED</td>
-        <td>Internal corrosion, voltage drop</td>
-        <td>Visual inspection, voltage-drop test, compare to good switch</td>
+        <td class="topic">R-Series open circuit fault</td>
+        <td>Tailigate is open</td>
+        <td>No air flow across the condencer causes high pressure which opens pressure switch.
+          Close the tailgate.
+        </td>
       </tr>
       <tr>
-        <td class="topic">Clutch noise</td>
-        <td>Failed bearing, worn clutch plate, incorrect air gap</td>
-        <td>Listen with stethoscope, check air gap, inspect bearing</td>
+        <td class="topic">Clutch not engaging and MCC LED solid</td>
+        <td>Voltage drop in AC switch</td>
+        <td>Voltage drop at MCC. Excessive voltage drop is usually from corosion in the AC switch.</td>
       </tr>
       <tr>
-        <td class="topic">Intermittent operation</td>
-        <td>Loose connections, faulty switch, failing coil</td>
-        <td>Wiggle test connections, voltage monitoring, resistance test</td>
-      </tr>
-      <tr>
-        <td class="topic">EDT fault codes</td>
-        <td>System overcurrent, freeze-up, short circuit</td>
-        <td>Read MCC codes, check system pressures and temperatures</td>
+        <td class="topic">MCC flashing fault codes</td>
+        <td>Clutch circuit problem</td>
+        <td>Read MCC codes, diag circuit from MCC to clutch or potential temp prob problem</td>
       </tr>
     </table>
 
@@ -323,7 +276,9 @@
 
     <div class="safety-note">
       <strong>⚡ Most Critical Electrical Test</strong>
-      <p>AC switch internal corrosion is the most common electrical failure. Even a slightly dim LED indicates excessive voltage drop. Always perform this test on AC complaints where clutch doesn't engage reliably.</p>
+      <p>AC switch internal corrosion is the most common electrical failure. 
+        Even a slightly dim LED indicates excessive voltage drop. Always perform this test 
+        before replacing the MCC</p>
     </div>
 
     <div class="steps">
@@ -353,39 +308,6 @@
         <div class="step-content">
           <div class="step-label">Verify Repair</div>
           <div class="step-body">After switch replacement, verify clutch engages properly and LED brightness is normal.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">Replacement Guidelines</div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <div class="step-label">AC Switch</div>
-          <div class="step-body">Disconnect battery, remove switch from panel, note wire positions. Install new switch with correct orientation. Reconnect battery.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-label">Clutch Coil</div>
-          <div class="step-body">Requires compressor removal on most models. Replace with compressor if coil failed. Check air gap during installation.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-label">EDT</div>
-          <div class="step-body">Location varies by model. May be separate or integrated with other components. Follow service manual procedures.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-label">Wiring</div>
-          <div class="step-body">Inspect all wiring for damage, corrosion, proper routing. Repair any damaged conductors. Ensure proper grounding.</div>
         </div>
       </div>
     </div>
