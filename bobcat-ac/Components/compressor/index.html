@@ -1,24 +1,58 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compressor — Bobcat AC Training</title>
+
+<!--
+  Path depth: this file lives at Components/compressor/index.html, which is
+  two levels below the bobcat-ac/ root, so every shared asset link needs
+  two "../" hops: ../../assets/...
+  This is the only file that needs to change when reorganizing folder structure
+  — the HTML content stays the same, only these relative paths move.
+-->
 <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
 
+<!--
+  Header: intentionally empty — main.js's buildHeader() populates it at
+  runtime. It reads two data attributes:
+    data-breadcrumb  text appended after "Service Training ›" in the header
+                     (the "›" here is a literal unicode character in the JS
+                     template string, not an HTML entity)
+    data-badge       small pill label that appears in the top-right corner
+  buildHeader() also counts the folder depth to compute the right number of
+  "../" hops for the logo link (back to bobcat-ac/index.html) and the
+  "Rudi-HQ" home link (back to the doghouse root).
+-->
 <header class="site-header" data-breadcrumb="System Components › Compressor" data-badge="Component Detail"></header>
 
 <div class="layout">
 
-  <!-- SIDEBAR NAV -->
+  <!--
+    SIDEBAR NAV — two groups:
+      "Course Modules"    the 7 top-level course pages (same on every page)
+      "Component Details" links to sibling component pages within Components/
+
+    Two links carry class="active" and are HARDCODED here (not set by JS).
+    That's intentional: main.js's setActiveNavigation() does a simple href
+    match against the current URL. With nested component pages the match
+    would only catch one link, so both are pre-set manually:
+      ../index.html   (the parent "System Components" module)
+      index.html      (this specific component page)
+
+    The ../../ prefix on course module links steps back up past
+    Components/compressor/ to reach the bobcat-ac/modules/ directory.
+  -->
   <nav class="sidebar">
     <div class="sidebar-section-label">Course Modules</div>
     <a href="../../modules/refrigerant-cycle.html">
       <span class="icon">🔄</span> Refrigerant Cycle
       <span class="step-num">1</span>
     </a>
+    <!-- Hardcoded active: this is the parent module for this component page -->
     <a href="../index.html" class="active">
       <span class="icon">�</span> System Components
       <span class="step-num">2</span>
@@ -44,6 +78,7 @@
       <span class="step-num">7</span>
     </a>
     <div class="sidebar-section-label">Component Details</div>
+    <!-- Hardcoded active: this is the current page -->
     <a href="index.html" class="active">
       <span class="icon">⚙️</span> Compressor
     </a>
@@ -85,6 +120,17 @@
   <!-- MAIN CONTENT -->
   <main class="main">
 
+    <!--
+      Page header block — three nested divs, all styled by main.css:
+        .page-label   small all-caps context label (same pattern as .eyebrow
+                      on the doghouse root page)
+        .page-title   large title; the <span> inside changes the span text
+                      to var(--text-primary) dark gray instead of the
+                      default accent blue — used when you want only part of
+                      the title highlighted
+        .page-meta    row of small badge-like spans for quick facts;
+                      no interactivity, purely presentational
+    -->
     <div class="page-header">
       <div class="page-label">Component Detail</div>
       <div class="page-title"><span>Compressor</span></div>
@@ -95,34 +141,70 @@
       </div>
     </div>
 
+    <!--
+      Section intro block:
+        .section-title  bold heading that visually divides content areas
+        .section-desc   muted lead paragraph below the title
+      These two classes always appear together as a section opener, before
+      whatever content follows (cards, steps, table, etc.).
+    -->
     <div class="section-title">Function & Operation</div>
-    <div class="section-desc">The compressor is the heart of the AC system. 
-      It draws low-pressure refrigerant vapor from the evaporator and compresses it into high-pressure, 
+    <div class="section-desc">The compressor is the heart of the AC system.
+      It draws low-pressure refrigerant vapor from the evaporator and compresses it into high-pressure,
       high-temperature vapor. The compressor doesn't create cold — it moves heat from inside the cab to outside the machine.</div>
 
+    <!--
+      .two-col: a CSS Grid with grid-template-columns: 1fr 1fr — two equal-
+      width columns with a 20px gap. The two .card children each get half
+      the available width. On screens narrower than ~600px (set in main.css
+      @media query), .two-col collapses to a single column automatically,
+      so no extra markup is needed for mobile layout.
+    -->
     <div class="two-col">
       <div class="card">
         <div class="card-icon">🔄</div>
         <div class="card-title">What It Does</div>
-        <p>Creates pressure differential that drives refrigerant flow. 
-          Increases refrigerant temperature and pressure for heat rejection at condenser.</p>
+        <p>Creates pressure differential that drives refrigerant flow (The compressor increasses presure and 
+          the TXV drops it again). Increases refrigerant temperature and pressure for heat rejection at condenser.</p>
       </div>
       <div class="card">
         <div class="card-icon">⚙️</div>
         <div class="card-title">How It Works</div>
-        <p>Belt-driven from engine. Electromagnetic clutch engages when AC is activated. 
+        <p>Belt-driven from engine. Electromagnetic clutch engages when AC is activated.
           Internal pistons or scroll compress refrigerant vapor.</p>
       </div>
     </div>
 
     <div class="section-title">Component Identification</div>
 
+    <!--
+      .tip-note: a green callout box — used for helpful field tips or
+      training notes. Visual hierarchy from main.css:
+        green left border (4px solid var(--green))
+        light green background (#f0fff4)
+        the <strong> inside renders in all-caps green text as a label
+      Compare to .safety-note below, which is the same pattern but in
+      red — the color signals the severity/type of the message.
+    -->
     <div class="tip-note">
-      <strong>💡 From HVAC Components Training</strong>
-      <p>Bobcat AC systems use Sanden or York-style compressors depending on model. 
-        Pumps ship with oil -capacity of entire system.</p>
+      <strong>💡 Don't overfill the AC oil</strong>
+      <p>Pumps ship with oil -capacity of entire system.</p>
     </div>
 
+    <!--
+      .steps / .step: a numbered procedure list. Each .step is a flex
+      container — .step-number sits on the left as a fixed-width blue
+      numeral, and .step-content fills the rest of the row. Inside
+      .step-content:
+        .step-label   bold title for this step (font-size 15px, dark)
+        .step-body    the detail text (font-size 14px, muted gray)
+
+      The inline style="color: var(--text-primary)" on the <strong> tags
+      inside .step-body overrides the inherited muted gray with the darker
+      primary text color — CSS custom properties (variables defined in
+      :root in main.css) work in inline styles the same way they do in
+      stylesheets, because they're resolved at computed-value time.
+    -->
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
@@ -130,7 +212,7 @@
           <div class="step-label">Location</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Engine bay, belt-driven</strong><br>
-            Mounted on engine block or accessory bracket. Driven by serpentine belt. 
+            Mounted on engine block or accessory bracket. Driven by serpentine belt.
             Look for electrical connector and refrigerant lines. Access varies by model series.
           </div>
         </div>
@@ -141,19 +223,19 @@
           <div class="step-label">Clutch Assembly</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Electromagnetic clutch with pulley</strong><br>
-            Pulley free-wheels when disengaged. When energized, clutch plate engages and drives compressor shaft. 
-            Should click when engaging.
+            Pulley free-wheels when disengaged. When energized, clutch plate engages and drives compressor shaft.
+            CLutch runs at about 3 amps. Use your high-current test light to supstitute test.
           </div>
         </div>
       </div>
-      
+
       <div class="step">
         <div class="step-number">3</div>
         <div class="step-content">
           <div class="step-label">Refrigerant Lines</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Suction and discharge lines</strong><br>
-            Suction line (low side): Larger, insulated, cold. Discharge line (high side): Smaller, 
+            Suction line (low side): Larger, insulated, cold. Discharge line (high side): Smaller,
             hot to touch. Check for oil residue indicating leaks.
           </div>
         </div>
@@ -162,28 +244,37 @@
 
     <div class="section-title">Testing Procedures</div>
 
+    <!--
+      .card-grid: CSS Grid with grid-template-columns: repeat(auto-fill,
+      minmax(280px, 1fr)). "auto-fill" means the browser creates as many
+      columns as fit, each at least 280px wide — so on a wide screen you
+      get 2–3 columns, on mobile you get 1. No media query needed; the
+      grid adapts automatically. This version uses minmax(280px, 1fr),
+      wider than the homepage's minmax(160px, 1fr), because testing-
+      procedure cards have more text and need the extra room.
+    -->
     <div class="card-grid">
       <div class="card">
         <div class="card-icon">⚡</div>
         <div class="card-title">Clutch Engagement Test</div>
-        <p>Key on, engine off. Turn AC on. After 6-second MCC delay, clutch should engage with audible click. 
-          If no click, check voltage and ground.</p>
+        <p>Key on, engine off. Turn AC on. After 6-second MCC delay, clutch should engage with audible click.
+          If no click, substitute test using your high-current test light. By-pass AC pressure switch.</p>
       </div>
       <div class="card">
         <div class="card-icon">🌡️</div>
         <div class="card-title">Temperature Check</div>
-        <p>Discharge line should be very hot (near engine temp). Suction line should be cold. 
+        <p>Discharge line should be very hot (near engine temp). Suction line should be cold.
           Large temperature difference indicates proper compression.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔍</div>
         <div class="card-title">Visual Inspection</div>
-        <p>Check belt condition, clutch gap, oil leaks, loose mounting bolts. Listen for unusual noises during operation.</p>
+        <p>Check belt condition, oil leaks, loose mounting bolts. Listen for unusual noises during operation.</p>
       </div>
       <div class="card">
         <div class="card-icon">⚙️</div>
         <div class="card-title">Bypass Test</div>
-        <p>Use high-current test light to substitute clutch. 
+        <p>Use high-current test light to substitute clutch.
           During operation, check system for 8x pressure differential.</p>
       </div>
     </div>
@@ -192,26 +283,36 @@
 
     <div class="tip-note">
       <strong>💡 From HVAC Components Training</strong>
-      <p>Compressor failures often result from other system issues. Always check for metal contamination, 
-        oil leaks, and clutch operation before condemning compressor.</p>
+      <p>Compressor failures often result from other system issues. Always check for metal contamination,
+        oil leaks, and clutch operation after condemning compressor.</p>
     </div>
 
+    <!--
+      Standard HTML <table>. The first row uses <th> (table header) cells,
+      which get the blue gradient background from main.css. Data rows use
+      <td>. The class="topic" on the first <td> in each row applies
+      font-weight: 500 and var(--text-primary) dark color so the symptom
+      column stands out as the row "key" — same visual role as a row header
+      without using <th> (which would affect accessibility semantics).
+      main.css also adds tr:nth-child(even) zebra striping and tr:hover
+      highlight automatically to all tables, no extra classes needed.
+    -->
     <table>
       <tr><th>Symptom</th><th>Cause</th><th>Diagnosis</th></tr>
       <tr>
         <td class="topic">Clutch not engaging</td>
-        <td>Electrical fault, low pressure, failed clutch coil, voltage drop</td>
-        <td>Voltage test, pressure check, bypass test, check AC switch</td>
+        <td>Low/High pressure, Electrical fault</td>
+        <td>Bypass pressure switch. Check MCC codes. Substitute test clutch.</td>
       </tr>
       <tr>
         <td class="topic">Loud grinding noise</td>
         <td>Internal bearing failure, piston damage, broken reed valves</td>
-        <td>Check for metal in system, oil analysis</td>
+        <td>Check for metal in system. Inspect system oil.</td>
       </tr>
       <tr>
         <td class="topic">No compression</td>
-        <td>Internal seal failure, broken reed valves, stuck pistons</td>
-        <td>Equal high/low pressures, no temperature difference across compressor</td>
+        <td>Internal seal failure, broken reed valves, damaged pistons</td>
+        <td>Not able to build the 8x pressure difference, no temperature difference across compressor</td>
       </tr>
       <tr>
         <td class="topic">Oil leak</td>
@@ -223,28 +324,30 @@
         <td>Worn clutch plate, incorrect air gap, weak coil</td>
         <td>Clutch engages but doesn't drive compressor, burning smell</td>
       </tr>
-      <tr>
-        <td class="topic">Short cycling</td>
-        <td>Low pressure cutout, electrical issues, overheating</td>
-        <td>Normal cycling is 5–45 sec on/off in 77–95°F weather. Shorter cycles indicate a problem. 
-          Check pressure readings, voltage, temperature.</td>
-      </tr>
     </table>
 
     <div class="section-title">Replacement Guidelines</div>
 
+    <!--
+      .safety-note: a red callout box — the "danger" severity version of
+      .tip-note. Same layout (4px left border, colored background, all-caps
+      <strong> label) but uses var(--red) and var(--red-dark) from main.css
+      to signal a critical warning. Use .tip-note for helpful info,
+      .safety-note when ignoring the content could cause damage or injury.
+    -->
     <div class="safety-note">
       <strong>⚠️ Critical Replacement Notes</strong>
-      <p>Compressor replacement requires complete system flush. Failed compressor can send metal debris throughout system. 
-        Always replace receiver/dryer, condenser, TXV, and evaporator, and flush lines.</p>
+      <p>Compressor replacement requires complete system flush. Failed compressor can send metal debris throughout system.
+        Always replace receiver/dryer, condenser, TXV, and evaporator. Flush the lines.</p>
     </div>
 
+    <!-- Replacement procedure reuses the same .steps/.step pattern as Component Identification above -->
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
         <div class="step-content">
           <div class="step-label">Recover Refrigerant</div>
-          <div class="step-body">Complete recovery to field bottle. Don't worry about oil quantity. System will be flushed and oil 
+          <div class="step-body">Complete recovery to field bottle. Don't worry about oil quantity. System will be flushed and oil
             will be replaced.</div>
         </div>
       </div>
@@ -260,7 +363,7 @@
         <div class="step-number">3</div>
         <div class="step-content">
           <div class="step-label">Flush System</div>
-          <div class="step-body">Flush lines with AC flush solvent. Replace receiver/dryer, 
+          <div class="step-body">Flush lines with AC flush solvent. Replace receiver/dryer,
             condenser and evaporator, TXV.</div>
         </div>
       </div>
@@ -268,22 +371,34 @@
         <div class="step-number">4</div>
         <div class="step-content">
           <div class="step-label">Install New Compressor</div>
-          <div class="step-body">Add correct oil amount to new compressor. Install, connect lines, torque fittings, 
-            connect electrical, install belt.</div>
+          <div class="step-body">Drain new compressor and add-back the correct oil amount to new compressor. 
+            Install, connect lines, torque fittings, connect electrical, install belt.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-number">5</div>
         <div class="step-content">
           <div class="step-label">Evacuate & Charge</div>
-          <div class="step-body">Pull vacuum to 29.9 in/Hg, hold 30 minutes. Charge to spec by weight. 
+          <div class="step-body">Pull vacuum to 29.9 in/Hg, hold 30 minutes. Charge to spec by weight.
             Check for leaks and proper operation.</div>
         </div>
       </div>
     </div>
 
-    
+    <!--
+      .nav-buttons: flex container with justify-content: space-between,
+      so the two buttons sit at opposite ends of the row — back on the left,
+      forward on the right. A top border and margin-top create a visual
+      separator from the content above.
 
+      Two button styles are used here:
+        .btn-ghost    transparent background, muted text, subtle border —
+                      de-emphasized "back" action so it doesn't compete
+                      visually with the forward button
+        .btn-primary  solid blue fill — the primary forward action
+      Both are <a> tags styled as buttons (not <button> elements), because
+      they navigate to other pages rather than triggering JS behavior.
+    -->
     <div class="nav-buttons">
       <a href="../index.html" class="btn btn-ghost">← Back: Components Overview</a>
       <a href="../condenser/index.html" class="btn btn-primary">Next: Condenser →</a>
@@ -292,6 +407,12 @@
   </main>
 </div>
 
+<!--
+  Script loaded at the bottom of <body> (not in <head>) so the DOM is fully
+  parsed before the script runs — it queries elements like .site-header and
+  .sidebar a, which must exist before the selectors can find them.
+  The ../../ path mirrors the CSS link above: two levels up to bobcat-ac/root.
+-->
 <script src="../../assets/js/main.js"></script>
 
 </body>
