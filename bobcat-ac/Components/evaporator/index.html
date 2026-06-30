@@ -96,18 +96,23 @@
     </div>
 
     <div class="section-title">Function & Operation</div>
-    <div class="section-desc">The evaporator is the cold heat exchanger inside the HVAC box. Low-pressure refrigerant enters as a cold mixture and boils (absorbs latent heat) as warm cab air blows across it. This heat absorption is what makes the air cold at the ducts. The evaporator also removes moisture from the air, which drains out as condensate.</div>
+    <div class="section-desc">The evaporator is the cold heat exchanger inside the HVAC box. 
+      Low-pressure refrigerant enters as a cold mixture and boils (absorbs latent heat) as warm cab air blows across it. 
+      This heat absorption is what makes the air cold at the ducts. The evaporator also removes moisture from the air, which 
+      drains out as condensate.</div>
 
     <div class="two-col">
       <div class="card">
         <div class="card-icon">❄️</div>
         <div class="card-title">Heat Absorption</div>
-        <p>Refrigerant boils at low temperature (around 32°F). Latent heat absorption from cab air causes this phase change. This is where cooling actually happens.</p>
+        <p>Refrigerant boils at low temperature (around -15°F at atmosphere). Latent heat absorption from cab air causes this phase change. 
+          This is where cooling actually happens.</p>
       </div>
       <div class="card">
         <div class="card-icon">💧</div>
         <div class="card-title">Dehumidification</div>
-        <p>Cold evaporator surface causes moisture to condense out of cab air. Water drains through tube to outside of machine. Prevents fogging and improves comfort.</p>
+        <p>Cold evaporator surface causes moisture to condense out of cab air. Water drains through tube to outside of machine. 
+          Prevents fogging and improves comfort. Makes the defrost work better</p>
       </div>
     </div>
 
@@ -120,7 +125,7 @@
           <div class="step-label">Location</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Inside HVAC box in cab</strong><br>
-            Located behind dash panel. Access may require removing panels or raising cab on some models. Look for insulated refrigerant lines entering box.
+             Will have a thermoter either taped to a line or inserted in fins.
           </div>
         </div>
       </div>
@@ -140,7 +145,7 @@
           <div class="step-label">Refrigerant Connections</div>
           <div class="step-body">
             <strong style="color: var(--text-primary)">Inlet from expansion device, outlet to compressor</strong><br>
-            Cold refrigerant enters from TXV/orifice tube. Suction line (low side) carries vapor back to compressor.
+            Cold refrigerant enters from TXV. Suction line (low side) carries vapor back to compressor.
           </div>
         </div>
       </div>
@@ -162,17 +167,19 @@
       <div class="card">
         <div class="card-icon">🌡️</div>
         <div class="card-title">Duct Temperature Test</div>
-        <p>Measure temperature at duct louver with AC on full cold. Normal: 45-53°F. Below 40°F indicates possible freeze-up. Above 55°F indicates problem.</p>
+        <p>Measure temperature at duct louver with AC on full cold. Normal: 45-53°F. Below 40°F indicates possible freeze-up. 
+          Above 55°F indicates problem.</p>
       </div>
       <div class="card">
         <div class="card-icon">📊</div>
         <div class="card-title">Pressure Analysis</div>
-        <p>Low-side pressure should be 25-45 psi at 70-80°F ambient. Low pressure indicates low charge or restriction. High pressure indicates overcharge.</p>
+        <p>Low-side pressure should be 25-45 psi at 70-80°F ambient. Low pressure indicates low charge or restriction. 
+          High pressure indicates overcharge.</p>
       </div>
       <div class="card">
         <div class="card-icon">💧</div>
         <div class="card-title">Condensate Drain Test</div>
-        <p>Verify water draining from condensate tube. Pour water into drain pan to check for blockages. Clogged drain can cause water damage and odor.</p>
+        <p>Verify water draining from condensate tube. Clogged drain can cause freeze-up or a wet operator.</p>
       </div>
       <div class="card">
         <div class="card-icon">❄️</div>
@@ -187,7 +194,7 @@
       <tr><th>Symptom</th><th>Cause</th><th>Diagnosis</th></tr>
       <tr>
         <td class="topic">Evaporator freeze-up</td>
-        <td>Low charge, restricted airflow, failed TXV</td>
+        <td>Restricted airflow, failed TXV or MCC</td>
         <td>Ice formation, low suction pressure, cold duct temp</td>
       </tr>
       <tr>
@@ -201,14 +208,9 @@
         <td>UV dye test, electronic leak detector, oil residue</td>
       </tr>
       <tr>
-        <td class="topic">Odor from vents</td>
-        <td>Mold growth in drain pan, clogged drain</td>
-        <p>Visual inspection, smell test, check drain flow</p>
-      </tr>
-      <tr>
         <td class="topic">Water in cab</td>
-        <td>Clogged condensate drain, damaged drain pan</td>
-        <td>Water leak location, drain flow test</td>
+        <td>Clogged condensate drain</td>
+        <td>Clean drain(s) and potentially modify drain valves</td>
       </tr>
     </table>
 
@@ -216,26 +218,20 @@
 
     <div class="tip-note">
       <strong>💡 Understanding Freeze-Up</strong>
-      <p>Evaporator freeze occurs when surface temperature drops below 32°F. This can happen from low refrigerant charge, restricted airflow, or failed expansion device. Ice blocks airflow and reduces cooling efficiency.</p>
+      <p>Evaporator freeze occurs when surface temperature drops below 32°F. This can happen from MCC thermoter problems, 
+        restricted airflow, or failed expansion device. Ice blocks airflow and reduces cooling efficiency.</p>
     </div>
 
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
         <div class="step-content">
-          <div class="step-label">EDT Protection</div>
-          <div class="step-body">Electronic De-icing Thermostat monitors evaporator temperature and cycles compressor to prevent freeze-up.</div>
+          <div class="step-label">MCC Protection</div>
+          <div class="step-body">EMCC thermostat monitors evaporator temperature and cycles compressor to prevent freeze-up.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-label">Pressure Switch</div>
-          <div class="step-body">Low-pressure switch prevents operation when refrigerant pressure is too low to prevent freeze-up.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
         <div class="step-content">
           <div class="step-label">Airflow Requirements</div>
           <div class="step-body">Minimum airflow required to keep evaporator above freezing. Check blower operation and filter condition.</div>
@@ -267,61 +263,8 @@
           <div class="step-body">Check blower motor operation and fan condition. Weak airflow causes freeze-up and poor cooling.</div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-label">Odor Treatment</div>
-          <div class="step-body">Clean drain pan and treat with antimicrobial solution if odor present. Check for mold growth.</div>
-        </div>
-      </div>
     </div>
 
-    <div class="section-title">Replacement Guidelines</div>
-
-    <div class="safety-note">
-      <strong>⚠️ Major Replacement</strong>
-      <p>Evaporator replacement is major job requiring dashboard removal on some models. Plan for extended downtime. Replace expansion device and receiver/dryer when replacing evaporator.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <div class="step-label">Recover Refrigerant</div>
-          <div class="step-body">Complete recovery to field bottle. Cap all openings immediately after line removal.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-label">Access Evaporator</div>
-          <div class="step-body">Remove dashboard panels, disconnect blower motor, remove HVAC box cover. May require raising cab on some models.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-label">Remove Old Unit</div>
-          <div class="step-body">Disconnect refrigerant lines, remove expansion device, disconnect sensors, unbolt evaporator from housing.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-label">Install New Unit</div>
-          <div class="step-body">Install new expansion device, connect lines with new O-rings, reconnect sensors, install new evaporator.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <div class="step-content">
-          <div class="step-label">Reassemble & Test</div>
-          <div class="step-body">Reassemble HVAC box, evacuate system, charge to spec, verify proper operation and drainage.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">Model-Specific Notes</div>
 
     <div class="nav-buttons">
       <a href="../condenser/index.html" class="btn btn-ghost">← Back: Condenser</a>
