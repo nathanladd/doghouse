@@ -67,15 +67,18 @@
     </div>
 
     <div class="section-title">Understanding the Refrigerant Cycle</div>
-    <div class="section-desc">Relate the fundamental principles of how refrigerant moves through the AC system to remove heat from the operator compartment. This is the foundation for all AC diagnostics and repair work.</div>
+    <div class="section-desc">Relate the fundamental principles of how refrigerant moves through the AC system to 
+      remove heat from the operator compartment. This is the foundation for all AC diagnostics and repair work.</div>
 
     <div class="instructor-note">
-      <strong>💡 From Refrigerant Cycle Training</strong>
-      <p>Students must understand that the AC system doesn't "create cold" - it moves heat from inside the cab to outside. Every component has a specific role in this heat transfer process.</p>
+      <strong>💡 Refrigerant Cycle Training</strong>
+      <p>The AC system doesn't "create cold" - it moves heat from inside the cab to outside. 
+        Every component has a specific role in this heat transfer process.</p>
     </div>
 
     <div class="section-title">Concepts You Already Know</div>
-    <div class="section-desc">The refrigerant cycle borrows the same physics you've already seen in other systems. Spot the connection before we dig in.</div>
+    <div class="section-desc">The refrigerant cycle borrows the same physics you've already seen in other systems. 
+      It's useful to make these connections before we dig in.</div>
 
     <div class="card-grid">
       <div class="card">
@@ -89,7 +92,8 @@
         <div class="card-icon">⚙️</div>
         <div class="card-title">Hydraulic Pump</div>
         <p>Moves fluid by raising its pressure. The AC <strong>compressor</strong> is the refrigerant pump — 
-          it pulls in low-pressure vapor and pushes out high-pressure vapor to keep the cycle moving.</p>
+          it pulls in low-pressure vapor and pushes out high-pressure vapor to keep the cycle moving.
+        An important difference - The AC compressor only wants to compress gas, not liquid.</p>
       </div>
       <div class="card">
         <div class="card-icon">🌬️</div>
@@ -124,6 +128,8 @@
             <ul>
               <li>Creates the pressure difference that drives the cycle</li>
               <li>Pumps low-pressure vapor to high-pressure vapor</li>
+              <li>Similar to the way a hydraulic pump creats the flow necessary for pressure, 
+                the compressor creats the flow necessary for the expansion valve to do its job.</li>
               <li>Refrigerant leaves compressor hot and high-pressure</li>
             </ul>
           </div>
@@ -139,9 +145,9 @@
             <p><strong>Location:</strong> Very close to the inlet of the evaporator</p>
             <p><strong>Key Points:</strong></p>
             <ul>
-              <li>Creates pressure drop from high to low side</li>
+              <li>A variable oriface that creates pressure drop from high to low side</li>
               <li>Refrigerant becomes cold and partially vaporizes</li>
-              <li>Controls refrigerant flow into evaporator</li>
+              <li>Has feedback that controls refrigerant flow into evaporator.</li>
             </ul>
           </div>
         </div>
@@ -175,7 +181,7 @@
             <ul>
               <li>Cold low-pressure refrigerant absorbs heat</li>
               <li>Blower moves warm cab air across cold evaporator</li>
-              <li>Refrigerant changes from liquid to vapor</li>
+              <li>Refrigerant changes state from liquid to vapor</li>
             </ul>
           </div>
         </div>
@@ -231,53 +237,6 @@
 
     </div>
 
-    <div class="section-title">Refrigerant States and Properties</div>
-    <div class="section-desc">Understanding how refrigerant behaves at different pressures and temperatures is crucial for diagnosis.</div>
-
-    <div class="tip-note">
-      <strong>🌡️ Temperature-Pressure Relationship</strong>
-      <p>Refrigerant has a predictable relationship between pressure and temperature.
-         At any given pressure, refrigerant will boil (change from liquid to vapor) at a specific temperature.
-         This relationship is key to diagnosing system problems.<br>
-        Think about why our engine cooling systems are pressurized - it raises the boiling point of water!</p>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Refrigerant State</th>
-          <th>Pressure</th>
-          <th>Temperature</th>
-          <th>Location in System</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>High-Pressure Vapor</strong></td>
-          <td>High (200-300 PSI)</td>
-          <td>Hot (180-200°F)</td>
-          <td>Leaving compressor</td>
-        </tr>
-        <tr>
-          <td><strong>High-Pressure Liquid</strong></td>
-          <td>High (200-300 PSI)</td>
-          <td>Warm (120-140°F)</td>
-          <td>Leaving condenser</td>
-        </tr>
-        <tr>
-          <td><strong>Low-Pressure Liquid</strong></td>
-          <td>Low (30-40 PSI)</td>
-          <td>Cold (30-40°F)</td>
-          <td>Leaving expansion device</td>
-        </tr>
-        <tr>
-          <td><strong>Low-Pressure Vapor</strong></td>
-          <td>Low (30-40 PSI)</td>
-          <td>Cold (40-50°F)</td>
-          <td>Leaving evaporator</td>
-        </tr>
-      </tbody>
-    </table>
 
     <div class="section-title">Heat Transfer Principles</div>
     <div class="section-desc">AC systems work on two fundamental heat transfer principles that every technician must understand.</div>
@@ -308,9 +267,9 @@
         <div class="step-content">
           <div class="step-label">Compressor Discharge</div>
           <div class="step-body">
-            <p>Low-pressure vapor (30-40 PSI, 40-50°F) enters compressor</p>
-            <p>Compressor pressurizes vapor to 200-300 PSI</p>
-            <p>Temperature rises to 180-200°F due to compression</p>
+            <p>Low-pressure vapor (Less than 30psi) enters compressor</p>
+            <p>Compressor pressurizes vapor somewhere close to 8x /p>
+            <p>Temperature rises due to compression</p>
           </div>
         </div>
       </div>
@@ -321,7 +280,7 @@
           <div class="step-label">Condensation</div>
           <div class="step-body">
             <p>Hot vapor enters condenser</p>
-            <p>Airflow removes heat, refrigerant cools to 120-140°F</p>
+            <p>Airflow removes heat, refrigerant cools by at least 20degF</p>
             <p>Refrigerant condenses from vapor to liquid (latent heat transfer)</p>
           </div>
         </div>
@@ -333,7 +292,7 @@
           <div class="step-label">Expansion</div>
           <div class="step-body">
             <p>Liquid refrigerant passes through expansion device</p>
-          <p>Pressure drops to 30-40 PSI</p>
+          <p>Pressure drops to about 30 or less PSI</p>
           <p>Temperature drops to 30-40°F</p>
           <p>Some refrigerant "flashes" to vapor (partial boiling)</p>
           </div>
@@ -348,7 +307,7 @@
             <p>Cold refrigerant enters evaporator</p>
             <p>Warm cab air (70-80°F) blows across evaporator fins</p>
             <p>Refrigerant absorbs heat and boils (latent heat transfer)</p>
-            <p>Air leaving evaporator is 40-50°F - cold air to cab</p>
+            <p>Air leaving evaporator is 45-53°F - cold air to cab</p>
           </div>
         </div>
       </div>
@@ -358,7 +317,7 @@
         <div class="step-content">
           <div class="step-label">Return to Compressor</div>
           <div class="step-body">
-            <p>Cold vapor (30-40 PSI, 40-50°F) returns to compressor</p>
+            <p>Cold vapor returns to compressor</p>
             <p>Cycle repeats continuously</p>
           </div>
         </div>
@@ -370,7 +329,8 @@
 
     <div class="tip-note">
       <strong>⚠️ Critical Oil Information</strong>
-      <p>Oil circulates with refrigerant through the entire system. Too little oil = compressor failure. Too much oil = reduced cooling capacity. Always account for oil during recovery and replacement.</p>
+      <p>Oil circulates with refrigerant through the entire system. Too little oil = compressor failure. Too much oil = reduced cooling capacity. 
+        Always account for oil during recovery and replacement.</p>
     </div>
 
     <div class="steps">
@@ -398,7 +358,6 @@
               <li>Measure oil recovered from system</li>
               <li>Add same amount of new oil to replacement components</li>
               <li>Never add oil without knowing system capacity</li>
-              <li>Use only approved PAG or POE oil types</li>
             </ul>
           </div>
         </div>
@@ -434,7 +393,7 @@
         </tr>
         <tr>
           <td><strong>Compressor Efficiency</strong></td>
-          <td>Weak compression = low pressures</td>
+          <td>Weak compression = low pressures difference</td>
           <td>Pressure differential, noise, temperature</td>
         </tr>
       </tbody>
@@ -463,10 +422,6 @@
       <div class="checklist-item">
         <input type="checkbox" id="demo5" onchange="toggleCheck(this)">
         <label for="demo5">Connect gauges and show pressure/temperature relationship</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="demo6" onchange="toggleCheck(this)">
-        <label for="demo6">Demonstrate latent heat with ice water analogy</label>
       </div>
     </div>
 
