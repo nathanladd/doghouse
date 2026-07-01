@@ -471,6 +471,29 @@ td .badge {
 .spec-table td:first-child { color: var(--text-primary); font-weight: 500; width: 40%; }
 .spec-table td:last-child  { color: var(--accent); font-size: 15px; font-weight: 600; }
 
+/* --- OBSERVATION ILLUSTRATION (whiteboard template, not fillable) --- */
+.obs-box {
+  display: inline-block;
+  min-width: 70px;
+  height: 24px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  vertical-align: middle;
+  margin: 0 12px 0 6px;
+}
+
+.obs-check {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  vertical-align: middle;
+  margin: 0 6px 0 12px;
+}
+
+.obs-check:first-child { margin-left: 0; }
+
 /* --- CHECKLIST --- */
 .checklist { list-style: none; margin-bottom: 24px; }
 
