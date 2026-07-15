@@ -100,6 +100,29 @@ body {
   border-radius: 3px;
 }
 
+.tv-mode-toggle {
+  margin-left: 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.tv-mode-toggle:hover { background: var(--title-top); color: var(--accent); border-color: var(--accent); }
+
+.tv-mode-toggle[aria-pressed="true"] {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
 /* --- LAYOUT --- */
 .layout {
   display: grid;
@@ -773,3 +796,57 @@ input[type="checkbox"] { accent-color: var(--accent); }
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* --- TV MODE (large text for viewing from a distance) --- */
+html.tv-mode .site-header .logo        { font-size: 26px; }
+html.tv-mode .breadcrumb                { font-size: 17px; }
+html.tv-mode .header-badge              { font-size: 15px; padding: 6px 16px; }
+html.tv-mode .tv-mode-toggle            { font-size: 14px; padding: 7px 16px; }
+html.tv-mode .home-link                 { font-size: 16px; }
+
+html.tv-mode .sidebar-section-label     { font-size: 14px; }
+html.tv-mode .sidebar a                 { font-size: 19px; padding: 12px 16px; }
+html.tv-mode .sidebar a .icon           { font-size: 20px; }
+html.tv-mode .sidebar a .step-num       { width: 24px; height: 24px; font-size: 13px; }
+
+html.tv-mode .page-label                { font-size: 15px; }
+html.tv-mode .page-title                { font-size: 48px; }
+html.tv-mode .page-meta                 { font-size: 18px; }
+
+html.tv-mode .section-title             { font-size: 30px; }
+html.tv-mode .section-desc              { font-size: 20px; max-width: none; }
+
+html.tv-mode .instructor-note,
+html.tv-mode .safety-note,
+html.tv-mode .tip-note                  { font-size: 20px; }
+html.tv-mode .instructor-note strong,
+html.tv-mode .safety-note strong,
+html.tv-mode .tip-note strong           { font-size: 15px; }
+
+html.tv-mode .card-icon                 { font-size: 34px; }
+html.tv-mode .card-title                { font-size: 20px; }
+html.tv-mode .card p                    { font-size: 19px; }
+
+html.tv-mode .step-number               { font-size: 26px; }
+html.tv-mode .step-label                { font-size: 21px; }
+html.tv-mode .step-body                 { font-size: 20px; }
+
+html.tv-mode table                      { font-size: 20px; }
+html.tv-mode th                         { font-size: 16px; }
+
+html.tv-mode .checklist li              { font-size: 20px; }
+html.tv-mode .checklist li input[type="checkbox"] { width: 22px; height: 22px; }
+
+html.tv-mode .exercise-block .ex-title  { font-size: 21px; }
+html.tv-mode .exercise-block ul         { font-size: 19px; }
+html.tv-mode .exercise-block .ex-goal   { font-size: 17px; }
+
+html.tv-mode .btn,
+html.tv-mode .btn-primary,
+html.tv-mode .btn-ghost                 { font-size: 18px; padding: 10px 24px; }
+
+html.tv-mode h2                         { font-size: 30px; }
+html.tv-mode h3                         { font-size: 22px; }
+html.tv-mode p                          { font-size: 20px; }
+html.tv-mode li                         { font-size: 19px; }
+html.tv-mode code                       { font-size: 1em; }

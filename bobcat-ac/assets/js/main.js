@@ -1,5 +1,22 @@
 // Bobcat AC Training - Main JavaScript
 
+// Apply saved TV Mode setting immediately, before the rest of the page renders
+if (localStorage.getItem('tvMode') === '1') {
+  document.documentElement.classList.add('tv-mode');
+}
+
+function applyTvMode(enabled) {
+  document.documentElement.classList.toggle('tv-mode', enabled);
+  const btn = document.querySelector('.tv-mode-toggle');
+  if (btn) btn.setAttribute('aria-pressed', String(enabled));
+}
+
+function toggleTvMode() {
+  const enabled = !document.documentElement.classList.contains('tv-mode');
+  localStorage.setItem('tvMode', enabled ? '1' : '0');
+  applyTvMode(enabled);
+}
+
 // Section navigation (for single-page applications)
 function showSection(id, link) {
   // Hide all sections
@@ -72,9 +89,15 @@ function buildHeader() {
   header.innerHTML = `
     <div class="logo"><a href="${courseHref}" style="text-decoration: none; color: inherit;">Bobcat AC: <span>Making Stuff Less Hot</span></a></div>
     <div class="breadcrumb">${breadcrumbHtml}</div>
+    <button type="button" class="tv-mode-toggle" onclick="toggleTvMode()" title="Enlarge text for viewing on a TV from a distance">&#128250; Large Text</button>
     <a href="${doghouseHref}" class="home-link">&#8592; Rudi-HQ</a>
     ${badge ? `<div class="header-badge">${badge}</div>` : ''}
   `;
+
+  const toggleBtn = header.querySelector('.tv-mode-toggle');
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-pressed', document.documentElement.classList.contains('tv-mode') ? 'true' : 'false');
+  }
 }
 
 // Initialize on page load
