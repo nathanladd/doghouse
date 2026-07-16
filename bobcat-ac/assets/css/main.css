@@ -123,6 +123,93 @@ body {
   border-color: var(--accent);
 }
 
+/* --- HEADER SEARCH ---
+   Client-side, index-backed search of the bobcat-ac subsite. The box lives in
+   the sticky header (built by main.js's buildHeader); margin-left:auto starts
+   the right-hand cluster, and the sibling override keeps the "Rudi-HQ" link
+   from adding a second auto-gap. */
+.header-search {
+  position: relative;
+  margin-left: auto;
+  flex: 0 1 260px;
+  min-width: 0;
+}
+.header-search ~ .home-link { margin-left: 16px; }
+
+.header-search-input {
+  width: 100%;
+  height: 34px;
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.header-search-input::placeholder { color: var(--text-muted); }
+.header-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+/* Results dropdown — hidden until .open is added by renderSearchResults(). */
+.header-search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 380px;
+  max-width: 80vw;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  z-index: 200;
+}
+.header-search-results.open { display: block; }
+
+.hs-item {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-soft);
+}
+.hs-item:last-child { border-bottom: none; }
+.hs-item:hover,
+.hs-item.hs-active { background: var(--title-top); }
+
+.hs-title { font-size: 14px; font-weight: 700; color: var(--accent); }
+.hs-crumb {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 2px 0;
+}
+.hs-snippet {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-top: 3px;
+}
+.header-search-results mark {
+  background: #fff2ab;
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+.hs-note {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
 /* --- LAYOUT --- */
 .layout {
   display: grid;
@@ -754,6 +841,10 @@ input[type="checkbox"] { accent-color: var(--accent); }
   .header-badge { display: none; }
   .logo span { display: none; }
 
+  /* Search stays, but shrinks and its dropdown aligns to the viewport edge. */
+  .header-search { flex: 1 1 auto; margin-left: 12px; }
+  .header-search-results { width: 92vw; right: -8px; }
+
   /* Sidebar becomes a horizontal scroll strip */
   .layout {
     grid-template-columns: 1fr;
@@ -803,6 +894,7 @@ html.tv-mode .breadcrumb                { font-size: 17px; }
 html.tv-mode .header-badge              { font-size: 15px; padding: 6px 16px; }
 html.tv-mode .tv-mode-toggle            { font-size: 14px; padding: 7px 16px; }
 html.tv-mode .home-link                 { font-size: 16px; }
+html.tv-mode .header-search-input       { font-size: 16px; height: 38px; }
 
 html.tv-mode .sidebar-section-label     { font-size: 14px; }
 html.tv-mode .sidebar a                 { font-size: 19px; padding: 12px 16px; }
