@@ -242,7 +242,10 @@ function renderSearchResults(matches, terms) {
     const section = m.section;
     // Deep-link into the matched section when we found one; otherwise the
     // result just opens the page (assignSectionIds() put the #id there).
-    const href = searchBase + page.url + (section ? '#' + section.id : '');
+    // ?hl=<terms> tells the destination page which words to highlight in
+    // its own content — see applySearchHighlight(), run on that page's load.
+    const hl = '?hl=' + encodeURIComponent(terms.join(' '));
+    const href = searchBase + page.url + hl + (section ? '#' + section.id : '');
     const crumbParts = [];
     if (page.breadcrumb) crumbParts.push(escapeHtml(page.breadcrumb));
     if (section) crumbParts.push(escapeHtml(section.title));
@@ -274,11 +277,12 @@ function buildSnippet(text, terms) {
   return highlight(slice, terms);
 }
 
-function highlight(text, terms) {
+function highlight(text, terms, markClass) {
   let out = escapeHtml(text);
+  const openTag = markClass ? '<mark class="' + markClass + '">' : '<mark>';
   terms.forEach(function (t) {
     if (!t) return;
-    out = out.replace(new RegExp('(' + escapeRegExp(t) + ')', 'ig'), '<mark>$1</mark>');
+    out = out.replace(new RegExp('(' + escapeRegExp(t) + ')', 'ig'), openTag + '$1</mark>');
   });
   return out;
 }
@@ -373,10 +377,104 @@ function scrollToHashIfPresent() {
   if (target) target.scrollIntoView();
 }
 
+// ---------------------------------------------------------------------------
+// Highlighting the matched text on the destination page
+//
+// Landing on the right section isn't quite enough to see AT A GLANCE what
+// you searched for, so search results also pass the query terms through as
+// ?hl=<terms>. On load, this wraps every matching word on the page in
+// <mark class="search-hit"> and scrolls straight to the first one.
+//
+// This is scoped to the ONE matched section, not the whole page: a term
+// like "recovery" appears in a dozen sections across the course, and
+// naively flashing/scrolling to whichever occurrence comes first in the
+// document would frequently land you in the WRONG section — silently
+// undoing the section deep-link that pickBestSection() in main.js's search
+// already got right. Sections in this site are flat sibling <div>s under
+// .main (see build-search-index.ps1's section-slicing comment for the same
+// assumption on the indexing side), so "this section's content" is just
+// "the heading plus its siblings up to the next .section-title".
+// ---------------------------------------------------------------------------
+function getHighlightTermsFromUrl() {
+  const raw = new URLSearchParams(window.location.search).get('hl');
+  if (!raw) return [];
+  return raw.split(/\s+/).map(function (t) { return t.trim(); }).filter(Boolean);
+}
+
+function getSectionSiblings(headingEl) {
+  const nodes = [headingEl];
+  let el = headingEl.nextElementSibling;
+  while (el && !el.classList.contains('section-title')) {
+    nodes.push(el);
+    el = el.nextElementSibling;
+  }
+  return nodes;
+}
+
+function collectTextNodes(root) {
+  const out = [];
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: function (n) {
+      const p = n.parentElement;
+      if (!p || p.closest('script, style')) return NodeFilter.FILTER_REJECT;
+      if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let n;
+  while ((n = walker.nextNode())) out.push(n);
+  return out;
+}
+
+// Wraps every match with <mark class="search-hit"> inside the given
+// elements (searched in order), marks the very first hit with an extra
+// "search-hit-primary" class (for the flash animation / scroll target),
+// and returns that first mark element (or null if nothing matched).
+function highlightWithinNodes(elements, terms) {
+  const testRes = terms.map(function (t) { return new RegExp(escapeRegExp(t), 'i'); });
+  let first = null;
+  elements.forEach(function (container) {
+    collectTextNodes(container).forEach(function (textNode) {
+      if (!testRes.some(function (re) { return re.test(textNode.nodeValue); })) return;
+      const html = highlight(textNode.nodeValue, terms, 'search-hit');
+      const frag = document.createRange().createContextualFragment(html);
+      if (!first) first = frag.querySelector('mark.search-hit');
+      textNode.replaceWith(frag);
+    });
+  });
+  if (first) first.classList.add('search-hit-primary');
+  return first;
+}
+
+function applySearchHighlight() {
+  const terms = getHighlightTermsFromUrl();
+  if (!terms.length) return null;
+
+  let scope = null;
+  if (window.location.hash) {
+    const heading = document.getElementById(window.location.hash.slice(1));
+    if (heading && heading.classList.contains('section-title')) {
+      scope = getSectionSiblings(heading);
+    }
+  }
+  // No section anchor (a title-only match with no section hit) - fall back
+  // to the whole page rather than skip highlighting entirely.
+  if (!scope) scope = [document.querySelector('.main') || document.body];
+
+  return highlightWithinNodes(scope, terms);
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
   assignSectionIds();
-  scrollToHashIfPresent();
+  // If we arrived from a search result, scroll to the actual matched text;
+  // otherwise (a plain link/bookmark to #section) just scroll to the section.
+  const firstHit = applySearchHighlight();
+  if (firstHit) {
+    firstHit.scrollIntoView({ block: 'center' });
+  } else {
+    scrollToHashIfPresent();
+  }
   buildHeader();
   setActiveNavigation();
   
