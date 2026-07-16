@@ -120,8 +120,15 @@ function buildHeader() {
 // (the Rudi server, GitHub Pages, or a local `npx serve`). Opening pages
 // directly as file:// blocks fetch() for security — search degrades to a
 // clear "unavailable" message rather than failing silently.
+//
+// Each page entry carries a sections[] array ({id, title, text}) built by
+// the same script from the same .section-title headings that
+// assignSectionIds() above turns into real DOM ids — see that comment for
+// how the two stay in sync. runSearch() uses sections[] both to rank
+// heading/body matches and to pick which single section a result should
+// deep-link into via #id.
 // ---------------------------------------------------------------------------
-var searchIndex = null;          // [{url, title, breadcrumb, headings, text}]
+var searchIndex = null;          // [{url, title, breadcrumb, sections, text}]
 var searchIndexState = 'idle';   // idle | loading | ready | error
 var searchBase = '';             // "../" hops from the current page to bobcat-ac/
 var searchSelected = -1;         // keyboard-highlighted result index
@@ -176,8 +183,9 @@ function runSearch(rawQuery) {
   const terms = query.split(/\s+/);
   const matches = [];
   searchIndex.forEach(function (page) {
+    const sections = page.sections || [];
     const title = (page.title || '').toLowerCase();
-    const headings = [].concat(page.headings || []).join(' ').toLowerCase();
+    const headings = sections.map(function (s) { return s.title || ''; }).join(' ').toLowerCase();
     const text = (page.text || '').toLowerCase();
     let score = 0;
     let matchedAll = true;
@@ -192,10 +200,31 @@ function runSearch(rawQuery) {
       if (s === 0) { matchedAll = false; break; }
       score += s;
     }
-    if (matchedAll) matches.push({ page: page, score: score });
+    if (matchedAll) {
+      matches.push({ page: page, score: score, section: pickBestSection(sections, terms) });
+    }
   });
   matches.sort(function (a, b) { return b.score - a.score; });
   renderSearchResults(matches.slice(0, 8), terms);
+}
+
+// Which single section within a matching page should the result deep-link
+// to? Independent of the whole-page score above — a page can win on title
+// match alone while one particular section holds the actual term hits.
+function pickBestSection(sections, terms) {
+  let best = null;
+  let bestScore = 0;
+  sections.forEach(function (sec) {
+    const title = (sec.title || '').toLowerCase();
+    const body = (sec.text || '').toLowerCase();
+    let s = 0;
+    terms.forEach(function (term) {
+      if (title.includes(term)) s += 4;
+      if (body.includes(term)) s += 1;
+    });
+    if (s > bestScore) { bestScore = s; best = sec; }
+  });
+  return bestScore > 0 ? best : null;
 }
 
 function renderSearchResults(matches, terms) {
@@ -210,14 +239,21 @@ function renderSearchResults(matches, terms) {
 
   results.innerHTML = matches.map(function (m, i) {
     const page = m.page;
-    const href = searchBase + page.url;
-    const crumb = page.breadcrumb
-      ? '<div class="hs-crumb">' + escapeHtml(page.breadcrumb) + '</div>'
+    const section = m.section;
+    // Deep-link into the matched section when we found one; otherwise the
+    // result just opens the page (assignSectionIds() put the #id there).
+    const href = searchBase + page.url + (section ? '#' + section.id : '');
+    const crumbParts = [];
+    if (page.breadcrumb) crumbParts.push(escapeHtml(page.breadcrumb));
+    if (section) crumbParts.push(escapeHtml(section.title));
+    const crumb = crumbParts.length
+      ? '<div class="hs-crumb">' + crumbParts.join(' <b>&rsaquo;</b> ') + '</div>'
       : '';
+    const snippetSource = section ? (section.text || '') : (page.text || '');
     return '<a class="hs-item" role="option" href="' + escapeHtml(href) + '" data-index="' + i + '">'
       + '<div class="hs-title">' + highlight(page.title || page.url, terms) + '</div>'
       + crumb
-      + '<div class="hs-snippet">' + buildSnippet(page.text || '', terms) + '</div>'
+      + '<div class="hs-snippet">' + buildSnippet(snippetSource, terms) + '</div>'
       + '</a>';
   }).join('');
   results.classList.add('open');
@@ -290,8 +326,57 @@ function closeSearchResults() {
   searchSelected = -1;
 }
 
+// ---------------------------------------------------------------------------
+// Section anchors (for search deep-linking)
+//
+// .section-title headings have no id in the HTML. Rather than hand-editing
+// ~100 headings across the site, ids are computed from the heading text at
+// load time here, AND independently from the same heading text by
+// tools/build-search-index.ps1 when it builds the index. Both sides run the
+// identical slug rule against the identical input, so they land on the same
+// id without ever communicating: assignSectionIds() -> "refrigerant-hazards"
+// on this page's <div>, Get-Slug in the .ps1 -> "refrigerant-hazards" in
+// search-index.json's sections[].id. If you change this rule, change
+// Get-Slug in build-search-index.ps1 to match, or every existing deep link
+// in the index silently stops landing on its target.
+// ---------------------------------------------------------------------------
+function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function assignSectionIds() {
+  const counts = {};
+  document.querySelectorAll('.section-title').forEach(function (el) {
+    if (el.id) return; // don't clobber an id someone set by hand
+    let slug = slugify(el.textContent) || 'section';
+    counts[slug] = (counts[slug] || 0) + 1;
+    // First occurrence of a slug on the page keeps it bare; repeats of the
+    // same heading text get -2, -3, ... in document order (must match the
+    // dedup order in Get-Slug's caller in the .ps1, since both walk the
+    // page top-to-bottom the same way).
+    if (counts[slug] > 1) slug = slug + '-' + counts[slug];
+    el.id = slug;
+  });
+}
+
+// Ids above are assigned after the browser parses the page, so on a fresh
+// navigation to page.html#some-slug the browser's own automatic
+// fragment-scroll can lose the race (the id didn't exist yet when it looked).
+// Scroll to it explicitly once we know the id is there.
+function scrollToHashIfPresent() {
+  if (!window.location.hash) return;
+  const target = document.getElementById(window.location.hash.slice(1));
+  if (target) target.scrollIntoView();
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+  assignSectionIds();
+  scrollToHashIfPresent();
   buildHeader();
   setActiveNavigation();
   

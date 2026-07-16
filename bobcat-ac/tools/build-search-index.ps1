@@ -42,6 +42,21 @@ function Convert-HtmlToText {
     return $t
 }
 
+# Must produce EXACTLY the same output as slugify() in assets/js/main.js for
+# the same input text. That JS function assigns real DOM ids to .section-title
+# headings at page-load time; this one computes the anchor a search result
+# links to (page.html#slug). Neither side talks to the other at runtime — they
+# only land on the same id because both run the identical rule on the
+# identical heading text. Change one, change the other, or every existing
+# deep link in the index silently stops landing on its target.
+function Get-Slug {
+    param([string]$text)
+    $s = $text.ToLower().Trim()
+    $s = [regex]::Replace($s, '[^a-z0-9]+', '-')
+    $s = $s.Trim('-')
+    return $s
+}
+
 # All pages under bobcat-ac, excluding build assets themselves.
 $files = Get-ChildItem -Path $root -Recurse -Filter *.html |
     Where-Object { $_.FullName -notmatch '\\assets\\' }
@@ -70,15 +85,10 @@ foreach ($f in $files) {
     $breadcrumb = ''
     if ($raw -match 'data-breadcrumb="([^"]*)"') { $breadcrumb = $matches[1] }
 
-    # Section headings carry strong signal — collect .section-title text.
-    $headings = New-Object System.Collections.Generic.List[string]
-    foreach ($m in [regex]::Matches($raw, '(?is)<div class="section-title">(.*?)</div>')) {
-        $h = Convert-HtmlToText $m.Groups[1].Value
-        if ($h) { $headings.Add($h) }
-    }
-
-    # Body text: prefer <main>; otherwise strip the shared nav/header chrome so
-    # sidebar link text doesn't pollute every page's index.
+    # Body HTML: prefer <main>; otherwise strip the shared nav/header chrome so
+    # sidebar link text doesn't pollute every page's index. Sections are found
+    # within THIS scoped HTML (not $raw) so slice offsets below line up with
+    # each section's own boundaries and never spill into nav/header markup.
     $bodyHtml = $raw
     if ($raw -match '(?is)<main[^>]*>(.*?)</main>') {
         $bodyHtml = $matches[1]
@@ -89,11 +99,45 @@ foreach ($f in $files) {
     $text = Convert-HtmlToText $bodyHtml
     if ($text.Length -gt 5000) { $text = $text.Substring(0, 5000) }
 
+    # One entry per .section-title heading: {id, title, text}. "text" is
+    # everything between this heading and the next one (or end of body) —
+    # i.e. that section's own content, for section-scoped search matching
+    # and result snippets. "id" is the anchor assignSectionIds() will give
+    # the matching heading in the browser (see Get-Slug's doc comment).
+    $sections = New-Object System.Collections.Generic.List[object]
+    $slugCounts = @{}
+    $titleMatches = [regex]::Matches($bodyHtml, '(?is)<div class="section-title">(.*?)</div>')
+    for ($i = 0; $i -lt $titleMatches.Count; $i++) {
+        $m = $titleMatches[$i]
+        $headingText = Convert-HtmlToText $m.Groups[1].Value
+        if (-not $headingText) { continue }
+
+        $slug = Get-Slug $headingText
+        if (-not $slug) { $slug = 'section' }
+        if ($slugCounts.ContainsKey($slug)) {
+            $slugCounts[$slug] = $slugCounts[$slug] + 1
+            $slug = "$slug-$($slugCounts[$slug])"
+        } else {
+            $slugCounts[$slug] = 1
+        }
+
+        $sectionStart = $m.Index + $m.Length
+        $sectionEnd = if ($i + 1 -lt $titleMatches.Count) { $titleMatches[$i + 1].Index } else { $bodyHtml.Length }
+        $sectionText = Convert-HtmlToText ($bodyHtml.Substring($sectionStart, $sectionEnd - $sectionStart))
+        if ($sectionText.Length -gt 600) { $sectionText = $sectionText.Substring(0, 600) }
+
+        $sections.Add([pscustomobject]@{
+            id    = $slug
+            title = $headingText
+            text  = $sectionText
+        })
+    }
+
     $entries.Add([pscustomobject]@{
         url        = $rel
         title      = $title
         breadcrumb = $breadcrumb
-        headings   = [string[]]@($headings)
+        sections   = $sections.ToArray()
         text       = $text
     })
 }

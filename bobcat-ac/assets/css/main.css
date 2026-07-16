@@ -336,6 +336,10 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  /* Search results deep-link to #<slug> anchors on this element (see
+     assignSectionIds() in main.js). The sticky .site-header (60px) would
+     otherwise cover the heading right after the jump. */
+  scroll-margin-top: 76px;
 }
 
 .section-title::after {
@@ -844,6 +848,9 @@ input[type="checkbox"] { accent-color: var(--accent); }
   /* Search stays, but shrinks and its dropdown aligns to the viewport edge. */
   .header-search { flex: 1 1 auto; margin-left: 12px; }
   .header-search-results { width: 92vw; right: -8px; }
+
+  /* Shorter header (52px) at this breakpoint — match the anchor offset. */
+  .section-title { scroll-margin-top: 68px; }
 
   /* Sidebar becomes a horizontal scroll strip */
   .layout {
