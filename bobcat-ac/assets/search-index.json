@@ -1,33 +1,5 @@
 [
     {
-        "url":  "bobcat_ac_training_framework.html",
-        "title":  "Bobcat AC Systems Hands-On Training",
-        "breadcrumb":  "",
-        "headings":  [
-                         "Course Goals",
-                         "What We\u0027re NOT Doing",
-                         "Refrigerant Hazards",
-                         "PPE Requirements",
-                         "Two Concepts to Anchor Everything",
-                         "The Cycle — Walk the Machine",
-                         "Why Clean, Dry Refrigerant Matters",
-                         "Component ID Checklist",
-                         "Full Recovery Process",
-                         "Field Kit Contents",
-                         "Pressure–Temperature Relationship",
-                         "Normal Operating Baseline",
-                         "Gauge Pattern Guide",
-                         "Machine Exercises — Cause the Failures",
-                         "The 7-Step Approach",
-                         "Voltage-Drop Testing the AC Switch",
-                         "Station Exercises",
-                         "Key Specifications",
-                         "Diagnosis Rules of Thumb",
-                         "MCC Flash Codes — AC Related"
-                     ],
-        "text":  "Course Overview Bobcat AC Systems Hands-On Training 🚜 Bobcat Loader Fleet 👷 Field Technicians ⏱️ Full Day 🎯 100% Hands-On Instructor Note This framework mirrors what your SharePoint pages should look like. Each section = one SharePoint page. Use these as your content template. Students use these pages as a reference after class — keep language direct and field-practical. Course Goals Students leave with the skills and confidence to handle any AC call in the field — from a complete recovery to diagnosing a subtle voltage-drop failure. 🔄 Understand the Cycle Walk the refrigerant cycle on a live machine. Understand sensible vs. latent heat, why dry refrigerant matters, and what oil does. 🛠️ Use the Tools Effortful practice on gauge sets, recovery machines, vacuum pumps, and charging equipment. Every tech leaves having completed a full R\u0026R. 📊 Read Gauge Patterns Diagnose good, low, overcharged, and airflow-restricted systems from gauge readings and duct temperatures. ⚡ Separate Electrical Failures Voltage-drop test the AC switch. Bypass pressure switches and clutches. Read MCC flash codes. Don\u0027t let a dim LED fool you. What We\u0027re NOT Doing No quizzes. No tests. No slide-only lectures. Every concept is introduced on the machine and proven by doing. If something goes sideways — good. That\u0027s the lesson. Next: Safety First → Module 1 Safety First ⏱️ 15–20 min 💬 Discussion ⚠️ Safety Critical Cover this before anyone touches equipment. These hazards are real and non-obvious to technicians who haven\u0027t worked with refrigerants. Refrigerant Hazards 1 Pressurized System R-134a pressure tries to escape the system at all times. It can drive oil or debris into eyes and skin, and it can blow fittings apart. Always relieve pressure properly before opening any fitting. 2 Frostbite R-134a boiling point is −15°F . Liquid refrigerant released on skin or eyes causes instant frostbite. Always wear safety glasses. Never let liquid contact bare skin. 3 Asphyxiation Refrigerant is heavier than air and displaces oxygen. In a pit, enclosed shop bay, or low area — it can silently pool and suffocate. Never vent refrigerant indoors. 4 Phosgene Gas R-134a passing through open flame or very high heat can form phosgene-like toxic gas. No welding near AC lines. No open flames when refrigerant may be present. 5 Exploding Containers Liquid refrigerant in a container expands as it heats. If the container fills completely, it will explode. Never store containers near heat sources or in direct sun. PPE Requirements Safety glasses or goggles when working on pressurized system Gloves when handling refrigerant lines or recovery equipment Know the location of the eyewash station Adequate ventilation — shop door open during recovery ← Back Next: Refrigerant Cycle → Module 2 The Refrigerant Cycle ⏱️ 45–60 min 🚜 Live Machine Instructor Approach Teach this cycle by walking around the machine with students. Don\u0027t lecture it — point to each component, have them touch the pipes, measure the temps. The machine IS the slide deck. Two Concepts to Anchor Everything 🌡️ Sensible Heat Heat you can measure with a thermometer. Temperature changes. The refrigerant stays in the same phase (all gas or all liquid). 💧 Latent Heat Heat absorbed or released during a phase change — liquid to gas or gas to liquid. This is where the real work happens. Temperature doesn\u0027t change; state does. 💡 Teaching Tip — The Boiling Water Analogy Water boiling on a stove stays at 212°F no matter how much heat you add — until it\u0027s all vaporized. That\u0027s latent heat. The evaporator does the same thing with refrigerant at a much lower temperature (inside the cab). The Cycle — Walk the Machine 1 Compressor — The Pump Where on machine: Engine bay, belt-driven What it does: Draws low-pressure vapor from the evaporator and compresses it into high-pressure, high-temperature vapor. It doesn\u0027t create cold — it moves heat. Feel it: The high-side line leaving the compressor should be very hot. 2 Condenser — Dumps Heat Outside Where on machine: Forward-facing, front of machine What it does: Hot high-pressure vapor enters. Ambient air carries the heat away. Refrigerant condenses to a liquid. This is where the heat from inside the cab actually leaves the system. Feel it: Outlet line is warm-hot liquid. Measure condenser inlet vs. outlet air temp. 3 Receiver/Dryer — Filter \u0026 Storage What it does: Stores liquid refrigerant, filters debris, and absorbs moisture with desiccant. Key rule: Replace the dryer any time the system is opened. Desiccant has a finite capacity — once saturated, moisture circulates and destroys the system. 4 Expansion Valve / Orifice Tube — The Restriction What it does: Meters refrigerant flow, dropping pressure and temperature rapidly. High-pressure liquid enters — cold low-pressure mixture exits. This is what makes the evaporator cold. 5 Evaporator — Pulls Heat Into the System Where on machine: Inside the HVAC box in the cab What it does: Low-pressure refrigerant boils (absor"
-    },
-    {
         "url":  "index.html",
         "title":  "Bobcat AC Systems Hands-On Training",
         "breadcrumb":  "Hands-On Curriculum",
