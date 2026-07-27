@@ -95,13 +95,16 @@
     </table>
 
     <div class="section-title" id="mcc-flash-codes">MCC Flash Codes</div>
-    <table>
-      <tr><th>Malfunction</th><th>Detection Interval</th><th>Status Light</th></tr>
-      <tr><td class="topic">Temperature Sensor</td><td>Continuous</td><td>1x per second</td></tr>
-      <tr><td class="topic">Compressor Clutch</td><td>At Cut-in</td><td>2x per second</td></tr>
-      <tr><td class="topic">Compressor Clutch Open</td><td>Continuous</td><td>3x per second</td></tr>
-      <tr><td class="topic">Clutch Short or Current High</td><td>At Cut-in</td><td>4x per second</td></tr>
-    </table>
+    <div class="three-col">
+      <table>
+        <tr><th>Malfunction</th><th>Detection Interval</th><th>Status Light</th></tr>
+        <tr><td class="topic">Temperature Sensor</td><td>Continuous</td><td>1x per second</td></tr>
+        <tr><td class="topic">Compressor Clutch (open or short)</td><td>At Cut-in</td><td>2x per second</td></tr>
+        <tr><td class="topic">Compressor Clutch Short to battery</td><td>Continuous</td><td>3x per second</td></tr>
+      </table>
+      <img src="../assets/images/mcc.png" alt="MCC module">
+      <img src="../assets/images/mcc_pins.png" alt="MCC pinout">
+    </div>
 
     <div class="section-title">Normal Operating Baseline</div>
     <table class="spec-table">
@@ -227,6 +230,7 @@
           <a href="../data/Mastercool%2069110%20Recovery%20System.pdf" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" target="_blank">Mastercool 69110 Recovery System →</a>
           <a href="../data/OMT%20Gauge%20Set%20and%20Vacuum%20Pump.pdf" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" target="_blank">OMT Gauge Set & Vacuum Pump →</a>
           <a href="../data/yellow-jacket-scale.html" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;">Yellow Jacket Scale →</a>
+          <a href="../data/mcc_thermostat.pdf" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" target="_blank">MCC Thermostat →</a>
         </div>
       </div>
     </div>
