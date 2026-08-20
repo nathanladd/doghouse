@@ -85,13 +85,13 @@
       <div class="card">
         <div class="card-icon">🔴</div>
         <div class="card-title">High Side Pressure</div>
-        <p>175-225 psi at 70-90°F ambient (rule of thumb: 2.5 × ambient °F). Hot refrigerant leaving compressor. Pressure increases with ambient temperature.
-          High pressure indicates condenser problems or overcharge.</p>
+        <p>Rule of thumb: 2.5 × ambient °F. Hot refrigerant leaving compressor. Pressure increases with ambient temperature.
+          Excessive high pressure indicates condenser problems or overcharge.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔵</div>
         <div class="card-title">Low Side Pressure</div>
-        <p>25-45 psi at 70-90°F ambient. Cold refrigerant entering compressor. Pressure decreases with ambient temperature. 
+        <p>10-35 psi at 70-110°F ambient. Cold refrigerant entering compressor. Pressure decreases with ambient temperature. 
           Low pressure indicates undercharge or restrictions.</p>
       </div>
     </div>
@@ -104,7 +104,7 @@
         <div class="step-content">
           <div class="step-label">70°F Ambient Temperature</div>
           <div class="step-body">
-            <strong style="color: var(--text-primary)">High Side: 175 psi (2.5 × ambient) | Low Side: 15-30 psi</strong><br>
+            <strong style="color: var(--text-primary)">High Side: 175 psi (2.5 × ambient) | Low Side: 10-25 psi</strong><br>
             Normal operation at moderate temperatures. Both pressures should be stable with compressor cycling.
           </div>
         </div>
@@ -114,7 +114,7 @@
         <div class="step-content">
           <div class="step-label">80°F Ambient Temperature</div>
           <div class="step-body">
-            <strong style="color: var(--text-primary)">High Side: 200 psi (2.5 × ambient) | Low Side: 20-35 psi</strong><br>
+            <strong style="color: var(--text-primary)">High Side: 200 psi (2.5 × ambient) | Low Side: 10-30 psi</strong><br>
             Higher pressures due to increased ambient heat. System works harder to reject heat. Expect slightly higher 
             pressures with same cooling performance.
           </div>
@@ -125,7 +125,7 @@
         <div class="step-content">
           <div class="step-label">90°F Ambient Temperature</div>
           <div class="step-body">
-            <strong style="color: var(--text-primary)">High Side: 225 psi (2.5 × ambient) | Low Side: 35-45 psi</strong><br>
+            <strong style="color: var(--text-primary)">High Side: 225 psi (2.5 × ambient) | Low Side: 25-35 psi</strong><br>
             Maximum normal operating pressures. Higher ambient reduces cooling efficiency. Pressures may approach 
             high-pressure switch limit (cuts out above 384 psi on high side).
           </div>
@@ -224,6 +224,13 @@
 
     <div class="section-title" style="font-size: 17px;">Failure Pattern Diagnostic Chart</div>
 
+    <div class="tip-note">
+      <strong>💡 Ambient Temperature and R134a Pressure</strong>
+      <p>At typical ambient temps, the R134a pressure in the system will be about the same on both sides once the engine is off and the system has stabilized.
+        Higher than normal pressure here means there is contamination. Normal pressure at this point does not guarantee the system is properly charged —
+        it only takes about 10% of a full system charge to reflect normal pressure when the system is off and stable.</p>
+    </div>
+
     <div class="table-wrapper" style="overflow-x: auto; margin: 20px 0;">
       <table style="min-width: 900px; font-size: 14px;">
         <tr>
@@ -234,49 +241,59 @@
           <th>Solutions</th>
         </tr>
         <tr>
-          <td>Low<br>15–30 PSI</td>
-          <td>Low<br>110–150 PSI</td>
+          <td>Low</td>
+          <td>Low</td>
           <td>Poor or no cooling. Foamy bubbles in the sight glass. Compressor cycles rapidly. Warm evaporator outlet line.</td>
           <td class="topic">Low or improper refrigerant charge.</td>
           <td>Check and repair any leaks in the system. Recharge system as needed.</td>
         </tr>
         <tr>
-          <td>Low or vacuum.<br>−20 to 10 PSI</td>
-          <td>Low to normal.<br>115–160 PSI</td>
+          <td>Low or vacuum.</td>
+          <td>Low to normal.</td>
           <td>No cooling. Sight glass is clear. Warm evaporator outlet line.</td>
           <td class="topic">High side restriction. Bad expansion valve.</td>
-          <td>Look for icing on the high-side lines as an indication of restriction. Clear the restriction or replace necessary components. 
+          <td>Look for icing on the high-side lines as an indication of restriction. Clear the restriction or replace necessary components.
             Inspect and replace the expansion valve and dryer. Evacuate and recharge the system.</td>
         </tr>
         <tr>
-          <td>Normal to low.<br>0–25 PSI</td>
-          <td>Normal<br>150–285 PSI</td>
+          <td>Normal to low.</td>
+          <td>Normal</td>
           <td>Unit works fine for a while, then begins to blow warm air. Evaporator pipes frozen. Compressor doesn't cycle.</td>
           <td class="topic">Evaporator freeze-up. Water drains plugged. Bad MCC or bulb sensor is in the wrong place.</td>
           <td>Clean water drains and evaporator. Correct the temp sensor or replace the MCC.</td>
         </tr>
         <tr>
-          <td>High or equal to high side gauge.<br>70–90 PSI</td>
-          <td>Low or equal to low side gauge.<br>90–110 PSI</td>
+          <td>High or equal to high side gauge.</td>
+          <td>Low or equal to low side gauge.</td>
           <td>No cooling. Warm evaporator outlet pipe. Compressor won't cycle.</td>
           <td class="topic">Expansion valve stuck open. Bad compressor.</td>
           <td>Repair or replace compressor. Replace expansion valve. Evacuate and recharge the system.</td>
         </tr>
         <tr>
-          <td>Normal to high.<br>30–60 PSI</td>
-          <td>High<br>200–300 PSI</td>
+          <td>Normal to high.</td>
+          <td>High</td>
           <td>Fair to poor cooling. Sight glass clear to foamy. Evaporator outlet cool to warm.</td>
           <td class="topic">System overcharged.</td>
           <td>Recover excess refrigerant until system operation returns to normal.</td>
         </tr>
         <tr>
-          <td>Normal to high.<br>30–60 PSI</td>
-          <td>High<br>200–300+ PSI</td>
+          <td>Normal to high.</td>
+          <td>High</td>
           <td>Fair to poor cooling. Sight glass clear. Evaporator outlet cool to warm.</td>
           <td class="topic">Engine overheating. Restricted airflow past condenser.</td>
           <td>Check cooling system operation. Check cooling fan operation. Clear radiator or condenser restriction.</td>
         </tr>
       </table>
+    </div>
+
+    <div class="safety-note">
+      <strong>⚠️ Low Side Pulling Into a Vacuum</strong>
+      <p>Indicates a TXV that is stuck closed or a drastic restriction on the high side. Look for massive temperature drops on the high side — if none, remove and test the TXV.</p>
+    </div>
+
+    <div class="safety-note">
+      <strong>⚠️ Pressure "Hunting"</strong>
+      <p>Fluctuating 5-7 psi indicates a malfunctioning TXV or icing from water contamination.</p>
     </div>
 
     <div class="section-title">Diagnostic Pressure Analysis</div>
