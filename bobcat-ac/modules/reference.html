@@ -74,15 +74,18 @@
       <tr><td>R-134a boiling point</td><td>−15°F</td></tr>
       <tr><td>MCC key-on delay before clutch engages</td><td>6 seconds</td></tr>
       <tr><td>MCC temperature control — clutch engages</td><td>−2°C to +2°C (28°F to 36°F)</td></tr>
-      <tr><td>Refrigerant type</td><td>R-134a</td></tr>
+      <tr><td>Refrigerant type</td><td>R-134a (r1234yf is comming in late 2027)</td></tr>
       <tr><td>Compressor temp (operating)</td><td>Near engine temp</td></tr>
+      <tr><td>Pressure switch cuts out (low side)</td><td>Below 28 psi</td></tr>
+      <tr><td>Pressure switch cuts out (high side)</td><td>Above 384 psi</td></tr>
     </table>
 
     <div class="section-title">Unit Conversions</div>
     <div class="section-desc">Quick conversions between the units used throughout this course.</div>
     <table>
       <tr><th>Conversion</th><th>Formula</th><th>Used For</th></tr>
-      <tr><td class="topic">CC (cm³) → fl oz</td><td>fl oz = CC ÷ 29.57</td><td>Compressor oil capacity (140–170 CC = 4.7–5.7 fl oz)</td></tr>
+      <tr><td class="topic">CC (cm³) → fl oz</td><td>fl oz = CC ÷ 29.57</td><td>Compressor oil capacity (140–170 CC = 4.7–5.7 fl oz)
+        (every 30 CC = 1 fl oz)</td></tr>
       <tr><td class="topic">oz → lb</td><td>lb = oz ÷ 16</td><td>Refrigerant charge weight on the recovery scale</td></tr>
       <tr><td class="topic">kg → lb</td><td>lb = kg × 2.205</td><td>Scale max capacity (100 kg = 220 lb)</td></tr>
       <tr><td class="topic">°F → °C</td><td>°C = (°F − 32) ÷ 1.8</td><td>MCC thermostat and pressure switch temperature specs</td></tr>
@@ -98,7 +101,8 @@
       <tr><td class="topic">Erratic pressures, intermittent cooling</td><td>Moisture — TXV freeze/thaw cycle</td></tr>
       <tr><td class="topic">Cold duct, low airflow</td><td>Clogged cab filters, weak blower, frozen evaporator</td></tr>
       <tr><td class="topic">Warm duct, gauges normal, very long cycle time</td><td>Heater valve bypassing hot coolant</td></tr>
-      <tr><td class="topic">Clutch not engaging, pressures normal</td><td>Electrical — voltage drop, AC switch, EDT fault</td></tr>
+      <tr><td class="topic">Clutch not engaging, pressures normal</td><td>Electrical — voltage drop, AC switch, EDT fault 
+        (remember that it only takes 10% of a charge to make the static pressure look normal)</td></tr>
       <tr><td class="topic">Oil on hose or fitting exterior</td><td>Refrigerant leak at that point</td></tr>
       <tr><td class="topic">Compressor running hot</td><td>Low oil quantity — check oil accounting</td></tr>
     </table>
@@ -196,6 +200,20 @@
         <p>Freeze protection: EDT cycles compressor. Drain must be clear. Duct temp: 45-53°F normal. Below 40°F possible freeze-up.</p>
       </div>
     </div>
+
+    <div class="section-title" id="oil-accounting">System Oil Accounting</div>
+    <div class="section-desc">Bobcat system holds a full charge of 150–170 cc (5.1–5.7 oz) of oil, allocated at 30 cc (1.0 oz) per
+      component. New compressor pumps ship pre-filled with a complete system charge (150–170 cc / 5.1–5.7 oz). Adjust the
+      base charge for whatever was actually done to the system.</div>
+    <table>
+      <tr><th>Action</th><th>Oil Adjustment</th></tr>
+      <tr><td class="topic">Component replaced</td><td>+30 cc (+1.0 oz)</td></tr>
+      <tr><td class="topic">Component cleaned</td><td>+30 cc (+1.0 oz)</td></tr>
+      <tr><td class="topic">Compressor replaced without flushing/replacing the rest of the system</td><td>−30 cc (−1.0 oz) per component not flushed</td></tr>
+      <tr><td class="topic">Dye added</td><td>−30 cc (−1.0 oz) per 1 oz of dye added</td></tr>
+      <tr><td class="topic">Liquid or suction hose replaced</td><td>+30 cc (+1.0 oz)</td></tr>
+      <tr><td class="topic">Discharge hose replaced</td><td>Measure oil remaining in the pump; make up to 60–80 cc (2.0–2.7 oz)</td></tr>
+    </table>
 
     <div class="section-title">Electrical Specifications</div>
     <table>

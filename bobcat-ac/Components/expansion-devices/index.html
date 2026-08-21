@@ -59,17 +59,8 @@
     <a href="index.html" class="active">
       <span class="icon">⭕</span> Expansion Devices
     </a>
-    <a href="../pressure-switches/index.html">
-      <span class="icon">🔘</span> Pressure Switches
-    </a>
     <a href="../electrical-components/index.html">
       <span class="icon">⚡</span> Electrical
-    </a>
-    <a href="../filters/index.html">
-      <span class="icon">🔲</span> Filters
-    </a>
-    <a href="../heater-system/index.html">
-      <span class="icon">🔥</span> Heater System
     </a>
     <div class="sidebar-section-label">Reference</div>
     <a href="../../modules/reference.html">
@@ -98,7 +89,9 @@
     <div class="section-title">Function & Operation</div>
     <div class="section-desc">Expansion devices meter refrigerant flow and create the pressure drop that makes the evaporator cold. 
       High-pressure liquid enters the expansion device and exits as a cold low-pressure mixture. This pressure drop is what causes 
-      refrigerant to boil at low temperature in the evaporator, absorbing heat from the cab.</div>
+      refrigerant to boil at low temperature in the evaporator, absorbing heat from the cab. The TXV's job is to maintain the 
+      proper amount of refrigerant in the evaporator. Just enough refrigerant for it all to get converted to gas. The TXV is calibrated
+       for the size of the AC system and built with the proper gas in the power element.</div>
 
 
     <div class="section-title">Types of Expansion Devices</div>
@@ -113,7 +106,7 @@
       <div class="card">
         <div class="card-icon">⭕</div>
         <div class="card-title">Orifice Tube</div>
-        <p>Fixed orifice that provides constant pressure drop. Simple design, no moving parts. 
+        <p> NOT INSTALLED IN BOBCAT MACHINES. Fixed orifice that provides constant pressure drop. Simple design, no moving parts. 
           Less precise control but reliable and less expensive.</p>
       </div>
     </div>
@@ -137,8 +130,9 @@
           <div class="step-content">
             <div class="step-label">Components</div>
             <div class="step-body">
-              <strong style="color: var(--text-primary)">Valve body, thermal bulb, capillary tube</strong><br>
-              Thermal bulb senses evaporator outlet temperature. Capillary tube transmits pressure to power element.
+              <strong style="color: var(--text-primary)">Valve body, power element (Valve Diaphragm), older units: capillary tube</strong><br>
+              Thermal bulb senses evaporator outlet temperature. Capillary tube transmits pressure to power element. In the current design
+              H-Block TXV, the bulb is built into the valve body and the capillary tube is eliminated. 
             </div>
           </div>
         </div>
@@ -169,61 +163,23 @@
       </div>
     </div>
 
-    <div class="section-title">Orifice Tube</div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <div class="step-label">Location</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">In liquid line between condenser and evaporator</strong><br>
-            Usually in high-side liquid line near evaporator. May have protective cover. Look for small tube with filter screen.
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="step-label">Construction</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Fixed orifice with filter screen</strong><br>
-            Precision-calibrated tube creates specific pressure drop. Upstream filter protects from debris. Color-coded by size/orifice.
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="step-label">Operation</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Constant pressure drop</strong><br>
-            Provides fixed metering regardless of load. System performance varies with conditions. Simpler but less efficient than TXV.
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="step-label">Identification</div>
-          <div class="step-body">
-            <strong style="color: var(--text-primary)">Color-coded by flow rate</strong><br>
-            Different colors indicate different orifice sizes. Check service manual for correct color for specific model.
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="section-title">Testing Procedures</div>
 
     <div class="card-grid">
       <div class="card">
         <div class="card-icon">🌡️</div>
         <div class="card-title">If removed, warm and cool the valve diaphragm (power element)</div>
-        <p>Use a heat gun to warm the bulb-end of the TXV. This should open the orifice further.
-          Use a upside-down can of dust spray to cool the bulb. This should restrict the orifice further. 
+        <p>Shine a light through the orifice. Use a heat gun to warm the power element of the TXV. This should open the orifice further.
+          Use a upside-down can of dust spray to cool the power element. This should restrict the orifice further.
           If the valve does not respond, replace it.
         </p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔥</div>
+        <div class="card-title">Testing while installed</div>
+        <p>Warm and cool the power element while monitoring low-side system pressure. Cooling the power element
+          should cause the low-side pressure to drop fast into a vacuum. Heating the power element will cause the
+          low-side pressure to rise. If the valve does not respond, replace it.</p>
       </div>
       <div class="card">
         <div class="card-icon">🎚️</div>
