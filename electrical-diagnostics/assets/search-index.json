@@ -15,5 +15,20 @@
       { "id": "schematic", "title": "Schematic", "text": "Trainer Kit Schematic. Experiment with the kit. Make all the circuits work. Lights dim and bright. Pull/hold solenoid. HVAC fan. Glow plug temperature." }
     ],
     "text": "Class Introduction. Nathan Ladd, Service Trainer. Pragmatic Electrical Diagnostics. Learning Objectives. First Principals. Battery Circuits. Snap Circuits. Trainer Kit. Schematic."
+  },
+  {
+    "url": "solder-projects.html",
+    "title": "Solder Projects",
+    "breadcrumb": "Solder Projects",
+    "sections": [
+      { "id": "solder-versus-crimp-repairs.", "title": "Solder versus crimp repairs", "text": "Solder projects for repairs kept small, or when the correct terminal isn't available. Soldering is about controlling heat. Tin the solder iron. Pre-heat with a heat gun. Crimp repairs are very reliable and often superior." },
+      { "id": "test-leads", "title": "Test Leads", "text": "4-Foot silicone wire red and black leads. Male 4mm banana plugs. Plug boots with flex relief slots. Strip just enough insulation. Avoid twisting conductors. Solder all 4 plugs." },
+      { "id": "high-current-test-light", "title": "High-Current Test Light", "text": "Handle, magnet, bolt and nut, crimp and seal eyelet, insulated P-clamp, ground wire, 1156 bulbs and bulb holders, female 4mm banana jacks." },
+      { "id": "assemble-the-bulb-holder.", "title": "Assemble the bulb holder", "text": "Bulb holders wired in parallel. Bulbs ground through the bulb holder. Positive wires soldered to a single 4mm female banana socket." },
+      { "id": "assemble-the-ground-wire", "title": "Assemble the ground wire", "text": "Solder the single ground wire to a 4mm female socket. Crimp the number 8 eyelet with the insulated die. Heat the eyelet to seal." },
+      { "id": "assemble-bulb-holders", "title": "Assemble Bulb Holders", "text": "Pass the 8x32 screw through the handle. Install both bulb holders, the ground wire eyelet, and 8x32 nut." },
+      { "id": "assemble-magnet-and-p-clamp", "title": "Assemble Magnet and P-Clamp", "text": "Insert threaded post of magnet through second hole. Secure P-clamp around all three wires. Install P-clamp, washer, lock washer, and nut." }
+    ],
+    "text": "Solder Projects. Nathan Ladd, Service Trainer. Solder versus crimp repairs. Test Leads. High-Current Test Light. Assemble the bulb holder. Assemble the ground wire. Assemble Bulb Holders. Assemble Magnet and P-Clamp."
   }
 ]
