@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current — Electrical Diagnostics</title>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+  .two-col img, .three-col img { max-width: 100%; height: auto; border-radius: 4px; }
+  figure.slide-photo { margin: 0 0 20px; text-align: center; }
+  figure.slide-photo img {
+    max-width: 100%;
+    max-height: 420px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  figure.slide-photo figcaption { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+  .embed-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" data-breadcrumb="Current" data-badge="Course Page"></header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Pages</div>
+    <a href="index.html">
+      <span class="icon">📘</span> Class Introduction
+    </a>
+    <a href="solder-projects.html">
+      <span class="icon">🔥</span> Solder Projects
+    </a>
+    <a href="current.html" class="active">
+      <span class="icon">⚡</span> Current
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">BOTR Electrical Diagnostics</div>
+      <h1 class="page-title">Current</h1>
+      <div class="page-meta">
+        <span>🧑‍🏫 Nathan Ladd</span>
+        <span>Service Trainer</span>
+      </div>
+    </div>
+
+    <div class="section-title">Current Lab Learning Objectives:</div>
+    <ul>
+      <li>There are three basic requirements for every circuit. Once we understand this, we can be more effective at bypass and substitution testing during diagnosis of a circuit.</li>
+      <li>Kirchhoff's Current Law.
+        <ul>
+          <li>When is voltage-drop practical and how does current flow through circuit branches.</li>
+          <li>How can I narrow possible failures when a fuse blows</li>
+        </ul>
+      </li>
+      <li>Practice with the internal DVOM ammeter and the clamp-style meter.</li>
+    </ul>
+
+    <!--
+      The slide deck embedded on the source page ("BOTR Electrical Diagnostics: CURRENT",
+      Rockies Training Center, 8 slides) is broken out into sections below rather than
+      embedded as a viewer, per request. Diagrams are cropped from the original slides;
+      slide 7's magnetic-field diagram is adapted from Wikimedia Commons (attribution
+      kept in its caption, as it was on the slide).
+    -->
+
+    <div class="section-title">3 Requirements for Current Flow</div>
+    <div class="section-desc">Source, load, and path.</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Source: Batteries and Alternators</li>
+          <li>Path: Wire Harness</li>
+          <li>Load: Lights, Solenoids, Motors, etc&hellip;</li>
+          <li>The resistance of the circuit load determines the circuit's current flow.</li>
+        </ul>
+        <div class="instructor-note">
+          <strong>💡 A Complete Path Is Required</strong>
+          <p>An open circuit will result in zero current flow even when your meter is connected correctly.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/current-3-requirements.png" alt="Diagram of a 12v battery, switch, and light bulb labeled with power wiring (path), source, and load">
+      </figure>
+    </div>
+
+    <div class="section-title">Electrostatic Force</div>
+    <div class="section-desc">Current is as predictable as gravity.</div>
+    <div class="two-col">
+      <ul>
+        <li>There is no need to complicate this topic. When provided a Source, Load, and Path, current will act very predictably.</li>
+        <li>Electrostatic force is one of the four fundamental forces of nature. It's as undeniable as gravity.</li>
+        <li>Opposite charges attract and like charges repel. You have seen this in magnets and static.</li>
+        <li>Gravity is strong over unimaginable distances and builds on itself, while Electrostatic force is strong over smaller distances and is always trying to equalize itself.</li>
+      </ul>
+      <figure class="slide-photo">
+        <img src="assets/images/current-electrostatic-force.png" alt="Diagram of positive and negative charges attracting across a row of atoms">
+      </figure>
+    </div>
+
+    <div class="section-title">Current Has a Direction</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Electron flow or Conventional flow. They are both happening at the same time, so it really doesn't matter.</li>
+          <li>AC and DC. Alternating current means the current flow changes direction. The amount of direct current in a circuit can change intensity but will never change direction.</li>
+        </ul>
+        <div class="instructor-note">
+          <strong>💡 Conventional vs. Electron Flow</strong>
+          <p>Conventional Current flow is from positive to negative. DC flows in only one direction.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/current-direction.png" alt="Diagram of electrons moving left and holes, an area of positive charge, moving right through a row of atoms">
+        <figcaption>Electrons are moving left. Holes, area of positive charge, are moving right.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section-title">DVOM &mdash; Current Measured with Your Internal Ammeter</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Use the correct jacks in your meter</li>
+          <li>Meter must be in series with the circuit</li>
+          <li>Be careful with your meter's fuse</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--text-muted);">1A = 1 amp, 1mA = 1 milliamp, 1&micro;A = 1 micro-amp</p>
+        <table class="spec-table">
+          <tbody>
+            <tr><td>1 Amp</td><td>1,000mA = 1,000,000&micro;A</td></tr>
+            <tr><td>1mA</td><td>1/1000 of 1 amp</td></tr>
+            <tr><td>1&micro;A</td><td>1/1,000,000 of 1 amp</td></tr>
+          </tbody>
+        </table>
+        <div class="instructor-note">
+          <strong>💡 Current Is Measured in Amps</strong>
+          <p>You use your Ammeter to measure current. A good ammeter has extremely low resistance. A meter with a blown fuse will not measure current.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/current-dvom-ammeter.png" alt="Hand holding a Fluke 85 III True RMS multimeter set to measure milliamps">
+      </figure>
+    </div>
+
+    <div class="section-title">Measuring Current &mdash; Series Ammeter</div>
+    <div class="instructor-note">
+      <strong>💡 Break the Circuit to Insert the Meter</strong>
+      <p>My internal DVOM ammeter must be inserted in series with the circuit I'm testing. Always in series with the load. I must use the current jacks of my meter. I can blow my fuse by connecting my meter in parallel or in a circuit with too much current.</p>
+    </div>
+    <figure class="slide-photo">
+      <img src="assets/images/current-measuring-series.png" alt="Diagram showing the circuit broken and an ammeter inserted in series between the switch and the light bulb">
+    </figure>
+
+    <div class="section-title">Current and Magnetic Fields</div>
+    <div class="two-col">
+      <ul>
+        <li>Current flow through a conductor creates a magnetic field around the conductor</li>
+        <li>A conductor (that is part of a complete circuit) traveling through a magnetic field will have a current generated in it.</li>
+      </ul>
+      <figure class="slide-photo">
+        <img src="assets/images/current-magnetic-field.png" alt="Diagram of current flowing through a conductor with a magnetic field circling around it">
+        <figcaption>Adapted from Wikimedia Commons, User:Stannered: commons.wikimedia.org/wiki/File:Electromagnetism.svg</figcaption>
+      </figure>
+    </div>
+
+    <div class="section-title">Measuring Current &mdash; Clamp Meter</div>
+    <figure class="slide-photo">
+      <img src="assets/images/current-measuring-clamp.png" alt="Diagram of a clamp-style ammeter clamped around a wire without breaking the circuit">
+    </figure>
+    <div class="instructor-note">
+      <strong>💡 No Need to Break the Circuit</strong>
+      <p>I do not need to open a circuit to test current with a clamp style ammeter. Clamp measures the magnetic field around the conductor. I need to 'zero' the clamp. I must use the voltage jacks in my meter.</p>
+    </div>
+
+    <div class="section-title">Lab: Current</div>
+    <div class="embed-placeholder">
+      📎 This is a Microsoft Forms / embedded lab activity on the source page that fails to load outside SharePoint (login.microsoftonline.com refused to connect). Re-link it here once the lab content is available.
+    </div>
+
+    <div class="section-title">Chapter Review: Current</div>
+    <div class="embed-placeholder">
+      📎 Same as above &mdash; the source page's chapter review embed doesn't load outside SharePoint. Re-link it here once available.
+    </div>
+
+    <div class="nav-buttons">
+      <a href="solder-projects.html" class="btn btn-ghost">← Back: Solder Projects</a>
+      <span></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

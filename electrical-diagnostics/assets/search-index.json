@@ -30,5 +30,21 @@
       { "id": "assemble-magnet-and-p-clamp", "title": "Assemble Magnet and P-Clamp", "text": "Insert threaded post of magnet through second hole. Secure P-clamp around all three wires. Install P-clamp, washer, lock washer, and nut." }
     ],
     "text": "Solder Projects. Nathan Ladd, Service Trainer. Solder versus crimp repairs. Test Leads. High-Current Test Light. Assemble the bulb holder. Assemble the ground wire. Assemble Bulb Holders. Assemble Magnet and P-Clamp."
+  },
+  {
+    "url": "current.html",
+    "title": "Current",
+    "breadcrumb": "Current",
+    "sections": [
+      { "id": "current-lab-learning-objectives:", "title": "Current Lab Learning Objectives", "text": "Three basic requirements for every circuit. Kirchhoff's Current Law. Voltage-drop. How can I narrow possible failures when a fuse blows. Internal DVOM ammeter and the clamp-style meter." },
+      { "id": "3-requirements-for-current-flow", "title": "3 Requirements for Current Flow", "text": "Source, load, and path. Batteries and Alternators. Wire Harness. Lights, Solenoids, Motors. Resistance of the circuit load determines current flow. A complete path is required." },
+      { "id": "electrostatic-force", "title": "Electrostatic Force", "text": "Current is as predictable as gravity. Electrostatic force is one of the four fundamental forces of nature. Opposite charges attract and like charges repel." },
+      { "id": "current-has-a-direction", "title": "Current Has a Direction", "text": "Electron flow or Conventional flow. AC and DC. Alternating current changes direction. Conventional current flow is from positive to negative." },
+      { "id": "dvom-current-measured-with-your-internal-ammeter", "title": "DVOM Current Measured with Your Internal Ammeter", "text": "Use the correct jacks in your meter. Meter must be in series with the circuit. Be careful with your meter's fuse. Amps, milliamps, micro-amps." },
+      { "id": "measuring-current-series-ammeter", "title": "Measuring Current Series Ammeter", "text": "Break the circuit to insert the meter. Always in series with the load. Use the current jacks of my meter." },
+      { "id": "current-and-magnetic-fields", "title": "Current and Magnetic Fields", "text": "Current flow through a conductor creates a magnetic field. A conductor traveling through a magnetic field will have current generated in it." },
+      { "id": "measuring-current-clamp-meter", "title": "Measuring Current Clamp Meter", "text": "No need to open a circuit to test current with a clamp style ammeter. Clamp measures the magnetic field around the conductor. Zero the clamp." }
+    ],
+    "text": "Current. Nathan Ladd, Service Trainer. Current Lab Learning Objectives. 3 Requirements for Current Flow. Electrostatic Force. Current Has a Direction. DVOM. Measuring Current. Current and Magnetic Fields."
   }
 ]
