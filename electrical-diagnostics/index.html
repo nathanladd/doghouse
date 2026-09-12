@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Introduction — Electrical Diagnostics</title>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<!--
+  Page-specific layout only used here: the two-column hero (title block +
+  mascot illustration) and the muted "Website Issues?" divider note. Both
+  mirror the source SharePoint page's one-off composition rather than
+  reusable site patterns, so they're kept inline instead of in main.css
+  (same convention as ../index.html's home-wrapper block).
+-->
+<style>
+  .hero-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .hero-row img { max-width: 100%; height: auto; }
+  .site-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 20px 0;
+    margin-bottom: 28px;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .site-note strong { display: block; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+  figure.kit-photo { margin: 0 0 24px; text-align: center; }
+  figure.kit-photo img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  figure.kit-photo figcaption { margin-top: 8px; font-size: 13px; color: var(--text-muted); }
+  .schematic-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  @media (max-width: 768px) {
+    .hero-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" data-breadcrumb="Class Introduction" data-badge="Course Home"></header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV — only one page exists so far; more list items get added here as later pages are built. -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Pages</div>
+    <a href="index.html" class="active">
+      <span class="icon">📘</span> Class Introduction
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="hero-row">
+      <div class="page-header" style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
+        <div class="page-label">BOTR Electrical Diagnostics</div>
+        <h1 class="page-title" style="border-bottom: none; padding-bottom: 0;">Class <span>Introduction</span></h1>
+        <div class="page-meta">
+          <span>🧑‍🏫 Nathan Ladd</span>
+          <span>Service Trainer</span>
+        </div>
+      </div>
+      <img src="assets/images/hero-mascot.png" alt="Ohm, Amp, and Volt mascot characters">
+    </div>
+
+    <div class="site-note">
+      <strong>Website Issues?</strong>
+      Clear your browser cookies and history.
+    </div>
+
+    <div class="section-title">Pragmatic Electrical Diagnostics</div>
+    <div class="section-desc">Why are we doing this and what do you want to take away from this class?</div>
+
+    <div class="section-title">Learning Objectives</div>
+    <p>My desire is for you to build a solid foundation of electrical problem solving. I expect even experienced technicians will find value in this diagnostic class. There's value in learning material from different perspectives. If you're an experienced tech, please have an open mind to new methods. I would never take credit for pioneering the methods I use. I learned them from others, and yet, I believe my approach to basic electrical diagnostics is still fundamentally different than many. My goal is for you to leave this class with a simplified, repeatable diagnostic method that gets you solutions to even those difficult intermittent failures.</p>
+    <p>If most of this information is new to you, you will always have access to this site. Review it often to help <strong>remember</strong> the concepts and diagnostic process. During class, please ask questions. I'm sure others have the same question and don't want to ask but these critical group conversations increase everyone's <strong>understanding</strong>.</p>
+    <p>Participate in the hands-on labs. I'm making a real effort to limit the time we spend studying written electrical theory. I have only included the theory I feel is very necessary. Instead, this class will focus on building, experimenting, making diagnostic plans from schematics, and using your diagnostic tools. Pay attention during lab time. <strong>Apply</strong> what you are learning. You will miss out on test content if you don't. I have intentionally added minimum requirements to the written exercises to control the pace and accountability in class.</p>
+    <p>Manufacturers write diagnostic guides that disregard the best practices I use to solve problems. I want you to be able to <strong>analyze</strong> the methods given to us, compare them to what I'm going to show you over the next few days, and <strong>evaluate</strong> the differences in methods. Finally, <strong>create</strong> your own methods, working within the 7-step diagnostic process, to find the root cause for failures.</p>
+
+    <div class="section-title">Examples:</div>
+    <!-- These four reference pages haven't been rebuilt yet — plain text for now, not dead links.
+         Once Service-Manual-Low-Voltage / Starting-System-Electrical-Concern / No-Backup-Alarm /
+         Diagnosing-a-Blown-Fuse exist on this site, turn these into real <a href> links. -->
+    <ul>
+      <li>Take a look at this service manual page. Service Manual - <strong>"Low Voltage Testing."</strong></li>
+      <li>Look at Diagnostic Guide <strong>"Starting System Electrical Concern."</strong></li>
+      <li>Now look at the Diagnostic Guide <strong>"No Backup Alarm."</strong></li>
+      <li>Last, look at Diagnostic Guide - <strong>"Diagnosing a Blown Fuse."</strong></li>
+    </ul>
+
+    <div class="section-title">First Principals</div>
+    <ul>
+      <li>Follow the 7-Step procedure and build simple diagnostic plans, using schematics to make every failure a series circuit. Always use Ohm's Law to solve for current, remembering the three basic requirements of current flow (source, path, and load).</li>
+      <li>Be precise and professional. Measure voltage to the hundredth of a volt. Pay attention to your meter settings and scale. Always have an expected result before performing a test and verify your meter connections. Use the proper, professional terminology. Electricity is not "juice."</li>
+      <li>Attempt to test every circuit with current flowing, always aware of the difference between open circuit voltage and voltage-drop.</li>
+      <li>The voltmeter is your primary weapon. Master its 5 fundamental readings.</li>
+    </ul>
+
+    <h3>Be careful when you relate electricity to hydraulics.</h3>
+    <table>
+      <thead>
+        <tr><th>Electricity</th><th>Hydraulics</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Current</strong> - Flow of electrons from areas of high voltage to lower voltage</td>
+          <td><strong>Flow</strong> - Movement of fluid produced by pumps (or some other force)</td>
+        </tr>
+        <tr>
+          <td><strong>Resistance</strong> - A material's opposition to current flow. Hopefully this is the load in a circuit.</td>
+          <td><strong>Restriction</strong> - Opposition to fluid flow either by an actuator or physical properties of a circuit. Hopefully this is the part of the circuit that performs work.</td>
+        </tr>
+        <tr>
+          <td>
+            <p><strong>Voltage</strong> - Charge. Potential difference in the concentration of electrons between two areas.</p>
+            <p>We always begin with a set amount of source voltage. This voltage is consumed proportionally over each resistance encountered in the circuit.</p>
+            <p>It's possible for a circuit to have voltage but no current.</p>
+          </td>
+          <td>
+            <p><strong>Pressure</strong> - Pressure is restriction to flow or force.</p>
+            <p>Pressure in a hydraulic circuit increases as additional sources of restriction are added.</p>
+            <p>A hydraulic circuit must have flow or force applied for there to be any pressure.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Battery Circuits</div>
+    <p>This is a diagnostic foundations class. For this purpose, I intend to focus on machine battery circuits. Any circuit that is directly powered by the machine battery I will define as a battery circuit. This would include the unfused, high current starting/charging circuits, many of the fused circuits, and circuits involving relays. These circuits have enough current to make voltage-drop testing the most reliable diagnostic method and voltage-drop will be a focus in this class.</p>
+    <p>It may seem foolish to ignore controllers. Bobcat has designed their machines around controllers for a long time. It's difficult to find a circuit that does not involve one. I'm going to save controllers, communication busses, and sensor circuits for another class. I want to focus on some fundamental diagnostic principals first. That being said, voltage-drop is also the best testing method for the power and ground circuits to a controller so we will not forget those.</p>
+
+    <div class="section-title">Snap Circuits</div>
+    <p>We will use Snap Circuit kits to explore basic electrical theories before working with powered Bobcat components. The Snap Circuit kits are lower voltage and current than the machines we work on but will allow us to easily rebuild circuits quickly.</p>
+    <div class="safety-note">
+      <strong>⚠️ Don't Short the Battery</strong>
+      <p>Open the kit and experiment with the parts. Always build circuits with some load or device (resistor, bulb, or motor) connected to the batteries.</p>
+    </div>
+
+    <h3>Snap Circuits Stored Properly:</h3>
+    <figure class="kit-photo">
+      <img src="assets/images/snap-circuits-kit.png" alt="Snap Circuits kit stored properly in its case">
+    </figure>
+
+    <!--
+      The source page also shows Snap Circuits' own "NEVER DO! / SHORT CIRCUIT"
+      warning diagram here — that's the manufacturer's copyrighted artwork, not
+      ours to reproduce. Same safety point, in our own words instead.
+    -->
+    <div class="safety-note">
+      <strong>⚠️ Avoid Short Circuits</strong>
+      <p>Placing a wire directly across the battery snaps is a short circuit — never do it. Watch for circuits that give current an accidental path around your components; a short circuit path will prevent the rest of the circuit from ever working.</p>
+    </div>
+
+    <h3>Explore the kit:</h3>
+    <ul>
+      <li>Build one series and one parallel circuit.</li>
+      <li>How many switches can you add to your lights? Add a switch to both the power and ground side of a circuit.</li>
+      <li>Will the motor spin either direction? Can you make the propeller hit the ceiling?</li>
+      <li>Can you make a circuit using both battery packs?</li>
+    </ul>
+
+    <div class="instructor-note">
+      <strong>💡 Series vs. Parallel</strong>
+      <p>Parallel circuits provide more than one path for current to flow while a series circuit only has one path for current.</p>
+    </div>
+
+    <div class="section-title">Trainer Kit</div>
+    <p>The trainer kit is built to resemble Bobcat components. It has a 12-volt power supply that will act as our machine battery. This would be the most dangerous component of the kit.</p>
+    <div class="safety-note">
+      <strong>⚠️ Power Supply</strong>
+      <p>Don't stick anything into the power supply housing or short anything directly across its terminals.</p>
+    </div>
+    <div class="safety-note">
+      <strong>⚠️ Glow Plugs</strong>
+      <p>The glow plugs will get hot. Don't touch them.</p>
+    </div>
+
+    <div class="section-title">Schematic</div>
+    <div class="two-col">
+      <div>
+        <div class="schematic-placeholder">
+          📄 Trainer Kit Schematic (PDF)<br>
+          <span style="font-size: 12px;">Add the PDF to <code>data/</code> and link it here.</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-top: 0;">Experiment with the kit. Make all the circuits work.</h3>
+        <ul>
+          <li>Can you make the lights shine dim and bright?</li>
+          <li>How do you apply and release the pull/hold solenoid?</li>
+          <li>Does air flow out of the vent holes while the HVAC fan is running?</li>
+          <li>How hot do the glow plugs get? Use the thermometer.</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

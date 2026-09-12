@@ -1,0 +1,19 @@
+[
+  {
+    "url": "index.html",
+    "title": "Class Introduction",
+    "breadcrumb": "Class Introduction",
+    "sections": [
+      { "id": "pragmatic-electrical-diagnostics", "title": "Pragmatic Electrical Diagnostics", "text": "Why are we doing this and what do you want to take away from this class?" },
+      { "id": "learning-objectives", "title": "Learning Objectives", "text": "Build a solid foundation of electrical problem solving. Leave this class with a simplified, repeatable diagnostic method that gets you solutions to even those difficult intermittent failures. Participate in hands-on labs. Analyze, evaluate, and create your own methods within the 7-step diagnostic process." },
+      { "id": "examples", "title": "Examples", "text": "Service Manual Low Voltage Testing. Diagnostic Guide Starting System Electrical Concern. No Backup Alarm. Diagnosing a Blown Fuse." },
+      { "id": "first-principals", "title": "First Principals", "text": "Follow the 7-Step procedure and build simple diagnostic plans using schematics to make every failure a series circuit. Use Ohm's Law to solve for current. Source, path, and load. Voltage-drop. The voltmeter is your primary weapon." },
+      { "id": "be-careful-when-you-relate-electricity-to-hydraulics.", "title": "Be careful when you relate electricity to hydraulics", "text": "Current, Resistance, Voltage compared to Flow, Restriction, Pressure." },
+      { "id": "battery-circuits", "title": "Battery Circuits", "text": "Any circuit directly powered by the machine battery. Unfused high current starting and charging circuits, fused circuits, and circuits involving relays. Voltage-drop testing." },
+      { "id": "snap-circuits", "title": "Snap Circuits", "text": "Explore basic electrical theories before working with powered Bobcat components. Don't short the battery. Series and parallel circuits." },
+      { "id": "trainer-kit", "title": "Trainer Kit", "text": "Built to resemble Bobcat components. 12-volt power supply acts as the machine battery. Glow plugs get hot." },
+      { "id": "schematic", "title": "Schematic", "text": "Trainer Kit Schematic. Experiment with the kit. Make all the circuits work. Lights dim and bright. Pull/hold solenoid. HVAC fan. Glow plug temperature." }
+    ],
+    "text": "Class Introduction. Nathan Ladd, Service Trainer. Pragmatic Electrical Diagnostics. Learning Objectives. First Principals. Battery Circuits. Snap Circuits. Trainer Kit. Schematic."
+  }
+]
