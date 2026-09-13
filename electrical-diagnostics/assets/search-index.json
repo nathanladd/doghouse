@@ -46,5 +46,19 @@
       { "id": "measuring-current-clamp-meter", "title": "Measuring Current Clamp Meter", "text": "No need to open a circuit to test current with a clamp style ammeter. Clamp measures the magnetic field around the conductor. Zero the clamp." }
     ],
     "text": "Current. Nathan Ladd, Service Trainer. Current Lab Learning Objectives. 3 Requirements for Current Flow. Electrostatic Force. Current Has a Direction. DVOM. Measuring Current. Current and Magnetic Fields."
+  },
+  {
+    "url": "resistance.html",
+    "title": "Resistance",
+    "breadcrumb": "Resistance",
+    "sections": [
+      { "id": "learning-objectives", "title": "Learning Objectives", "text": "How to read your ohmmeter. The ohmmeter is almost never the best tool. Everything has resistance. Ohm's Law series and parallel resistance. Resistance is the load in our circuit." },
+      { "id": "source-load-path", "title": "Source Load Path", "text": "Voltage comes from the source. Circuit wires make up the path. Resistance is the load. Resistance is opposition to current flow. In a series circuit all resistance adds together." },
+      { "id": "ohm's-law", "title": "Ohm's Law", "text": "Current equals Volts over Ohms. Resistance is indirectly related to current. As resistance goes up, current decreases." },
+      { "id": "conductors-and-insulators", "title": "Conductors and Insulators", "text": "Materials with little resistance are conductors: copper, aluminum, steel. Materials with lots of resistance are insulators: glass, rubber, vinyl. A short-to-ground has basically no resistance." },
+      { "id": "typical-resistance-readings", "title": "Typical Resistance Readings", "text": "Save your ohmmeter for circuit testing scenarios. Light bulb, piece of wire, switch, connector. Resistance affected by temperature, length, diameter, and material composition." },
+      { "id": "reading-the-meter", "title": "Reading the Meter", "text": "Meter settings: resistance ohms omega symbol, continuity beeper, diode test. Meter counts and range changes. OL means open loop or overload, infinite resistance." }
+    ],
+    "text": "Resistance. Nathan Ladd, Service Trainer. Learning Objectives. Source Load Path. Ohm's Law. Conductors and Insulators. Typical Resistance Readings. Reading the Meter."
   }
 ]

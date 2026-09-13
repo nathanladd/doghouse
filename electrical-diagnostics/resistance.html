@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resistance — Electrical Diagnostics</title>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+  figure.slide-photo { margin: 0 0 20px; text-align: center; }
+  figure.slide-photo img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  figure.slide-photo figcaption { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+  .ohms-law-formula {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 12px 0 20px;
+  }
+  .ohms-law-formula .current { color: #0078d4; }
+  .ohms-law-formula .frac { display: flex; flex-direction: column; align-items: center; margin-left: 8px; }
+  .ohms-law-formula .volts { color: #E53935; }
+  .ohms-law-formula .bar { width: 100%; height: 2px; background: var(--text-primary); margin: 2px 0; }
+  .ohms-law-formula .ohms { color: #2E7D32; }
+  .embed-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" data-breadcrumb="Resistance" data-badge="Course Page"></header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Pages</div>
+    <a href="index.html">
+      <span class="icon">📘</span> Class Introduction
+    </a>
+    <a href="solder-projects.html">
+      <span class="icon">🔥</span> Solder Projects
+    </a>
+    <a href="current.html">
+      <span class="icon">⚡</span> Current
+    </a>
+    <a href="resistance.html" class="active">
+      <span class="icon">🌀</span> Resistance
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">BOTR Electrical Diagnostics</div>
+      <h1 class="page-title">Resistance</h1>
+      <div class="page-meta">
+        <span>🧑‍🏫 Nathan Ladd</span>
+        <span>Service Trainer</span>
+      </div>
+    </div>
+
+    <div class="section-title">Learning Objectives</div>
+    <ul>
+      <li>Understand what the limitations are and how to read your ohmmeter. The ohmmeter is <strong>almost never the best tool.</strong></li>
+      <li>Everything has resistance and resistance is affected by physical properties like temperature and wire diameter. Measure resistance of some typical components.</li>
+      <li>Ohm's Law: Series resistance adds together and decreases current flow.</li>
+      <li>Ohm's Law: Parallel resistance adds additional paths for current to flow, therefore, decreasing overall resistance and increasing overall current flow.</li>
+      <li>Resistance is the load in our circuit and ideally there is only one load.</li>
+    </ul>
+
+    <!--
+      The slide deck embedded on the source page ("BOTR Electrical Diagnostics: RESISTANCE",
+      Rockies Training Center, 6 slides) is broken out into sections below, same approach
+      as the Current page.
+    -->
+
+    <div class="section-title">Source Load Path</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Voltage comes from the source, our circuit wires make up the path, and, hopefully, <strong>resistance is the load or electrical device in our circuits</strong>. Generally, our circuits will be designed to have one device, or load, and that load should constitute all the resistance in the circuit.</li>
+          <li>The load in a circuit, aside from using the voltage to create some type of work, is responsible for regulating the circuit's current flow.</li>
+          <li>Resistance is opposition to current flow</li>
+          <li>Resistance failures usually come from too much resistance in parts of our circuits other than the load or, sometimes, the resistance of the load itself becomes incorrect.</li>
+        </ul>
+        <div class="instructor-note">
+          <strong>💡 Resistance in a Series Circuit</strong>
+          <p>Resistance is the opposition to current flow. In a series circuit, all the resistance adds together.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/circuit-battery-switch-load.png" alt="Diagram of a 12v battery, switch, and light bulb labeled as source, path (wires), and electrical device (load)">
+      </figure>
+    </div>
+
+    <div class="section-title">Ohm's Law</div>
+    <p>Keep this simple. Use the most important variation of Ohm's Law.</p>
+    <p>Resistance is <strong>indirectly</strong> related to current. As resistance goes up, current decreases. When resistance decreases, current increases.</p>
+    <div class="ohms-law-formula">
+      <div style="display: flex; align-items: center;">
+        <span class="current">Current</span>&nbsp;=
+        <span class="frac">
+          <span class="volts">Volts</span>
+          <span class="bar"></span>
+          <span class="ohms">Ohms</span>
+        </span>
+      </div>
+    </div>
+    <div class="instructor-note">
+      <strong>💡 Resistance vs. Current</strong>
+      <p>As resistance goes up, current decreases. When resistance decreases, current increases.</p>
+    </div>
+
+    <div class="section-title">Conductors and Insulators</div>
+    <div class="two-col">
+      <div>
+        <p>Basically, everything has some resistance. Materials with little resistance are conductors. Materials with lots of resistance are insulators. We need resistance in our circuits to control current flow.</p>
+        <p>A circuit with no resistance would have more current than the conductors (path) or source could handle and would be referred to as a short. With no resistance, current will increase to damaging levels.</p>
+        <div class="safety-note">
+          <strong>⚠️ Short to Ground</strong>
+          <p>A short-to-ground has basically no resistance. Current is very high.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/resistance-conductors-insulators.png" alt="Conductor examples: copper, aluminum, steel. Insulator examples: glass, rubber, vinyl">
+      </figure>
+    </div>
+    <div class="card-grid">
+      <div class="card-accent">
+        <div class="card-title">Conductor</div>
+        <p>Any material that allows electric current to pass through it. Examples: copper, aluminum, steel.</p>
+      </div>
+      <div class="card-accent">
+        <div class="card-title">Insulator</div>
+        <p>Any material that does not allow electric current to pass through it. The higher the resistance, the better the insulator. Examples: glass, rubber, vinyl.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Typical Resistance Readings</div>
+    <div class="two-col">
+      <div>
+        <p>Save your ohmmeter for circuit testing scenarios. An ohmmeter cannot be used on a circuit that has current flowing, or voltage applied. It's best to remove a component from the circuit to complete a resistance test.</p>
+        <div class="instructor-note">
+          <strong>💡 What Affects Resistance</strong>
+          <p>Resistance is affected by temperature, length, diameter, and material composition. Usually, resistance increases with component heat. A wire's resistance increases with its length.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/resistance-typical-readings.png" alt="Typical resistance readings: light bulb around 8 ohms, piece of wire, switch, and connector each close to 0.1 ohm">
+      </figure>
+    </div>
+    <table class="spec-table">
+      <tbody>
+        <tr><td>Light Bulb</td><td>~8&Omega;</td></tr>
+        <tr><td>Piece of Wire</td><td>~0.1&Omega;</td></tr>
+        <tr><td>Switch</td><td>~0.1&Omega;</td></tr>
+        <tr><td>Connector</td><td>~0.1&Omega;</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--text-muted);">Values approximate, read off the source diagram. A good wire, switch, or connector should read close to 0&Omega; — a healthy low-resistance connection. The light bulb's filament is the deliberate load in the circuit.</p>
+
+    <div class="section-title">Reading the Meter</div>
+    <div class="two-col">
+      <figure class="slide-photo">
+        <img src="assets/images/resistance-meter-settings.png" alt="Fluke multimeter dial showing resistance, continuity, capacitance, and diode test mode symbols, with a range values table from 600.0 ohms to 60.00 megohms">
+      </figure>
+      <div>
+        <h3 style="margin-top: 0;">Meter Settings</h3>
+        <ul>
+          <li>Resistance (Ohms) - Greek letter Omega (&Omega;)</li>
+          <li>Continuity - Sounds a beeper to indicate continuity</li>
+          <li><em>Diode - Save this for the next class.</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Meter Counts</h3>
+    <p>Resistance is where we generally notice the meter 'counts' specification of a meter. The meter shown here is a 6000-count meter. While making a reading, every time the meter reaches 6000, it will change range by moving the decimal place and potentially changing the resistance scale.</p>
+
+    <h3>OL</h3>
+    <p>Meter displays the letters 'O' and 'L'. This can mean Open Loop or Overload. Some meters display '1'. This is an out-of-range result usually because a circuit has no continuity.</p>
+
+    <div class="instructor-note">
+      <strong>💡 Resistance and OL</strong>
+      <p>Resistance is measured in Ohms. A meter reading of OL means infinite resistance.</p>
+    </div>
+
+    <div class="section-title">Lab: Resistance</div>
+    <div class="embed-placeholder">
+      📎 This is an embedded lab activity on the source page that fails to load outside SharePoint. Re-link it here once the lab content is available.
+    </div>
+
+    <div class="section-title">Chapter Review: Resistance</div>
+    <div class="embed-placeholder">
+      📎 Same as above &mdash; the source page's chapter review embed doesn't load outside SharePoint. Re-link it here once available.
+    </div>
+
+    <div class="nav-buttons">
+      <a href="current.html" class="btn btn-ghost">← Back: Current</a>
+      <span></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
