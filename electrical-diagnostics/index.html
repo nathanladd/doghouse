@@ -41,15 +41,6 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.06);
   }
   figure.kit-photo figcaption { margin-top: 8px; font-size: 13px; color: var(--text-muted); }
-  .schematic-placeholder {
-    border: 1px dashed var(--border);
-    border-radius: 6px;
-    background: var(--surface);
-    padding: 24px;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 13px;
-  }
   @media (max-width: 768px) {
     .hero-row { grid-template-columns: 1fr; }
   }
@@ -208,10 +199,9 @@
     <div class="section-title">Schematic</div>
     <div class="two-col">
       <div>
-        <div class="schematic-placeholder">
-          📄 Trainer Kit Schematic (PDF)<br>
-          <span style="font-size: 12px;">Add the PDF to <code>data/</code> and link it here.</span>
-        </div>
+        <a href="assets/images/2026-4-20-electrical-trainer-schematic.pdf" target="_blank" style="display: block;">
+          <img src="assets/images/trainer-schematic-preview.png" alt="Trainer Kit Schematic (PDF) — click to open" style="max-width: 100%; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.06);">
+        </a>
       </div>
       <div>
         <h3 style="margin-top: 0;">Experiment with the kit. Make all the circuits work.</h3>
