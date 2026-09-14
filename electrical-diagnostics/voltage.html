@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voltage — Electrical Diagnostics</title>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+  figure.slide-photo { margin: 0 0 20px; text-align: center; }
+  figure.slide-photo img {
+    max-width: 100%;
+    max-height: 420px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  figure.slide-photo figcaption { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+  .embed-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .formula-box {
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 12px 0 20px;
+  }
+  .formula-box .current { color: #0078d4; }
+  .formula-box .frac { display: flex; flex-direction: column; align-items: center; margin-left: 8px; }
+  .formula-box .volts { color: #E53935; }
+  .formula-box .bar { width: 100%; height: 2px; background: var(--text-primary); margin: 2px 0; }
+  .formula-box .ohms { color: #2E7D32; }
+  .kvl-box {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 16px;
+    color: var(--text-primary);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" data-breadcrumb="Voltage" data-badge="Course Page"></header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Course Pages</div>
+    <a href="index.html">
+      <span class="icon">📘</span> Class Introduction
+    </a>
+    <a href="solder-projects.html">
+      <span class="icon">🔥</span> Solder Projects
+    </a>
+    <a href="current.html">
+      <span class="icon">⚡</span> Current
+    </a>
+    <a href="resistance.html">
+      <span class="icon">🌀</span> Resistance
+    </a>
+    <a href="voltage.html" class="active">
+      <span class="icon">🔋</span> Voltage
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="page-label">BOTR Electrical Diagnostics</div>
+      <h1 class="page-title">Voltage</h1>
+      <div class="page-meta">
+        <span>🧑‍🏫 Nathan Ladd</span>
+        <span>Service Trainer</span>
+      </div>
+    </div>
+
+    <div class="section-title">Learning Objectives</div>
+    <ul>
+      <li>Voltage is potential only. A circuit can have voltage and no current.</li>
+      <li>Voltage-drop is directly related to current. More current flow makes difficult resistance easier to find.</li>
+      <li>Voltage-drop testing is the most effective method.</li>
+      <li>Master the voltmeter. Use all the information your meter gives you.</li>
+    </ul>
+
+    <!--
+      The slide deck embedded on the source page ("BOTR Electrical Diagnostics: VOLTAGE",
+      Rockies Training Center, 18 slides) is broken out into sections below, same approach
+      as the Current and Resistance pages. Diagrams are exported from the original slide
+      deck (Voltage.pptx) rather than screenshotted.
+    -->
+
+    <div class="section-title">What Is Voltage?</div>
+    <p>Voltage is the difference in charge between one spot and another &mdash; a comparison, not an absolute amount. When you measure voltage with your meter, you're comparing the amount of charge in one spot to another.</p>
+    <p>Voltage is sometimes called <strong>potential difference</strong>. Voltage is required to direct current, but it's possible to have voltage in a circuit with no current at all. The more relative difference in charge, the more potential there is for current to flow.</p>
+    <p>Voltage is the charge that enables current to flow across all the resistances in a circuit. Voltage is <strong>consumed</strong> over every resistance, proportional to the amount of resistance. In a complete circuit with current flowing, all the voltage is always consumed &mdash; and it's consumed very predictably.</p>
+    <div class="instructor-note">
+      <strong>💡 Voltage vs. Current Through a Series Circuit</strong>
+      <p>Voltage drops through a series circuit, but current stays constant. This is the opposite of current, where the current leaving a point always equals the current that entered it.</p>
+    </div>
+
+    <div class="section-title">Four Voltage Tests</div>
+    <div class="card-grid">
+      <div class="card-accent">
+        <div class="card-title">Open Circuit Voltage</div>
+        <p>No current flow. Measured across battery terminals, or by disconnecting a component and back-probing the connections. The voltmeter ends up in series with the circuit under test.</p>
+      </div>
+      <div class="card-accent">
+        <div class="card-title">Source Voltage</div>
+        <p>Voltage across the battery <em>with</em> current flowing. Should be lower than open circuit voltage with the engine not running. Source voltage that isn't lower than open circuit voltage means no current is flowing.</p>
+      </div>
+      <div class="card-accent">
+        <div class="card-title">Available Voltage</div>
+        <p>Voltage measured at different points along a circuit with current flowing &mdash; the voltage-drop of multiple components at once. Ground your meter to the battery or frame and probe down the circuit with the positive lead. Results that don't progressively drop indicate no current flow.</p>
+      </div>
+      <div class="card-accent">
+        <div class="card-title">Voltage Drop</div>
+        <p>The difference in voltage across a single component &mdash; a section of wire, a connection, or a device. A reading of 0.000v indicates no current flow, but continuity through the component.</p>
+      </div>
+    </div>
+
+    <div class="section-title">Voltage Is Directly Related to Current</div>
+    <div class="two-col">
+      <div>
+        <p>Always work with the most important Ohm's Law equation. Everything else staying the same: less voltage means less current, more voltage means more current.</p>
+        <p>Always start your diagnosis with <strong>Source Voltage</strong>. Fortunately, you're only looking for a few possible voltage levels as Source Voltage &mdash; is it charging voltage, or a fully charged battery voltage?</p>
+        <div class="formula-box">
+          <span class="current">I</span>&nbsp;=
+          <span class="frac">
+            <span class="volts">E</span>
+            <span class="bar"></span>
+            <span class="ohms">R</span>
+          </span>
+        </div>
+        <div class="instructor-note">
+          <strong>💡 Ohm's Law</strong>
+          <p>Current is directly proportional to voltage and indirectly proportional to resistance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Keep It Simple: Source, Load, and Path</div>
+    <div class="two-col">
+      <p>Voltage fulfills the source requirement for current flow. For us, sources are batteries and alternators. Batteries store voltage chemically; alternators produce voltage magnetically.</p>
+      <figure class="slide-photo">
+        <img src="assets/images/circuit-source-load-path.png" alt="Diagram of a 12v battery, switch, and light bulb labeled as source, path (wires), and electrical device (load)">
+      </figure>
+    </div>
+
+    <div class="section-title">Measuring Voltage</div>
+    <div class="two-col">
+      <div>
+        <p>Voltage is potential. Voltmeters measure the difference in potential between two spots, and they're always connected in <strong>parallel</strong> with the circuit being tested.</p>
+        <div class="instructor-note">
+          <strong>💡 Have an Expected Result</strong>
+          <p>When a measurement isn't what you expect, check your connections and meter, then test again.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-battery-measurement.jpeg" alt="Hands measuring battery voltage with a multimeter reading 13.02 volts">
+      </figure>
+    </div>
+
+    <div class="section-title">Open Circuit Voltage</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Open circuit voltage testing means <strong>no current flow</strong>.</li>
+          <li>Resistance has no effect on this test &mdash; a voltmeter won't show you any resistance here.</li>
+          <li>It's possible for a circuit to have voltage but no current.</li>
+        </ul>
+        <div class="instructor-note">
+          <strong>💡 One Open Component Stops It All</strong>
+          <p>In a series circuit, all it takes is one component failing open to stop all current flow.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-open-circuit-diagram.png" alt="Diagram of a 12v power source with an open switch labeled power source connections, contacts and terminals, and connector">
+      </figure>
+    </div>
+
+    <div class="section-title">Voltage-Drop: Ideal vs. Real-Life</div>
+    <p><strong>Kirchhoff's Voltage Law:</strong> the sum of all the volts is zero.</p>
+    <div class="kvl-box">&Sigma;V&nbsp;=&nbsp;0</div>
+    <p>Voltage-drop testing is the best test of resistance. In an ideal world, all the voltage is consumed by the load, and every other point in the circuit reads 0v. These ideal measurements aren't realistic &mdash; but the rule holds: if there's no voltage-drop, there's no current flow, even across good components.</p>
+    <div class="two-col">
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-drop-ideal.png" alt="Ideal measurements diagram: a 12.6v battery circuit showing 0v drop across the fuse, switch, connector, and clamp, with all 12.6v reaching the electrical device">
+      </figure>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-drop-reallife.png" alt="Real-life measurements diagram: a 12.6v battery circuit showing small drops of 0.05v to 0.1v across the fuse, switch, connector, and clamp, with 12.35v reaching the electrical device">
+      </figure>
+    </div>
+    <p>Everything has resistance. Voltage-drop is directly proportional to current &mdash; more current means more voltage-drop. What's a normal voltage-drop reading? It depends on the current in the circuit, the length of the circuit, and the material it's made from.</p>
+    <div class="instructor-note">
+      <strong>💡 Voltmeter Connections</strong>
+      <p>Your voltmeter is always connected parallel with the component or circuit you're testing.</p>
+    </div>
+
+    <div class="section-title">Don't Forget the Battery Terminals</div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Voltage-drop test the battery terminals: one lead on the battery post, the other on the battery cable clamp.</li>
+          <li>Operate a high-current load to make the resistance more apparent &mdash; HVAC, glow plugs, starter motor, or a combination of circuits.</li>
+          <li>Voltage-drop should be near 0. Any voltage-drop indicates resistance in the connection.</li>
+        </ul>
+        <div class="instructor-note">
+          <strong>💡 Corrosion Hides on Either Side</strong>
+          <p>Corrosion is a common cause of voltage-drop and can happen on the positive or negative side.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-bad-connection.png" alt="Diagram labeled Bad Connection showing a meter reading 3 volts across a battery post connection">
+      </figure>
+    </div>
+
+    <div class="section-title">Available Voltage Method #1</div>
+    <div class="two-col">
+      <div>
+        <p>Leave your negative lead on the battery negative post. Test your way down a circuit with the positive lead &mdash; the circuit must be activated to measure available voltage. You can start at either end, or the middle, of a problem circuit. Even the ground side can be checked this way.</p>
+        <div class="instructor-note">
+          <strong>💡 Great for the Power Probe</strong>
+          <p>Available Voltage on the ground side should always be very low.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-available-method1.png" alt="Diagram of Available Voltage Method 1: negative probe fixed to the battery pigtail, positive probe walking down the circuit from the fuse box to the load">
+      </figure>
+    </div>
+
+    <div class="section-title">Available Voltage Method #2</div>
+    <div class="two-col">
+      <div>
+        <p>Now the meter's positive lead stays on the battery positive terminal, and you test your way down the problem circuit with the negative lead. The circuit must be activated for this test. This method does the math for you &mdash; the meter displays only the voltage-drop between the leads. It's essentially measuring voltage-drop of several components at once, so there must be current flow for this test to be effective.</p>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-available-method2.png" alt="Diagram of Available Voltage Method 2: positive probe fixed to the battery positive terminal, negative probe walking down the circuit toward the load">
+      </figure>
+    </div>
+
+    <div class="section-title">What's Normal Look Like?</div>
+    <table class="spec-table">
+      <thead>
+        <tr><th>Current in the Circuit</th><th>Acceptable Voltage Drop</th><th>Typical Voltage Drop of the Circuit</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Low Current: 1&ndash;10 amps</td>
+          <td>Near 0%</td>
+          <td>0.5 volts through the entire circuit is acceptable.</td>
+        </tr>
+        <tr>
+          <td>Medium Current: 10&ndash;30 amps</td>
+          <td>5%</td>
+          <td>At 12.6v battery voltage, up to 0.6v. At 13.5v charging, up to 0.7v.</td>
+        </tr>
+        <tr>
+          <td>High Current: 30&ndash;100 amps</td>
+          <td>8%</td>
+          <td>Example: charging circuit under full load, or start-aid circuits. At 13.5v charging, no more than a 1v drop in the complete circuit.</td>
+        </tr>
+        <tr>
+          <td>Very High Current: 100&ndash;250 amps</td>
+          <td>12%</td>
+          <td>The battery cables to the starter. At 10v cranking voltage, no more than a 1.5v drop in the circuit.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--text-muted);">Measure battery voltage under load, then compare to the voltage-drop of the load. If the fan in an HVAC circuit draws 10 amps, a 1-volt drop across a single connection in that circuit is excessive.</p>
+    <div class="instructor-note">
+      <strong>💡 Wiggle-Test While Measuring</strong>
+      <p>Wiggle-test while measuring voltage-drop. Wires and connections often show up as intermittent failures.</p>
+    </div>
+
+    <div class="section-title">The Voltmeter's 5 Readings</div>
+    <div class="section-desc">Master these five patterns and you can read almost any circuit with a voltmeter.</div>
+
+    <h3>1. Good Circuit</h3>
+    <div class="two-col">
+      <div>
+        <p>In a complete circuit with current flowing, points along the circuit will show small amounts of voltage-drop. This is normal &mdash; reference the normal amount of voltage-drop for the amount of current in the circuit.</p>
+        <div class="instructor-note">
+          <strong>💡 Voltage Falls Across Every Load</strong>
+          <p>Voltage in a good series circuit drops, or falls, across every load or resistance.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-good-circuit.png" alt="Hand-drawn schematic of a good series circuit with readings stepping down 12.77v, 12.76v, 12.75v, 12.70v, 12.64v, to 0v at ground">
+      </figure>
+    </div>
+
+    <h3>2. High Resistance</h3>
+    <div class="two-col">
+      <div>
+        <p>With a complete circuit and current flowing, if there's significantly less voltage at some point, that's the classic high-resistance symptom. All the voltage should drop over the load, not somewhere else in the circuit. This voltage drop in the wrong place is most often caused by resistance from poor contacts or corrosion.</p>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-high-resistance.png" alt="Hand-drawn schematic showing a large voltage drop from 12.69v to 9.64v across one connection, labeled High Resistance">
+      </figure>
+    </div>
+
+    <h3>3. Open Circuit</h3>
+    <div class="two-col">
+      <div>
+        <p>You need to recognize the lack of voltage-drop. When Available Voltage tests in the circuit come back at <strong>exactly</strong> source voltage, the circuit is open &mdash; there is no current flow. A switch is open, a connector is unplugged, or a wire is broken. This test will not find any unwanted resistance in the circuit.</p>
+        <div class="instructor-note">
+          <strong>💡 Equal Readings Mean No Current</strong>
+          <p>It's possible for a circuit to have voltage but no current. In a series circuit, all it takes is one component failing open to stop current flow &mdash; Available Voltage test results that are exactly the same all the way down the circuit indicate no current flow.</p>
+        </div>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-open-circuit-equal.png" alt="Hand-drawn schematic showing every reading identical at 12.77v down the circuit until an open switch, labeled Open, No Amps">
+      </figure>
+    </div>
+
+    <h3>4. Ghost Voltage</h3>
+    <div class="two-col">
+      <div>
+        <p>Very similar to an open circuit, but this means there's no continuity between the meter leads. Ghost Voltage is a varying, small voltage reading &mdash; wrapping a lead around your wrist, or wiggling the meter leads, affects the reading. This is an open circuit. Check your meter lead connections, then check the circuit for open-circuit failures.</p>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-ghost-voltage.png" alt="Hand-drawn diagram of two open switches with meters dangling from the leads, both grounded, labeled Ghost Voltage">
+      </figure>
+    </div>
+
+    <h3>5. Continuity</h3>
+    <div class="two-col">
+      <div>
+        <p>Meter reads a steady zero. Shaking the meter leads doesn't affect the reading &mdash; that confirms good connection to the circuit, with good continuity between the meter leads and no current flow. And it really means 0.00v: even the smallest amount of voltage measured means there is current flow.</p>
+      </div>
+      <figure class="slide-photo">
+        <img src="assets/images/voltage-continuity.png" alt="Hand-drawn diagram showing a meter reading a true 0.00v across an open connector, labeled with the text if the meter reads true zero volts, you have continuity">
+      </figure>
+    </div>
+
+    <div class="section-title">Lab: Voltage</div>
+    <div class="embed-placeholder">
+      📎 This is an embedded lab activity on the source page that fails to load outside SharePoint. Re-link it here once the lab content is available.
+    </div>
+
+    <div class="section-title">Chapter Review: Voltage</div>
+    <div class="embed-placeholder">
+      📎 Same as above &mdash; the source page's chapter review embed doesn't load outside SharePoint. Re-link it here once available.
+    </div>
+
+    <div class="nav-buttons">
+      <a href="resistance.html" class="btn btn-ghost">← Back: Resistance</a>
+      <span></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -4,15 +4,51 @@
     "title": "Class Introduction",
     "breadcrumb": "Class Introduction",
     "sections": [
-      { "id": "pragmatic-electrical-diagnostics", "title": "Pragmatic Electrical Diagnostics", "text": "Why are we doing this and what do you want to take away from this class?" },
-      { "id": "learning-objectives", "title": "Learning Objectives", "text": "Build a solid foundation of electrical problem solving. Leave this class with a simplified, repeatable diagnostic method that gets you solutions to even those difficult intermittent failures. Participate in hands-on labs. Analyze, evaluate, and create your own methods within the 7-step diagnostic process." },
-      { "id": "examples", "title": "Examples", "text": "Service Manual Low Voltage Testing. Diagnostic Guide Starting System Electrical Concern. No Backup Alarm. Diagnosing a Blown Fuse." },
-      { "id": "first-principals", "title": "First Principals", "text": "Follow the 7-Step procedure and build simple diagnostic plans using schematics to make every failure a series circuit. Use Ohm's Law to solve for current. Source, path, and load. Voltage-drop. The voltmeter is your primary weapon." },
-      { "id": "be-careful-when-you-relate-electricity-to-hydraulics.", "title": "Be careful when you relate electricity to hydraulics", "text": "Current, Resistance, Voltage compared to Flow, Restriction, Pressure." },
-      { "id": "battery-circuits", "title": "Battery Circuits", "text": "Any circuit directly powered by the machine battery. Unfused high current starting and charging circuits, fused circuits, and circuits involving relays. Voltage-drop testing." },
-      { "id": "snap-circuits", "title": "Snap Circuits", "text": "Explore basic electrical theories before working with powered Bobcat components. Don't short the battery. Series and parallel circuits." },
-      { "id": "trainer-kit", "title": "Trainer Kit", "text": "Built to resemble Bobcat components. 12-volt power supply acts as the machine battery. Glow plugs get hot." },
-      { "id": "schematic", "title": "Schematic", "text": "Trainer Kit Schematic. Experiment with the kit. Make all the circuits work. Lights dim and bright. Pull/hold solenoid. HVAC fan. Glow plug temperature." }
+      {
+        "id": "pragmatic-electrical-diagnostics",
+        "title": "Pragmatic Electrical Diagnostics",
+        "text": "Why are we doing this and what do you want to take away from this class?"
+      },
+      {
+        "id": "learning-objectives",
+        "title": "Learning Objectives",
+        "text": "Build a solid foundation of electrical problem solving. Leave this class with a simplified, repeatable diagnostic method that gets you solutions to even those difficult intermittent failures. Participate in hands-on labs. Analyze, evaluate, and create your own methods within the 7-step diagnostic process."
+      },
+      {
+        "id": "examples",
+        "title": "Examples",
+        "text": "Service Manual Low Voltage Testing. Diagnostic Guide Starting System Electrical Concern. No Backup Alarm. Diagnosing a Blown Fuse."
+      },
+      {
+        "id": "first-principals",
+        "title": "First Principals",
+        "text": "Follow the 7-Step procedure and build simple diagnostic plans using schematics to make every failure a series circuit. Use Ohm's Law to solve for current. Source, path, and load. Voltage-drop. The voltmeter is your primary weapon."
+      },
+      {
+        "id": "be-careful-when-you-relate-electricity-to-hydraulics.",
+        "title": "Be careful when you relate electricity to hydraulics",
+        "text": "Current, Resistance, Voltage compared to Flow, Restriction, Pressure."
+      },
+      {
+        "id": "battery-circuits",
+        "title": "Battery Circuits",
+        "text": "Any circuit directly powered by the machine battery. Unfused high current starting and charging circuits, fused circuits, and circuits involving relays. Voltage-drop testing."
+      },
+      {
+        "id": "snap-circuits",
+        "title": "Snap Circuits",
+        "text": "Explore basic electrical theories before working with powered Bobcat components. Don't short the battery. Series and parallel circuits."
+      },
+      {
+        "id": "trainer-kit",
+        "title": "Trainer Kit",
+        "text": "Built to resemble Bobcat components. 12-volt power supply acts as the machine battery. Glow plugs get hot."
+      },
+      {
+        "id": "schematic",
+        "title": "Schematic",
+        "text": "Trainer Kit Schematic. Experiment with the kit. Make all the circuits work. Lights dim and bright. Pull/hold solenoid. HVAC fan. Glow plug temperature."
+      }
     ],
     "text": "Class Introduction. Nathan Ladd, Service Trainer. Pragmatic Electrical Diagnostics. Learning Objectives. First Principals. Battery Circuits. Snap Circuits. Trainer Kit. Schematic."
   },
@@ -21,13 +57,41 @@
     "title": "Solder Projects",
     "breadcrumb": "Solder Projects",
     "sections": [
-      { "id": "solder-versus-crimp-repairs.", "title": "Solder versus crimp repairs", "text": "Solder projects for repairs kept small, or when the correct terminal isn't available. Soldering is about controlling heat. Tin the solder iron. Pre-heat with a heat gun. Crimp repairs are very reliable and often superior." },
-      { "id": "test-leads", "title": "Test Leads", "text": "4-Foot silicone wire red and black leads. Male 4mm banana plugs. Plug boots with flex relief slots. Strip just enough insulation. Avoid twisting conductors. Solder all 4 plugs." },
-      { "id": "high-current-test-light", "title": "High-Current Test Light", "text": "Handle, magnet, bolt and nut, crimp and seal eyelet, insulated P-clamp, ground wire, 1156 bulbs and bulb holders, female 4mm banana jacks." },
-      { "id": "assemble-the-bulb-holder.", "title": "Assemble the bulb holder", "text": "Bulb holders wired in parallel. Bulbs ground through the bulb holder. Positive wires soldered to a single 4mm female banana socket." },
-      { "id": "assemble-the-ground-wire", "title": "Assemble the ground wire", "text": "Solder the single ground wire to a 4mm female socket. Crimp the number 8 eyelet with the insulated die. Heat the eyelet to seal." },
-      { "id": "assemble-bulb-holders", "title": "Assemble Bulb Holders", "text": "Pass the 8x32 screw through the handle. Install both bulb holders, the ground wire eyelet, and 8x32 nut." },
-      { "id": "assemble-magnet-and-p-clamp", "title": "Assemble Magnet and P-Clamp", "text": "Insert threaded post of magnet through second hole. Secure P-clamp around all three wires. Install P-clamp, washer, lock washer, and nut." }
+      {
+        "id": "solder-versus-crimp-repairs.",
+        "title": "Solder versus crimp repairs",
+        "text": "Solder projects for repairs kept small, or when the correct terminal isn't available. Soldering is about controlling heat. Tin the solder iron. Pre-heat with a heat gun. Crimp repairs are very reliable and often superior."
+      },
+      {
+        "id": "test-leads",
+        "title": "Test Leads",
+        "text": "4-Foot silicone wire red and black leads. Male 4mm banana plugs. Plug boots with flex relief slots. Strip just enough insulation. Avoid twisting conductors. Solder all 4 plugs."
+      },
+      {
+        "id": "high-current-test-light",
+        "title": "High-Current Test Light",
+        "text": "Handle, magnet, bolt and nut, crimp and seal eyelet, insulated P-clamp, ground wire, 1156 bulbs and bulb holders, female 4mm banana jacks."
+      },
+      {
+        "id": "assemble-the-bulb-holder.",
+        "title": "Assemble the bulb holder",
+        "text": "Bulb holders wired in parallel. Bulbs ground through the bulb holder. Positive wires soldered to a single 4mm female banana socket."
+      },
+      {
+        "id": "assemble-the-ground-wire",
+        "title": "Assemble the ground wire",
+        "text": "Solder the single ground wire to a 4mm female socket. Crimp the number 8 eyelet with the insulated die. Heat the eyelet to seal."
+      },
+      {
+        "id": "assemble-bulb-holders",
+        "title": "Assemble Bulb Holders",
+        "text": "Pass the 8x32 screw through the handle. Install both bulb holders, the ground wire eyelet, and 8x32 nut."
+      },
+      {
+        "id": "assemble-magnet-and-p-clamp",
+        "title": "Assemble Magnet and P-Clamp",
+        "text": "Insert threaded post of magnet through second hole. Secure P-clamp around all three wires. Install P-clamp, washer, lock washer, and nut."
+      }
     ],
     "text": "Solder Projects. Nathan Ladd, Service Trainer. Solder versus crimp repairs. Test Leads. High-Current Test Light. Assemble the bulb holder. Assemble the ground wire. Assemble Bulb Holders. Assemble Magnet and P-Clamp."
   },
@@ -36,14 +100,46 @@
     "title": "Current",
     "breadcrumb": "Current",
     "sections": [
-      { "id": "current-lab-learning-objectives:", "title": "Current Lab Learning Objectives", "text": "Three basic requirements for every circuit. Kirchhoff's Current Law. Voltage-drop. How can I narrow possible failures when a fuse blows. Internal DVOM ammeter and the clamp-style meter." },
-      { "id": "3-requirements-for-current-flow", "title": "3 Requirements for Current Flow", "text": "Source, load, and path. Batteries and Alternators. Wire Harness. Lights, Solenoids, Motors. Resistance of the circuit load determines current flow. A complete path is required." },
-      { "id": "electrostatic-force", "title": "Electrostatic Force", "text": "Current is as predictable as gravity. Electrostatic force is one of the four fundamental forces of nature. Opposite charges attract and like charges repel." },
-      { "id": "current-has-a-direction", "title": "Current Has a Direction", "text": "Electron flow or Conventional flow. AC and DC. Alternating current changes direction. Conventional current flow is from positive to negative." },
-      { "id": "dvom-current-measured-with-your-internal-ammeter", "title": "DVOM Current Measured with Your Internal Ammeter", "text": "Use the correct jacks in your meter. Meter must be in series with the circuit. Be careful with your meter's fuse. Amps, milliamps, micro-amps." },
-      { "id": "measuring-current-series-ammeter", "title": "Measuring Current Series Ammeter", "text": "Break the circuit to insert the meter. Always in series with the load. Use the current jacks of my meter." },
-      { "id": "current-and-magnetic-fields", "title": "Current and Magnetic Fields", "text": "Current flow through a conductor creates a magnetic field. A conductor traveling through a magnetic field will have current generated in it." },
-      { "id": "measuring-current-clamp-meter", "title": "Measuring Current Clamp Meter", "text": "No need to open a circuit to test current with a clamp style ammeter. Clamp measures the magnetic field around the conductor. Zero the clamp." }
+      {
+        "id": "current-lab-learning-objectives:",
+        "title": "Current Lab Learning Objectives",
+        "text": "Three basic requirements for every circuit. Kirchhoff's Current Law. Voltage-drop. How can I narrow possible failures when a fuse blows. Internal DVOM ammeter and the clamp-style meter."
+      },
+      {
+        "id": "3-requirements-for-current-flow",
+        "title": "3 Requirements for Current Flow",
+        "text": "Source, load, and path. Batteries and Alternators. Wire Harness. Lights, Solenoids, Motors. Resistance of the circuit load determines current flow. A complete path is required."
+      },
+      {
+        "id": "electrostatic-force",
+        "title": "Electrostatic Force",
+        "text": "Current is as predictable as gravity. Electrostatic force is one of the four fundamental forces of nature. Opposite charges attract and like charges repel."
+      },
+      {
+        "id": "current-has-a-direction",
+        "title": "Current Has a Direction",
+        "text": "Electron flow or Conventional flow. AC and DC. Alternating current changes direction. Conventional current flow is from positive to negative."
+      },
+      {
+        "id": "dvom-current-measured-with-your-internal-ammeter",
+        "title": "DVOM Current Measured with Your Internal Ammeter",
+        "text": "Use the correct jacks in your meter. Meter must be in series with the circuit. Be careful with your meter's fuse. Amps, milliamps, micro-amps."
+      },
+      {
+        "id": "measuring-current-series-ammeter",
+        "title": "Measuring Current Series Ammeter",
+        "text": "Break the circuit to insert the meter. Always in series with the load. Use the current jacks of my meter."
+      },
+      {
+        "id": "current-and-magnetic-fields",
+        "title": "Current and Magnetic Fields",
+        "text": "Current flow through a conductor creates a magnetic field. A conductor traveling through a magnetic field will have current generated in it."
+      },
+      {
+        "id": "measuring-current-clamp-meter",
+        "title": "Measuring Current Clamp Meter",
+        "text": "No need to open a circuit to test current with a clamp style ammeter. Clamp measures the magnetic field around the conductor. Zero the clamp."
+      }
     ],
     "text": "Current. Nathan Ladd, Service Trainer. Current Lab Learning Objectives. 3 Requirements for Current Flow. Electrostatic Force. Current Has a Direction. DVOM. Measuring Current. Current and Magnetic Fields."
   },
@@ -52,13 +148,120 @@
     "title": "Resistance",
     "breadcrumb": "Resistance",
     "sections": [
-      { "id": "learning-objectives", "title": "Learning Objectives", "text": "How to read your ohmmeter. The ohmmeter is almost never the best tool. Everything has resistance. Ohm's Law series and parallel resistance. Resistance is the load in our circuit." },
-      { "id": "source-load-path", "title": "Source Load Path", "text": "Voltage comes from the source. Circuit wires make up the path. Resistance is the load. Resistance is opposition to current flow. In a series circuit all resistance adds together." },
-      { "id": "ohm's-law", "title": "Ohm's Law", "text": "Current equals Volts over Ohms. Resistance is indirectly related to current. As resistance goes up, current decreases." },
-      { "id": "conductors-and-insulators", "title": "Conductors and Insulators", "text": "Materials with little resistance are conductors: copper, aluminum, steel. Materials with lots of resistance are insulators: glass, rubber, vinyl. A short-to-ground has basically no resistance." },
-      { "id": "typical-resistance-readings", "title": "Typical Resistance Readings", "text": "Save your ohmmeter for circuit testing scenarios. Light bulb, piece of wire, switch, connector. Resistance affected by temperature, length, diameter, and material composition." },
-      { "id": "reading-the-meter", "title": "Reading the Meter", "text": "Meter settings: resistance ohms omega symbol, continuity beeper, diode test. Meter counts and range changes. OL means open loop or overload, infinite resistance." }
+      {
+        "id": "learning-objectives",
+        "title": "Learning Objectives",
+        "text": "How to read your ohmmeter. The ohmmeter is almost never the best tool. Everything has resistance. Ohm's Law series and parallel resistance. Resistance is the load in our circuit."
+      },
+      {
+        "id": "source-load-path",
+        "title": "Source Load Path",
+        "text": "Voltage comes from the source. Circuit wires make up the path. Resistance is the load. Resistance is opposition to current flow. In a series circuit all resistance adds together."
+      },
+      {
+        "id": "ohm's-law",
+        "title": "Ohm's Law",
+        "text": "Current equals Volts over Ohms. Resistance is indirectly related to current. As resistance goes up, current decreases."
+      },
+      {
+        "id": "conductors-and-insulators",
+        "title": "Conductors and Insulators",
+        "text": "Materials with little resistance are conductors: copper, aluminum, steel. Materials with lots of resistance are insulators: glass, rubber, vinyl. A short-to-ground has basically no resistance."
+      },
+      {
+        "id": "typical-resistance-readings",
+        "title": "Typical Resistance Readings",
+        "text": "Save your ohmmeter for circuit testing scenarios. Light bulb, piece of wire, switch, connector. Resistance affected by temperature, length, diameter, and material composition."
+      },
+      {
+        "id": "reading-the-meter",
+        "title": "Reading the Meter",
+        "text": "Meter settings: resistance ohms omega symbol, continuity beeper, diode test. Meter counts and range changes. OL means open loop or overload, infinite resistance."
+      }
     ],
     "text": "Resistance. Nathan Ladd, Service Trainer. Learning Objectives. Source Load Path. Ohm's Law. Conductors and Insulators. Typical Resistance Readings. Reading the Meter."
+  },
+  {
+    "url": "voltage.html",
+    "title": "Voltage",
+    "breadcrumb": "Voltage",
+    "sections": [
+      {
+        "id": "learning-objectives",
+        "title": "Learning Objectives",
+        "text": "Voltage is potential only, a circuit can have voltage with no current. Voltage-drop is directly related to current. Voltage-drop testing is the most effective method. Master the voltmeter."
+      },
+      {
+        "id": "what-is-voltage",
+        "title": "What Is Voltage?",
+        "text": "Voltage is the difference in charge between two spots, also called potential difference. Voltage is consumed over every resistance in a circuit. Voltage drops through a series circuit, but current stays constant."
+      },
+      {
+        "id": "four-voltage-tests",
+        "title": "Four Voltage Tests",
+        "text": "Open Circuit Voltage, Source Voltage, Available Voltage, and Voltage Drop, the four ways to test voltage in a circuit."
+      },
+      {
+        "id": "voltage-is-directly-related-to-current",
+        "title": "Voltage Is Directly Related to Current",
+        "text": "Ohm's Law: Current equals Volts over Ohms. Always start diagnosis with Source Voltage, either charging voltage or fully charged battery voltage."
+      },
+      {
+        "id": "keep-it-simple-source-load-and-path",
+        "title": "Keep It Simple: Source, Load, and Path",
+        "text": "Voltage fulfills the source requirement for current flow. Batteries store voltage chemically, alternators produce voltage magnetically."
+      },
+      {
+        "id": "measuring-voltage",
+        "title": "Measuring Voltage",
+        "text": "Voltmeters measure the difference in potential between two spots and are always connected in parallel with the circuit being tested."
+      },
+      {
+        "id": "open-circuit-voltage",
+        "title": "Open Circuit Voltage",
+        "text": "Open circuit voltage testing means no current flow. Resistance has no effect on this test. In a series circuit, one open component stops all current flow."
+      },
+      {
+        "id": "voltage-drop-ideal-vs-real-life",
+        "title": "Voltage-Drop: Ideal vs. Real-Life",
+        "text": "Kirchhoff's Voltage Law: the sum of all the volts is zero. Ideal measurements show 0v everywhere but the load. Real-life measurements show small drops across every connection."
+      },
+      {
+        "id": "don-t-forget-the-battery-terminals",
+        "title": "Don't Forget the Battery Terminals",
+        "text": "Voltage-drop test the battery terminals under a high-current load. Voltage-drop should be near 0. Corrosion is a common cause on either side."
+      },
+      {
+        "id": "available-voltage-method-1",
+        "title": "Available Voltage Method #1",
+        "text": "Negative lead fixed to battery negative, positive lead walks down the circuit with current flowing. Great for the Power Probe."
+      },
+      {
+        "id": "available-voltage-method-2",
+        "title": "Available Voltage Method #2",
+        "text": "Positive lead fixed to battery positive, negative lead walks down the circuit. The meter displays only the voltage-drop between the leads."
+      },
+      {
+        "id": "what-s-normal-look-like",
+        "title": "What's Normal Look Like?",
+        "text": "Acceptable voltage-drop by current: near 0% under 10 amps, 5% at 10-30 amps, 8% at 30-100 amps, 12% at 100-250 amps."
+      },
+      {
+        "id": "the-voltmeter-s-5-readings",
+        "title": "The Voltmeter's 5 Readings",
+        "text": "Good Circuit, High Resistance, Open Circuit, Ghost Voltage, and Continuity, the five patterns a voltmeter shows you."
+      },
+      {
+        "id": "lab-voltage",
+        "title": "Lab: Voltage",
+        "text": "Embedded lab activity, not yet available outside SharePoint."
+      },
+      {
+        "id": "chapter-review-voltage",
+        "title": "Chapter Review: Voltage",
+        "text": "Embedded chapter review, not yet available outside SharePoint."
+      }
+    ],
+    "text": "Voltage. Nathan Ladd, Service Trainer. Learning Objectives What Is Voltage? Four Voltage Tests Voltage Is Directly Related to Current Keep It Simple: Source, Load, and Path Measuring Voltage Open Circuit Voltage Voltage-Drop: Ideal vs. Real-Life Don't Forget the Battery Terminals Available Voltage Method #1 Available Voltage Method #2 What's Normal Look Like? The Voltmeter's 5 Readings Lab: Voltage Chapter Review: Voltage."
   }
 ]
